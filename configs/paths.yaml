@@ -1,0 +1,12 @@
+# Centralized Project Paths Configuration
+raw_data_dir: "CampusFaceBD_Data/raw"
+processed_data_dir: "CampusFaceBD_Data/processed"
+metadata_dir: "CampusFaceBD_Data/metadata"
+splits_dir: "CampusFaceBD_Data/splits"
+private_dir: "CampusFaceBD_Data/private"
+
+results_dir: "results"
+logs_dir: "results/logs"
+checkpoints_dir: "results/checkpoints"
+tables_dir: "results/tables"
+figures_dir: "results/figures"

@@ -1,0 +1,20 @@
+# Core Requirements
+python==3.10.*
+numpy
+pandas
+scipy
+scikit-learn
+matplotlib
+pillow
+pyyaml
+tqdm
+
+# Computer Vision & Deep Learning
+opencv-python
+albumentations
+insightface
+onnxruntime
+
+# Monitoring & Visualization & Demo
+tensorboard
+streamlit

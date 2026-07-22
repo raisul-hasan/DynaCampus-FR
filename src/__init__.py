@@ -1,0 +1,3 @@
+"""
+DynaCampus-FR Core Module
+"""

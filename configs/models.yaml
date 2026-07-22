@@ -1,0 +1,20 @@
+detector:
+  name: scrfd
+  input_size: [640, 640]
+  confidence_threshold: 0.50
+
+recognizer:
+  primary: adaface_ir50
+  baseline: insightface_arcface
+  secondary_comparison: facelivtv2_s
+  input_size: [112, 112]
+  embedding_dim: 512
+
+adapter:
+  enabled: true
+  hidden_dim: 256
+  dropout: 0.10
+
+tracker:
+  name: bytetrack
+  track_buffer: 30

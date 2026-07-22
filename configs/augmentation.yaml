@@ -1,0 +1,20 @@
+severity_levels: [0, 1, 2, 3]
+
+transforms:
+  horizontal_flip:
+    probability: 0.5
+  rotation_degrees: 8
+  downscale_face_widths: [16, 24, 32, 48, 64]
+  jpeg_quality_ranges:
+    mild: [60, 85]
+    moderate: [30, 60]
+    severe: [15, 35]
+  motion_blur_kernel:
+    mild: [3, 5]
+    moderate: [5, 9]
+    severe: [9, 15]
+
+combined_profiles:
+  - low_resolution_plus_compression
+  - low_light_plus_noise
+  - blur_plus_low_light_plus_compression

@@ -1,0 +1,39 @@
+# Biometric Data & Local Datasets
+data/
+CampusFaceBD_Data/
+private/
+
+# Video & Image Media
+*.mp4
+*.avi
+*.mov
+*.jpg
+*.jpeg
+*.png
+
+# Weights, Models & Binary Data
+*.npy
+*.npz
+*.onnx
+*.pt
+*.pth
+*.bin
+
+# Python & Environment
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+.env
+.venv/
+env/
+venv/
+
+# IDE & OS Specific
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs & Temporary Output
+*.log

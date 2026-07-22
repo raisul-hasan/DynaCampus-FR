@@ -1,0 +1,18 @@
+splits: [split_01, split_02, split_03]
+seeds: [42, 123, 2026]
+
+open_set_targets:
+  fpir: [0.01, 0.001]
+
+verification_targets:
+  far: [0.01, 0.001]
+
+aggregation_methods:
+  - single_frame
+  - best_quality
+  - mean
+  - top_k_mean
+  - quality_weighted
+
+report_runtime: true
+bootstrap_samples: 1000

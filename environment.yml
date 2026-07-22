@@ -1,0 +1,23 @@
+name: dynacampus
+channels:
+  - defaults
+  - pytorch
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  - matplotlib
+  - pillow
+  - pyyaml
+  - tqdm
+  - pip:
+      - opencv-python
+      - albumentations
+      - insightface
+      - onnxruntime
+      - tensorboard
+      - streamlit

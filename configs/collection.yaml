@@ -1,0 +1,10 @@
+target_participants: 60
+enrollment_photos_per_participant: 15
+enrollment_video_duration_sec: 15
+cctv_sessions: 2
+cameras_per_session: 2
+frame_sampling_fps: 5
+distances:
+  near: 2.0
+  medium: 5.0
+  far: 8.0

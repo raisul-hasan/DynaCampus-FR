@@ -1,0 +1,11 @@
+input_dim: 512
+hidden_dim: 256
+output_dim: 512
+dropout: 0.10
+optimizer: AdamW
+learning_rate: 0.0001
+batch_size: 64
+max_epochs: 30
+early_stopping_patience: 5
+triplet_margin: 0.20
+random_seeds: [42, 123, 2026]
