@@ -17,10 +17,10 @@
     "quality_score": 0.9667,
     "embedding_dim": 512
   },
-  "AutoID_2": {
-    "name": "AutoID_2",
-    "enrolled_at": "2026-07-29T14:58:42.113103",
-    "quality_score": 0.9865,
+  "S001": {
+    "name": "Raisul",
+    "enrolled_at": "2026-07-29T15:32:54.262230",
+    "quality_score": 0.0,
     "embedding_dim": 512
   }
 }

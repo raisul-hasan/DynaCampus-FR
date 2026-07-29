@@ -28,6 +28,7 @@ from src.gallery import FaceGallery
 from src.tracking import FaceTracker
 from src.aggregation import FeatureAggregator
 from src.open_set import OpenSetDecisionEngine
+from src.augmentation import CCTVAugmentor
 
 # ── Page configuration ───────────────────────────────────────
 st.set_page_config(
@@ -116,9 +117,9 @@ def load_quality():
     return FaceQualityEstimator()
 
 
-def get_gallery() -> FaceGallery:
+def get_gallery():
     """Get or create the face gallery (stored in session state)."""
-    if "gallery" not in st.session_state:
+    if "gallery" not in st.session_state or not hasattr(st.session_state.gallery, "list_pending"):
         st.session_state.gallery = FaceGallery(
             gallery_dir=str(ROOT / "gallery_data"),
             similarity_threshold=0.40,
@@ -292,6 +293,8 @@ with st.sidebar:
             "🖼️ Image Recognition",
             "🎬 Video Recognition",
             "📹 Live Webcam",
+            "📡 Live CCTV (RTSP)",
+            "⏳ Pending Approvals",
             "📋 Gallery Management",
         ],
         label_visibility="collapsed",
@@ -422,61 +425,58 @@ elif "➕ Enroll" in page:
                 # Take the largest face (highest bbox area)
                 face = max(faces, key=lambda f: (f["bbox"][2] - f["bbox"][0]) * (f["bbox"][3] - f["bbox"][1]))
 
-                all_embeddings.append(face["embedding"])
-                q = face["quality"]["overall_quality"]
-                all_qualities.append(q)
+                # Apply CCTV-Aware Data Augmentation to generate robust synthetic variants
+                augmentor = CCTVAugmentor()
+                variants = augmentor.generate_cctv_variants(face["aligned"])
+                
+                for var_img in variants:
+                    emb = embedder.extract_embedding(var_img)
+                    q_meta = quality_est.estimate_quality(var_img, bbox=face["bbox"], landmarks=face["kps"])
+                    q_score = q_meta["overall_quality"]
+                    all_embeddings.append(emb)
+                    all_qualities.append(q_score)
 
-                if q > best_quality:
-                    best_quality = q
+                if face["quality"]["overall_quality"] > best_quality:
+                    best_quality = face["quality"]["overall_quality"]
                     best_aligned = face["aligned"]
 
                 # Show preview
                 c1, c2 = st.columns(2)
                 with c1:
-                    # Draw bbox on original
                     disp = image.copy()
                     bx = face["bbox"]
-                    cv2.rectangle(
-                        disp,
-                        (int(bx[0]), int(bx[1])),
-                        (int(bx[2]), int(bx[3])),
-                        (0, 200, 100),
-                        2,
-                    )
+                    cv2.rectangle(disp, (int(bx[0]), int(bx[1])), (int(bx[2]), int(bx[3])), (0, 200, 100), 2)
                     st.image(bgr_to_rgb(disp), caption=f"Detected — {uploaded.name}", use_container_width=True)
                 with c2:
-                    st.image(bgr_to_rgb(face["aligned"]), caption="Aligned 112×112", width=150)
+                    st.image(bgr_to_rgb(face["aligned"]), caption="Aligned 112×112 Crop", width=150)
                     st.markdown(
-                        f"**Quality:** `{q:.3f}`  |  "
+                        f"**Clean Quality:** `{face['quality']['overall_quality']:.3f}`  |  "
                         f"Blur: `{face['quality']['blur_score']:.2f}`  "
-                        f"Res: `{face['quality']['resolution_score']:.2f}`  "
-                        f"Pose: `{face['quality']['pose_score']:.2f}`"
+                        f"Res: `{face['quality']['resolution_score']:.2f}`"
                     )
+
+                with st.expander("🎨 CCTV-Aware Synthetic Augmentations (4 variants generated)"):
+                    v_cols = st.columns(4)
+                    labels = ["Motion Blur", "Low-Res Scale", "JPEG Noise", "Shadow Shift"]
+                    for idx_v, var_crop in enumerate(variants[1:]):
+                        with v_cols[idx_v % 4]:
+                            st.image(bgr_to_rgb(var_crop), caption=labels[idx_v], use_container_width=True)
 
         if all_embeddings:
             st.divider()
             st.info(
-                f"✅ **{len(all_embeddings)}** face(s) processed from **{len(uploaded_files)}** image(s).  "
-                f"Average quality: **{np.mean(all_qualities):.3f}**"
+                f"✅ **{len(all_embeddings)}** total feature vector(s) generated (including CCTV synthetic variants).  "
+                f"Weighted quality score: **{np.mean(all_qualities):.3f}**"
             )
 
             if st.button("✅ Confirm Enrollment", type="primary", use_container_width=True):
-                if len(all_embeddings) == 1:
-                    success = gallery.enroll(
-                        subject_id,
-                        name.strip(),
-                        all_embeddings[0],
-                        best_aligned,
-                        all_qualities[0],
-                    )
-                else:
-                    success = gallery.enroll_multi(
-                        subject_id,
-                        name.strip(),
-                        all_embeddings,
-                        all_qualities,
-                        best_aligned,
-                    )
+                success = gallery.enroll_multi(
+                    subject_id,
+                    name.strip(),
+                    all_embeddings,
+                    all_qualities,
+                    best_aligned,
+                )
 
                 if success:
                     # Force gallery reload in session state
@@ -861,6 +861,172 @@ elif "📹 Live" in page:
                 st.code(traceback.format_exc())
             finally:
                 cap.release()
+
+
+
+# ═══════════════════════════════════════════════════════════════
+#  PAGE: LIVE CCTV (RTSP STREAM)
+# ═══════════════════════════════════════════════════════════════
+elif "📡 Live CCTV" in page:
+    st.markdown("# 📡 Live CCTV Stream (RTSP / IP Camera)")
+    st.markdown('<div class="header-bar"></div>', unsafe_allow_html=True)
+
+    st.caption(
+        "Connect to a campus CCTV feed via RTSP URL (e.g. `rtsp://admin:password@192.168.1.100:554/stream`). "
+        "Applies multi-person SORT tracking, Quality-Aware Temporal Aggregation (QATA), and Open-Set Recognition."
+    )
+
+    rtsp_url = st.text_input("RTSP Stream URL", value="rtsp://127.0.0.1:8554/live", help="Enter IP camera RTSP endpoint.")
+    run_cctv = st.checkbox("▶️ Connect to CCTV Stream", value=False)
+
+    if run_cctv:
+        frame_placeholder = st.empty()
+        log_placeholder = st.empty()
+        cap = cv2.VideoCapture(rtsp_url)
+
+        if not cap.isOpened():
+            st.error(f"❌ Failed to connect to RTSP stream: `{rtsp_url}`. Please verify network address & credentials.")
+        else:
+            st.success(f"Connected to RTSP stream: `{rtsp_url}`")
+            tracker = FaceTracker(max_age=15, min_hits=2, iou_threshold=0.3)
+            aggregator = FeatureAggregator(strategy="quality_weighted")
+            osde = OpenSetDecisionEngine(base_threshold=threshold, quality_threshold=0.3)
+            recent_log = []
+            frame_count = 0
+            t_start = time.time()
+
+            try:
+                while True:
+                    ret, frame = cap.read()
+                    if not ret:
+                        st.warning("RTSP stream disconnected or end of stream.")
+                        break
+
+                    frame_count += 1
+                    elapsed = time.time() - t_start
+                    fps = frame_count / elapsed if elapsed > 0 else 0
+
+                    faces = process_faces(frame, detector, aligner, embedder, quality_est)
+                    dets = [[f["bbox"][0], f["bbox"][1], f["bbox"][2], f["bbox"][3], f["score"]] for f in faces]
+                    tracks = tracker.update(np.array(dets) if dets else np.empty((0, 5)))
+
+                    annotated = frame.copy()
+                    results = []
+                    now = datetime.now().strftime("%H:%M:%S")
+
+                    for trk in tracks:
+                        x1, y1, x2, y2, track_id = trk
+                        track_id = int(track_id)
+                        x1, y1, x2, y2 = int(x1), int(y1), int(x2), int(y2)
+
+                        best_face = None
+                        for f in faces:
+                            cx1, cy1 = (x1 + x2) / 2, (y1 + y2) / 2
+                            cx2, cy2 = (f["bbox"][0] + f["bbox"][2]) / 2, (f["bbox"][1] + f["bbox"][3]) / 2
+                            if np.sqrt((cx1 - cx2) ** 2 + (cy1 - cy2) ** 2) < 60:
+                                best_face = f
+                                break
+
+                        q = best_face["quality"]["overall_quality"] if best_face else 0.5
+                        if best_face:
+                            aggregator.update(track_id, best_face["embedding"], q)
+
+                        agg_feat = aggregator.aggregate(track_id)
+                        label = f"Cam Track #{track_id}"
+                        color = (255, 150, 0)
+
+                        if agg_feat is not None:
+                            search_res = gallery.search(agg_feat, threshold=0.1)
+                            top_matches = [(search_res["top1_id"], search_res["top1_score"], None)] if search_res["top1_id"] else []
+                            decision, match_id, match_score = osde.evaluate(top_matches, q)
+
+                            if decision == "KNOWN":
+                                color = (0, 200, 100)
+                                name = gallery.get_name(match_id)
+                                label = f"{name} ({match_score:.2f})"
+                                results.append({"Time": now, "Cam": "CCTV-1", "Decision": "KNOWN", "Name": name, "Score": match_score})
+                            elif decision == "UNKNOWN":
+                                color = (80, 80, 255)
+                                label = f"UNKNOWN ({match_score:.2f})"
+                                results.append({"Time": now, "Cam": "CCTV-1", "Decision": "UNKNOWN", "Name": "-", "Score": match_score})
+
+                                if best_face and q > 0.70:
+                                    auto_id = f"AutoID_{track_id}"
+                                    if auto_id not in gallery._identities:
+                                        gallery.enroll(auto_id, auto_id, agg_feat, best_face["aligned"], q)
+
+                        cv2.rectangle(annotated, (x1, y1), (x2, y2), color, 2, cv2.LINE_AA)
+                        cv2.putText(annotated, label, (x1, max(y1 - 8, 15)), cv2.FONT_HERSHEY_SIMPLEX, 0.55, color, 2, cv2.LINE_AA)
+
+                    annotated = add_info_bar(annotated, gallery.size, fps=fps)
+                    frame_placeholder.image(bgr_to_rgb(annotated), use_container_width=True)
+
+                    if results:
+                        recent_log.extend(results)
+                        recent_log = recent_log[-20:]
+
+                    if frame_count % 15 == 0 and recent_log:
+                        log_placeholder.dataframe(pd.DataFrame(recent_log[::-1]), use_container_width=True)
+
+            except Exception as e:
+                st.error(f"CCTV stream error: {e}")
+            finally:
+                cap.release()
+
+
+# ═══════════════════════════════════════════════════════════════
+#  PAGE: PENDING APPROVALS
+# ═══════════════════════════════════════════════════════════════
+elif "⏳ Pending" in page:
+    st.markdown("# ⏳ Pending Auto-Enrollments")
+    st.markdown('<div class="header-bar"></div>', unsafe_allow_html=True)
+
+    st.caption(
+        "Review high-quality unknown faces automatically captured by the CCTV & webcam feeds. "
+        "Type a name and click **Approve** to permanently enroll them into the campus gallery."
+    )
+
+    pending_list = gallery.list_pending()
+
+    if not pending_list:
+        st.info("🎉 No pending auto-enrollments! New high-quality unknown faces will automatically appear here.")
+    else:
+        st.caption(f"Found **{len(pending_list)}** auto-captured faces waiting for approval.")
+
+        cols_per_row = 3
+        for idx, item in enumerate(pending_list):
+            sid = item["subject_id"]
+            if idx % cols_per_row == 0:
+                cols = st.columns(cols_per_row)
+
+            col = cols[idx % cols_per_row]
+            with col:
+                st.markdown(f"### 👤 `{sid}`")
+                thumb = gallery.get_thumbnail(sid)
+                if thumb is not None:
+                    st.image(bgr_to_rgb(thumb), use_container_width=True)
+
+                st.caption(f"Quality Score: `{item.get('quality_score', 0):.3f}`  \nCaptured: {item.get('enrolled_at', '')[:19]}")
+
+                new_name = st.text_input("Enter Full Name", key=f"name_{sid}", placeholder="e.g. Raisul Hasan")
+                btn_col1, btn_col2 = st.columns(2)
+
+                with btn_col1:
+                    if st.button("✅ Approve", key=f"app_{sid}", type="primary"):
+                        if new_name.strip():
+                            gallery.approve_pending(sid, new_name.strip())
+                            st.session_state.gallery = gallery
+                            st.success(f"Enrolled `{new_name.strip()}`!")
+                            st.rerun()
+                        else:
+                            st.warning("Please type a name first.")
+
+                with btn_col2:
+                    if st.button("🗑️ Discard", key=f"disc_{sid}"):
+                        gallery.remove(sid)
+                        st.session_state.gallery = gallery
+                        st.info("Discarded entry.")
+                        st.rerun()
 
 
 # ═══════════════════════════════════════════════════════════════
