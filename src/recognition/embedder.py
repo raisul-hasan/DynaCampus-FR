@@ -37,7 +37,7 @@ class FaceEmbedder:
         if not self.mock:
             try:
                 from insightface.app import FaceAnalysis
-                self.app = FaceAnalysis(name="buffalo_l", allowed_modules=["recognition"], providers=self.providers)
+                self.app = FaceAnalysis(name="buffalo_l", allowed_modules=["detection", "recognition"], providers=self.providers)
                 self.app.prepare(ctx_id=0)
                 if "recognition" in self.app.models:
                     self.model = self.app.models["recognition"]

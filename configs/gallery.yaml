@@ -1,0 +1,5 @@
+# Gallery Configuration
+gallery_dir: "gallery_data"
+similarity_threshold: 0.40
+max_enrollment_images: 15
+min_quality_for_enrollment: 0.30

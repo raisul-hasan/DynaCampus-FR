@@ -45,3 +45,52 @@ DynaCampus-FR/
 ├── docs/             # Protocols, consent forms, cards, notes
 └── tests/            # Unit and integration tests
 ```
+
+---
+
+## 🖥️ Supervisor Dashboard
+
+A fully functional Streamlit dashboard is included to manage the face gallery, test the recognition pipeline, and evaluate live webcam and video feeds.
+
+### Features
+- **Dynamic Enrollment:** Enroll new subjects directly from the UI without retraining the underlying model. Extracts 512-d embeddings and saves them to a local JSON/NPZ gallery.
+- **Image & Video Recognition:** Upload files for automated bounding-box annotation and similarity scoring.
+- **Live Webcam:** Real-time face detection and recognition using your local camera.
+
+---
+
+## 🚀 Setup Guide
+
+### 1. Requirements
+- Python 3.10+
+- A working C++ compiler (for InsightFace)
+- Webcam (optional, for live feed)
+
+### 2. Installation
+Clone the repository and set up a virtual environment:
+
+```bash
+git clone https://github.com/raisul-hasan/DynaCampus-FR.git
+cd DynaCampus-FR
+python -m venv .venv
+```
+
+Activate the environment:
+- **Windows:** `.venv\Scripts\activate`
+- **Linux/Mac:** `source .venv/bin/activate`
+
+Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Model Downloads
+The system uses `insightface`. The first time you run the application, it will attempt to download the `buffalo_l` model bundle (~300MB) to `~/.insightface/models/buffalo_l`.
+
+### 4. Running the Dashboard
+To start the Streamlit web application:
+
+```bash
+python -m streamlit run app.py
+```
+Open your browser and navigate to `http://localhost:8501`.
