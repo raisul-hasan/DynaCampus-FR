@@ -25,6 +25,9 @@ from src.alignment import FaceAligner
 from src.recognition import FaceEmbedder
 from src.quality import FaceQualityEstimator
 from src.gallery import FaceGallery
+from src.tracking import FaceTracker
+from src.aggregation import FeatureAggregator
+from src.open_set import OpenSetDecisionEngine
 
 # ── Page configuration ───────────────────────────────────────
 st.set_page_config(
@@ -713,6 +716,7 @@ elif "📹 Live" in page:
         log_placeholder = st.empty()
 
         cap = cv2.VideoCapture(int(cam_index))
+
         if not cap.isOpened():
             st.error(
                 "❌ Cannot access webcam. Make sure it's connected and not in use by another application."
@@ -724,6 +728,10 @@ elif "📹 Live" in page:
             t_start = time.time()
 
             try:
+                tracker = FaceTracker(max_age=15, min_hits=2, iou_threshold=0.3)
+                aggregator = FeatureAggregator(strategy="quality_weighted")
+                osde = OpenSetDecisionEngine(base_threshold=threshold, quality_threshold=0.3)
+                
                 while True:
                     ret, frame = cap.read()
                     if not ret:
@@ -734,13 +742,99 @@ elif "📹 Live" in page:
                     elapsed = time.time() - t_start
                     fps = frame_count / elapsed if elapsed > 0 else 0
 
-                    # Process faces
+                    # Process faces (raw detection + embedding)
                     faces = process_faces(
                         frame, detector, aligner, embedder, quality_est
                     )
-                    annotated, results = annotate_frame(
-                        frame, faces, gallery, threshold
-                    )
+                    
+                    # 1. Prepare detections for tracker [x1, y1, x2, y2, score]
+                    dets = []
+                    for f in faces:
+                        dets.append([f["bbox"][0], f["bbox"][1], f["bbox"][2], f["bbox"][3], f["score"]])
+                    
+                    if len(dets) > 0:
+                        dets = np.array(dets)
+                        tracks = tracker.update(dets)
+                    else:
+                        tracks = tracker.update(np.empty((0, 5)))
+                    
+                    annotated = frame.copy()
+                    results = []
+                    now = datetime.now().strftime("%H:%M:%S")
+                    
+                    # 2. Map tracks back to embeddings & aggregate
+                    for trk in tracks:
+                        x1, y1, x2, y2, track_id = trk
+                        track_id = int(track_id)
+                        
+                        # Find closest face in current frame to this track (simplistic mapping for demo)
+                        best_iou = 0
+                        best_face = None
+                        for f in faces:
+                            # calculate simplistic center distance or IoU
+                            cx1, cy1 = (x1+x2)/2, (y1+y2)/2
+                            cx2, cy2 = (f["bbox"][0]+f["bbox"][2])/2, (f["bbox"][1]+f["bbox"][3])/2
+                            dist = np.sqrt((cx1-cx2)**2 + (cy1-cy2)**2)
+                            if dist < 50: # pixel threshold
+                                best_face = f
+                                break
+                                
+                        if best_face:
+                            # Update Aggregator
+                            q = best_face["quality"]["overall_quality"]
+                            aggregator.update(track_id, best_face["embedding"], q)
+                            
+                        # 3. Get aggregated feature and perform Open-Set Decision
+                        agg_feat = aggregator.aggregate(track_id)
+                        
+                        label = f"ID: {track_id} (Tracking)"
+                        color = (255, 150, 0) # Orange default
+                        
+                        if agg_feat is not None:
+                            search_res = gallery.search(agg_feat, threshold=0.1) # search raw top matches
+                            # Use OSDE 4-state engine
+                            # Mock top_matches format: [(id, score, meta)]
+                            if search_res["decision"] != "UNKNOWN" or search_res["top1_score"] > 0:
+                                top_matches = [(search_res["top1_id"], search_res["top1_score"], None)]
+                            else:
+                                top_matches = []
+                                
+                            decision, match_id, match_score = osde.evaluate(top_matches, q if best_face else 0.5)
+                            
+                            if decision == "KNOWN":
+                                color = (0, 200, 100) # Green
+                                name = gallery.get_name(match_id)
+                                label = f"{name} ({match_score:.2f})"
+                                results.append({"Time": now, "Decision": "KNOWN", "Name": name, "Score": match_score})
+                                
+                                # --- Auto-Enrollment Prototype Logic ---
+                                # If they were auto-enrolled previously, we could notify here.
+                                
+                            elif decision == "UNKNOWN":
+                                color = (80, 80, 255) # Red
+                                label = f"UNKNOWN ({match_score:.2f})"
+                                results.append({"Time": now, "Decision": "UNKNOWN", "Name": "-", "Score": match_score})
+                                
+                                # Auto-Enrollment trigger
+                                if best_face and q > 0.70:
+                                    # High quality unknown face detected continuously!
+                                    # Auto-enroll logic
+                                    new_id = f"AutoID_{track_id}"
+                                    if new_id not in gallery._identities:
+                                        gallery.enroll(new_id, new_id, agg_feat, best_face["aligned"], q)
+                                        results.append({"Time": now, "Decision": "AUTO_ENROLLED", "Name": new_id, "Score": q})
+                                        
+                            elif decision == "AMBIGUOUS":
+                                color = (0, 255, 255) # Yellow
+                                label = f"AMBIGUOUS ({match_score:.2f})"
+                            elif decision == "INSUFFICIENT_QUALITY":
+                                color = (150, 150, 150) # Gray
+                                label = "LOW QUALITY"
+
+                        # Draw Tracking BBox with crisp anti-aliased rendering
+                        cv2.rectangle(annotated, (int(x1), int(y1)), (int(x2), int(y2)), color, 2, cv2.LINE_AA)
+                        cv2.putText(annotated, label, (int(x1), max(int(y1)-8, 15)), cv2.FONT_HERSHEY_SIMPLEX, 0.6, color, 2, cv2.LINE_AA)
+                        
                     annotated = add_info_bar(annotated, gallery.size, fps=fps)
 
                     # Display annotated frame
@@ -748,31 +842,23 @@ elif "📹 Live" in page:
                         bgr_to_rgb(annotated), use_container_width=True
                     )
 
-                    # Live stats
+                    # Live stats (throttled to keep stream smooth at 30+ FPS)
                     if results:
-                        now = datetime.now().strftime("%H:%M:%S")
                         for r in results:
                             r["Time"] = now
                             recent_log.append(r)
-                        # Keep last 30 entries
-                        recent_log = recent_log[-30:]
-
-                        with stats_placeholder.container():
-                            cols = st.columns(min(len(results), 4))
-                            for i, r in enumerate(results):
-                                with cols[i % len(cols)]:
-                                    if r["Decision"] == "KNOWN":
-                                        st.success(f"✅ {r['Name']} ({r['Score']:.2f})")
-                                    else:
-                                        st.error(f"❌ Not Recognized ({r['Score']:.2f})")
-
+                        recent_log = recent_log[-20:]
+                    
+                    if frame_count % 15 == 0 and recent_log:
                         log_placeholder.dataframe(
-                            pd.DataFrame(recent_log[-10:][::-1]),
+                            pd.DataFrame(recent_log[::-1]),
                             use_container_width=True,
                         )
 
-            except Exception:
-                pass
+            except Exception as e:
+                import traceback
+                st.error(f"Error in webcam loop: {e}")
+                st.code(traceback.format_exc())
             finally:
                 cap.release()
 

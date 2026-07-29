@@ -1,0 +1,26 @@
+{
+  "S0002": {
+    "name": "Rajkonna Al Farabi",
+    "enrolled_at": "2026-07-29T14:16:02.063382",
+    "quality_score": 0.9907,
+    "embedding_dim": 512
+  },
+  "S0003": {
+    "name": "Shamsiya Nasrin Chyti",
+    "enrolled_at": "2026-07-29T14:16:46.255756",
+    "quality_score": 0.985,
+    "embedding_dim": 512
+  },
+  "S0004": {
+    "name": "Shahedul Islam Shahed",
+    "enrolled_at": "2026-07-29T14:18:33.872459",
+    "quality_score": 0.9667,
+    "embedding_dim": 512
+  },
+  "AutoID_2": {
+    "name": "AutoID_2",
+    "enrolled_at": "2026-07-29T14:58:42.113103",
+    "quality_score": 0.9865,
+    "embedding_dim": 512
+  }
+}
