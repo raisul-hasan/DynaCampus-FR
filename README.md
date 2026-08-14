@@ -8,7 +8,7 @@ United International University
 ---
 
 ## 📌 Overview
-DynaCampus-FR is a four-month research project developing an open-set campus CCTV face recognition framework. It addresses the domain gap between clean enrollment photographs and degraded CCTV probe tracks without retraining the core recognition backbone when new identities enroll.
+DynaCampus-FR is a research project developing an open-set campus CCTV face recognition framework. It addresses the domain gap between clean enrollment photographs and degraded CCTV probe tracks without retraining the core recognition backbone when new identities enroll.
 
 ### Key Architecture
 - **Detector**: SCRFD (5-point face landmarks)
