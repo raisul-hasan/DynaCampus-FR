@@ -1,0 +1,5 @@
+-r requirements.txt
+# AdaFace, adapter unit checks and the complete test suite.
+# The existing CUDA installation uses the compatible 2.9.0+cu126 build.
+torch==2.9.0
+pytest==9.1.1

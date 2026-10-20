@@ -1,0 +1,9 @@
+protocol_version: enrollment_pooling_development_v1
+enrollment_run: results/enrollment/enrollment_development_20261019T222121709545Z
+decision_run: results/decisions/decisions_development_20261019T222927022126Z
+methods: [one_photo, uniform_mean, heuristic_weighted, detector_weighted, best_quality]
+target_conditional_fpir: 0.01
+seed: 42
+bootstrap_samples: 2000
+final_test_evaluation: false
+scope: descriptive_development_ablation_not_an_unseen_test

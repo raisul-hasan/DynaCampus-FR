@@ -1,0 +1,6 @@
+{
+  "run": "results/defense/defense_development_20261020T210142299692Z",
+  "case_manifest_sha256": "8afd43f620ac74b43267d9040bcd16f6f43329f41b418baa7c8f48c8c761c606",
+  "photographs_in_public_assets": false,
+  "selection_rule": "First lexicographic source path in every declared category, before visual inspection; no replacements to improve appearance."
+}

@@ -1,0 +1,165 @@
+{
+  "output": "data/defense/defense_development_20261020T210142299692Z/defense_evidence_backup.mp4",
+  "type": "assembled_evidence_walkthrough_not_live_screen_recording",
+  "reused_prior_browser_captures": true,
+  "new_browser_capture": false,
+  "portraits_in_backup": false,
+  "chapters": [
+    {
+      "frame": "frame_000.png",
+      "duration_seconds": 8,
+      "title": "DynaCampus-FR: defense backup evidence",
+      "source": null,
+      "source_sha256": null
+    },
+    {
+      "frame": "frame_001.png",
+      "duration_seconds": 9,
+      "title": "The frozen final comparison",
+      "source": "paper_assets\\heldout\\final_v1\\fig01_heldout_comparison.png",
+      "source_sha256": "e1ed0f159b430aee23607964bb0321b6f6c8e2c639b687b89e485297783af858"
+    },
+    {
+      "frame": "frame_002.png",
+      "duration_seconds": 9,
+      "title": "Additional development evidence",
+      "source": "paper_assets\\development\\backbones_v1\\fig01_backbone_comparison.png",
+      "source_sha256": "774bb3afeb1f2734f6aaa7a10543e2a8b1f1749f1adeea6e021f98b1aef441c7"
+    },
+    {
+      "frame": "frame_003.png",
+      "duration_seconds": 7,
+      "title": "C01: helped known",
+      "source": "paper_assets\\development\\defense_v1\\fig_case_C01.png",
+      "source_sha256": "9cff81c0b7cf7d94be17cfe7e61a4cb0384f9714fd4afacd0b1f966593fbfffe"
+    },
+    {
+      "frame": "frame_004.png",
+      "duration_seconds": 7,
+      "title": "C02: harmed known",
+      "source": "paper_assets\\development\\defense_v1\\fig_case_C02.png",
+      "source_sha256": "7c84c7d7058be59341db2990d7bda05b61e8ee040d16acab00ef3577cc991386"
+    },
+    {
+      "frame": "frame_005.png",
+      "duration_seconds": 7,
+      "title": "C03: unchanged accept",
+      "source": "paper_assets\\development\\defense_v1\\fig_case_C03.png",
+      "source_sha256": "fec69f41139e25636d378ec14a80d3e45f29dabff32e885bf9d2bdd8ef854445"
+    },
+    {
+      "frame": "frame_006.png",
+      "duration_seconds": 7,
+      "title": "C04: unknown rejected",
+      "source": "paper_assets\\development\\defense_v1\\fig_case_C04.png",
+      "source_sha256": "657c6a5b176e4648074096a8680008176af343490e6af4f34309ae56b98c25fb"
+    },
+    {
+      "frame": "frame_007.png",
+      "duration_seconds": 7,
+      "title": "C05: ambiguous unknown",
+      "source": "paper_assets\\development\\defense_v1\\fig_case_C05.png",
+      "source_sha256": "bd27257f3b852aba75ce229d43042d8bc627728deda5f3996e64ea5daf5c6821"
+    },
+    {
+      "frame": "frame_008.png",
+      "duration_seconds": 7,
+      "title": "C06: known rejected",
+      "source": "paper_assets\\development\\defense_v1\\fig_case_C06.png",
+      "source_sha256": "e0f6dbbbbc130344924e139aa7922ddeed91ee59f2eecfd7fb7baac77bb4960d"
+    },
+    {
+      "frame": "frame_009.png",
+      "duration_seconds": 7,
+      "title": "C07: capture failure",
+      "source": "paper_assets\\development\\defense_v1\\fig_case_C07.png",
+      "source_sha256": "8fa73f0d7e4ec0becd736b0d8a47ff30b1c4f4f7770dd816f6934304fa187b7a"
+    },
+    {
+      "frame": "frame_010.png",
+      "duration_seconds": 7,
+      "title": "C08: unknown false accept",
+      "source": "paper_assets\\development\\defense_v1\\fig_case_C08.png",
+      "source_sha256": "cfa3bb1deb0a1caa5c2dc54be081671c129b13131554c62abd12363ec6822170"
+    },
+    {
+      "frame": "frame_011.png",
+      "duration_seconds": 7,
+      "title": "C09: helped known",
+      "source": "paper_assets\\development\\defense_v1\\fig_case_C09.png",
+      "source_sha256": "b87719d8f7625603391e8800e48120b5d0a6a942eade3d56eb90ea2d61b3cf1c"
+    },
+    {
+      "frame": "frame_012.png",
+      "duration_seconds": 7,
+      "title": "C10: harmed known",
+      "source": "paper_assets\\development\\defense_v1\\fig_case_C10.png",
+      "source_sha256": "d7244d3cc6124d6dcf48edf28f01d93a9c0dd96d55abba805213336e97ee64d3"
+    },
+    {
+      "frame": "frame_013.png",
+      "duration_seconds": 7,
+      "title": "C11: helped known",
+      "source": "paper_assets\\development\\defense_v1\\fig_case_C11.png",
+      "source_sha256": "865466fd0729696b41bd7073e071470ab6ddee9b2efc4f6e028849f00ee2cb09"
+    },
+    {
+      "frame": "frame_014.png",
+      "duration_seconds": 7,
+      "title": "C12: harmed known",
+      "source": "paper_assets\\development\\defense_v1\\fig_case_C12.png",
+      "source_sha256": "e4ead3e3a017fa4841c0a634f7ea6501129c5132c0b8f58bda4896c252ae98f3"
+    },
+    {
+      "frame": "frame_015.png",
+      "duration_seconds": 6,
+      "title": "Actual prior browser capture: enrollment",
+      "source": "paper_assets\\development\\demo_v1\\fig03_app_enrollment.png",
+      "source_sha256": "7c9f8d956d63408e291f59e012f0138cbb470c107acdef8c1957679fa233e647"
+    },
+    {
+      "frame": "frame_016.png",
+      "duration_seconds": 6,
+      "title": "Actual prior browser capture: known masked probe",
+      "source": "paper_assets\\development\\demo_v1\\fig04_app_known.png",
+      "source_sha256": "c66fda44430766accf0d3724d9916a925e3a80499210a8bc1ba230509c17b59b"
+    },
+    {
+      "frame": "frame_017.png",
+      "duration_seconds": 6,
+      "title": "Actual prior browser capture: unknown probe",
+      "source": "paper_assets\\development\\demo_v1\\fig05_app_unknown.png",
+      "source_sha256": "b1a81cd77f700cdf639cd445cc4a15ecaedcd98fa3c2209377ff23f6c1c83bd1"
+    },
+    {
+      "frame": "frame_018.png",
+      "duration_seconds": 6,
+      "title": "Actual prior browser capture: reload",
+      "source": "paper_assets\\development\\demo_v1\\fig06_app_persistence.png",
+      "source_sha256": "8e86f938dd522dd002b93211e80ed3f19178c009d4a975f3522f665b35102bf1"
+    },
+    {
+      "frame": "frame_019.png",
+      "duration_seconds": 6,
+      "title": "Actual prior browser capture: removal",
+      "source": "paper_assets\\development\\demo_v1\\fig07_app_after_removal.png",
+      "source_sha256": "c086dab25f03f3b5a8fa8898324bc2f0c87a544771872bc974b1310fa7a4e005"
+    },
+    {
+      "frame": "frame_020.png",
+      "duration_seconds": 9,
+      "title": "What the evidence supports",
+      "source": null,
+      "source_sha256": null
+    }
+  ],
+  "expected_duration_seconds": 149,
+  "decoded_duration_seconds": 149.0,
+  "decoded_fps": 10.0,
+  "source_capture_run": "results/demo/dynamic_development_20261019T233918475526Z",
+  "video_sha256": "a31d2c3b76cfccf7aa47b81af61af39d75292721b8537633a86ca6e403f36430",
+  "encoder_wheel_sha256": "02fa47c83703c37df6bfe4896aab339013f62bf02c5ebf2dce6da56af04ffc0a",
+  "encoder_sha256": "2ce797a0f88d7f067180338fb227f7b1928ea727bd9a4d7a1d022f7c52af71a3",
+  "script_sha256": "0053b5c73c00afb764d9f46631d11db7dc171e4b96f7a9f7ab94313ea102ed2f",
+  "all_chapters_decode": true
+}

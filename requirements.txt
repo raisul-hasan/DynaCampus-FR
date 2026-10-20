@@ -1,0 +1,16 @@
+# Direct runtime dependencies observed working on Windows / Python 3.13.3.
+# This is not a clean-machine installation certification or a transitive lock.
+numpy==2.3.3
+pandas==3.0.3
+scipy==1.18.0
+scikit-learn==1.9.0
+matplotlib==3.11.1
+pillow==11.3.0
+pyyaml==6.0.3
+tqdm==4.67.1
+opencv-python==5.0.0.93
+insightface==1.0.1
+onnxruntime==1.27.0
+streamlit==1.65.0
+filterpy==1.4.5
+requests==2.32.5

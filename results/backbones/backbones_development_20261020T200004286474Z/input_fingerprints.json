@@ -1,0 +1,11 @@
+{
+  "configs/backbone_comparison.yaml": "5c463b916f7714a89aff57b59255c534ff1196c14012a4568b0ded92620d67b5",
+  "results/enrollment/enrollment_development_20261019T222121709545Z/comparison.json": "1bde84d1c5c0099542bc327b32f120b847c5993470bcc39945df5d25244d3b3d",
+  "results/enrollment/enrollment_development_20261019T222121709545Z/combined_extraction.csv": "09575a0c063011419b8bc502736932d3e7af161a74552e98c1aba4042583563d",
+  "results/enrollment/enrollment_development_20261019T222121709545Z/predictions.csv": "43d8a1719b96f50a3283e5fa61913c9b4f4bb18b20c0f116648e46b2ce8da306",
+  "results/enrollment/enrollment_development_20261019T222121709545Z/split_snapshot.json": "a7e8556ccedc987765f0b90285efe52ce58ff6bd28543aa5187876cbb91b42ac",
+  "data/embeddings/enrollment_development_20261019T222121709545Z/embeddings.npz": "c884fda16a0344675f6778cbd82ede86fc57c083731ff535850b6cca0fddcad9",
+  "configs/decision_ablation.yaml": "792a7750a4d52fc9a104cff500d6f01d193cb243dca68a69a5a6acc53a4c880c",
+  "data/manifests/halfface_usable.csv": "f5e4d7949be0619ce4b7ac2cdab5c97372b445a88f02d36aa882e1043301f1cd",
+  "data/manifests/icfd_sample.csv": "6e821e2950bbea6f0dcb04c5f349ca161c9a7a0d3a060dbd4695ea35ae8cc80e"
+}

@@ -1,0 +1,25 @@
+{
+  "assessment_date": "2026-10-21",
+  "count_convention": {
+    "Met": 1,
+    "Partial": 0.5,
+    "Not demonstrated": 0
+  },
+  "checklist_counts": {
+    "Partial": 11,
+    "Met": 5,
+    "Not demonstrated": 10
+  },
+  "planning_index_percent": 40.38461538461539,
+  "not_a_labor_or_grade_percentage": true,
+  "sha256": {
+    "Face Identification Research.pdf": "927795970e0a2d0086a0ff110706a7140b72f135daee004be21116d5f02dc57e",
+    "DynaCampus_FR_Complete_Project_Context.pdf": "293a42c8cd2c5d98bcece1c067107bdc9082f94c6967ed6b8dbfbac51733a82c",
+    "paper_assets/heldout/final_v1/README.md": "12b176e1b0791acb8575cbccafab0bd73e7e2d9ba10765002c0f4335eefcdc9e",
+    "results/final/heldout_20261019T231512869782Z/verification.json": "521f904b076d6381c94138d885597536d996a67c6777e04e59e01fa98fe1ee90",
+    "results/validation/setup_20261021/setup_verification.json": "178f5bea75e3d1d642445b233452b3f5417a135fedff9f75b443ac07ce6bf1c0",
+    "scripts/train_adapter.py": "8bf244acb0cc86730545efaf0eecbbc2f51410477631846b560427bf0967cef5",
+    "src/tracking/tracker.py": "9f46f49d80200d68f86e669f7b0b351882217f1de4c51d6991be9c4c00d152b2",
+    "docs\\ORIGINAL_PDF_PROGRESS_AUDIT.md": "ac8d0331790cf89b8a625fce592cc0da423579509df538d2f41bb48464698bf1"
+  }
+}

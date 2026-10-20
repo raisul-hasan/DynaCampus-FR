@@ -1,0 +1,16 @@
+{
+  "verification": "passed",
+  "selected_examples": 12,
+  "candidate_records": 905,
+  "deterministic_first_path_selection": true,
+  "original_image_hashes_match": true,
+  "case_values_match_verified_research": true,
+  "actual_real_image_backend_steps": 10,
+  "app_test_steps": 10,
+  "fresh_model_features_match_cache": true,
+  "genuine_multi_identity_ambiguity": true,
+  "frozen_final_source_hashes_unchanged": true,
+  "fresh_browser_capture": false,
+  "live_screen_recording": false,
+  "verifier_sha256": "3aafab5492ba5ebe59e21672a2d5fbb0e256c7f0f376c77607431e0de81116cb"
+}

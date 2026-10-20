@@ -1,0 +1,27 @@
+{
+  "verification": "passed",
+  "case_views_checked": 12,
+  "real_walkthrough_steps": 10,
+  "state_sequence": [
+    "UNKNOWN",
+    null,
+    "KNOWN",
+    "UNKNOWN",
+    "AMBIGUOUS",
+    null,
+    "KNOWN",
+    null,
+    "UNKNOWN",
+    "CAPTURE_FAILURE"
+  ],
+  "isolated_gallery_size_after": 54,
+  "session_directory": "data/defense/defense_development_20261020T210142299692Z/sessions/61cd06d70dd84ab4ba49fe7cefec08a4",
+  "real_inference": true,
+  "app_test_api_used": true,
+  "actual_browser_interaction": false,
+  "source_sha256": {
+    "defense_app.py": "fb09d176e8958b85f3f50422fc5ee6fe3ee4aba4f6acc546b6c55b5a14ba7a23",
+    "src/defense_workflow.py": "d798011455ff6842486b5fc7de2464dd0bcf5738252ef9f621b54a1574b4dc0c",
+    "scripts/check_defense_app.py": "46f1f7333ab253c397f63224189d8b50a1f4854d4e39d64ed5b26d25ea33beb6"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "verification": "passed",
+  "session_directory": "data/defense/defense_development_20261020T210142299692Z/sessions/7e9c6acfbb394e3f9ef84737371af25d",
+  "steps": 10,
+  "real_images_reinferred": true,
+  "background_seed_templates": 54,
+  "checkpoint_sha256": {
+    "C:\\Users\\msi\\.insightface\\models\\buffalo_l\\det_10g.onnx": "5838f7fe053675b1c7a08b633df49e7af5495cee0493c7dcf6697200b85b5b91",
+    "C:\\Users\\msi\\.insightface\\models\\buffalo_l\\w600k_r50.onnx": "4c06341c33c2ca1f86781dab0e829f88ad5b64be9fba56e56bc9ebdefc619e43"
+  },
+  "state_sequence": [
+    "UNKNOWN",
+    null,
+    "KNOWN",
+    "UNKNOWN",
+    "AMBIGUOUS",
+    null,
+    "KNOWN",
+    null,
+    "UNKNOWN",
+    "CAPTURE_FAILURE"
+  ],
+  "browser_interaction_tested": false,
+  "screenshots_created": false,
+  "screen_recording_created": false,
+  "event_log_sha256": "d87ea0ddabdcceaf1c39a87c5b45b8fb26bfc61e0c9de27a3008b2f172dd0712",
+  "source_sha256": {
+    "src/defense_workflow.py": "d798011455ff6842486b5fc7de2464dd0bcf5738252ef9f621b54a1574b4dc0c",
+    "scripts/rehearse_defense.py": "8f81de50b9ed1bec131c099e8eed4433773d34cf8d91febe60cb2b45078ff3da",
+    "src/demo_workflow.py": "cd165216567ab8764452a2c7f194b7531f56dfe6f15b091d612ca173c5d97729",
+    "src/gallery/gallery.py": "f041d9f14a575fe28120dd252f465e86561c2b1726f3ca91a14b47139d81e5dd"
+  }
+}

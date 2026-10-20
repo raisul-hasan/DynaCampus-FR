@@ -1,0 +1,16 @@
+{
+  "source_run": "results/backbones/backbones_development_20261020T200004286474Z",
+  "source_verification_sha256": "07fe85091f7b0a341297d6791dd442f2d6d7cfc33693474e13036594db3a92e5",
+  "renderer_sha256": "e7b0ed5518b0b351558f47bc36be8b29f957aae4669a68514e494df865694b59",
+  "asset_sha256": {
+    "fig01_backbone_comparison.png": "774bb3afeb1f2734f6aaa7a10543e2a8b1f1749f1adeea6e021f98b1aef441c7",
+    "fig01_backbone_comparison.svg": "a46d6faa4c78c22e1aa2c3b65bd8b528d6c3497e526b25a108a84eed54e7a63a",
+    "fig02_backbone_timing.png": "022c8ad2c57ef91a7264509a1447ac70abdf4a073622f6f616632e66b703d940",
+    "fig02_backbone_timing.svg": "a0f92e2a3a87ad90b977d82f28b411b6ac0dbcc6da6f6faf8f725bdffb916845",
+    "paired_effects.csv": "9f0d1f93e8cb5ef07a4a85150a78df558a447ac9a509c9a9b3380076401a4296",
+    "README.md": "4dd6d96b5d622a4d0aa88a9eb47d21a3df8d157f11bb5e49d633f273ed73da55",
+    "selected_thresholds.csv": "b72009a8a342e83cbddcb7baf9c18131f3e169d8f0a213df8c3855681df9d8bb",
+    "summary.csv": "32f5d10bbdffb2b6abab1144da8d992139b4139918db7df5011a4095c14f6c4a",
+    "timing_summary.csv": "b7ba7824fa8d42acb00e79f81d3a337933695f2fb549d02146dc2935d284ac0b"
+  }
+}

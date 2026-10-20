@@ -1,0 +1,37 @@
+protocol_version: backbone_development_v1
+enrollment_run: results/enrollment/enrollment_development_20261019T222121709545Z
+adaface_model_dir: data/models/adaface
+device: cpu
+cpu_threads: 2
+detector_confidence: 0.5
+detector_input_size:
+- 640
+- 640
+providers:
+- CPUExecutionProvider
+crop_padding_fraction: 0.5
+crop_padding_value: 127
+strategies:
+- one_photo
+- up_to_three_photos
+decision_families:
+- score_only
+- score_margin
+target_conditional_fpir: 0.01
+minimum_known_valid_coverage: 0.85
+minimum_unknown_valid_coverage: 0.85
+margin_grid:
+- 0.0
+- 0.025
+- 0.05
+- 0.075
+- 0.1
+- 0.15
+- 0.2
+quality_grid:
+- 0.0
+seed: 42
+bootstrap_samples: 2000
+warmup_calls: 5
+final_test_evaluation: false
+scope: descriptive_development_comparison_of_pretrained_checkpoints

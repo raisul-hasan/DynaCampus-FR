@@ -1,0 +1,10 @@
+{
+  "official_preprocessing_exact": true,
+  "reference_feature_max_difference": 0.0,
+  "single_batch_max_difference": 1.4901161193847656e-07,
+  "pre_normalization_norm": 20.03887367248535,
+  "real_model_loaded": true,
+  "strict_checkpoint_loading": true,
+  "source_path": "data/raw/halfface/full_face/p001/p001_00m.jpeg",
+  "aligned_crop_sha256": "598b5b7013cb923f1577ef171e35e21aa0b4acd0b5bf5b50f2f27de51bf1f406"
+}

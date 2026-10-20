@@ -1,0 +1,9 @@
+model,dataset,strategy,family,score_threshold,margin_threshold,quality_threshold,correct_known_accepts,false_known_unknowns,wrong_known_identity_accepts,valid_decision_coverage,known_valid_coverage,unknown_valid_coverage,fpir_conditional,feasible
+arcface,halfface,one_photo,score_only,0.3913350999355316,0.0,0.0,129,1,0,1.0,1.0,1.0,0.006711409395973154,True
+arcface,halfface,one_photo,score_margin,0.3206184208393097,0.1,0.0,139,1,0,0.98989898989899,1.0,0.9798657718120806,0.006711409395973154,True
+arcface,halfface,up_to_three_photos,score_only,0.3978477716445923,0.0,0.0,138,1,0,1.0,1.0,1.0,0.006711409395973154,True
+arcface,halfface,up_to_three_photos,score_margin,0.3778589367866516,0.15,0.0,139,1,0,0.9932659932659933,1.0,0.9865771812080537,0.006711409395973154,True
+adaface,halfface,one_photo,score_only,0.3992882966995239,0.0,0.0,112,1,0,1.0,1.0,1.0,0.006711409395973154,True
+adaface,halfface,one_photo,score_margin,0.32279378175735474,0.1,0.0,120,1,0,0.9595959595959596,0.9864864864864865,0.9328859060402684,0.006711409395973154,True
+adaface,halfface,up_to_three_photos,score_only,0.4159545302391052,0.0,0.0,122,1,0,1.0,1.0,1.0,0.006711409395973154,True
+adaface,halfface,up_to_three_photos,score_margin,0.33722615242004395,0.15,0.0,133,0,0,0.9326599326599326,0.9527027027027027,0.912751677852349,0.0,True

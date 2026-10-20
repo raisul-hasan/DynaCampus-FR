@@ -30,95 +30,143 @@ The still-image app flow is checked with real development uploads, including
 original-photo enrollment, known/unknown recognition, reload and removal.
 See [application evidence](paper_assets/development/demo_v1/README.md) for actual
 screenshots and reproduction. Camera/RTSP and temporal performance are unvalidated.
-AdaFace, the domain adapter
-and the full original architecture below are planned work, not validated results.
+A paired **AdaFace IR-50 versus ArcFace development comparison** is also complete,
+using the same SCRFD crops and original enrollment photos. It includes calibrated
+score/margin results, failure cases and CPU stage timings. Enrollment effects
+depend on both the checkpoint and decision rule; AdaFace did not increase correct
+known acceptance in this comparison. These are descriptive development results,
+with different checkpoint pretraining and runtime engines, and do not replace
+the frozen held-out evaluation. See [backbone evidence](paper_assets/development/backbones_v1/README.md)
+and [integration details](docs/ADAFACE_INTEGRATION.md). The dashboard still uses
+ArcFace. The domain adapter and validated temporal pipeline remain planned work.
 
 ---
 
-## 📌 Overview
-DynaCampus-FR is a four-month research project developing an open-set campus CCTV face recognition framework. It addresses the domain gap between clean enrollment photographs and degraded CCTV probe tracks without retraining the core recognition backbone when new identities enroll.
+# Dashboard setup and verification
 
-### Key Architecture
-- **Detector**: SCRFD (5-point face landmarks)
-- **Primary Backbone**: AdaFace IR-50 (pretrained & frozen)
-- **Baseline Backbone**: ArcFace / InsightFace
-- **Domain Adapter**: Lightweight Residual MLP ($512 \to 256 \to 512$)
-- **Tracking**: ByteTrack face tracking
-- **Aggregation**: Quality-weighted multi-frame track aggregation
-- **Gallery Search**: Exact Cosine Matrix Matching
-- **Decision Engine**: Calibrated 4-State Open-Set Decision (`KNOWN`, `UNKNOWN`, `AMBIGUOUS`, `INSUFFICIENT_QUALITY`)
+The original research dashboard is `app.py`; the separate defense evidence
+dashboard is `defense_app.py`. Both use ArcFace. The defense dashboard adds saved
+comparisons and an isolated development walkthrough; it does not replace the
+original dashboard or provide a new recognition algorithm.
 
----
+## Launch on this laptop
 
-## 📁 Repository Structure
-```
-DynaCampus-FR/
-├── configs/          # YAML configuration files
-├── notebooks/        # Exploration and verification notebooks
-├── src/              # Core modular library
-│   ├── detection/
-│   ├── alignment/
-│   ├── recognition/
-│   ├── augmentation/
-│   ├── tracking/
-│   ├── quality/
-│   ├── adapter/
-│   ├── gallery/
-│   ├── aggregation/
-│   ├── open_set/
-│   ├── evaluation/
-│   └── utils/
-├── scripts/          # Pipeline execution and evaluation scripts
-├── results/          # Raw predictions, tables, figures, checkpoints, logs
-├── docs/             # Protocols, consent forms, cards, notes
-└── tests/            # Unit and integration tests
+Double-click **Start Original Dashboard.cmd** or **Start Defense Dashboard.cmd**
+in the project folder. Keep the server window open and visit:
+
+- Original dashboard: <http://127.0.0.1:8501>
+- Defense dashboard: <http://127.0.0.1:8521>
+
+The launchers select `.venv\Scripts\python.exe` when available. They check local
+dependencies and model files before starting. They do not download assets or
+automatically open a browser. Stop a server with Ctrl+C in its terminal. If its
+port is already occupied, use the existing server or supply another port:
+
+```powershell
+.\.venv\Scripts\python.exe launch_dashboard.py main --port 8502
+.\.venv\Scripts\python.exe launch_dashboard.py defense --port 8522
 ```
 
----
+Check setup without starting a server:
 
-## 🖥️ Supervisor Dashboard
+```powershell
+.\.venv\Scripts\python.exe launch_dashboard.py main --check
+.\.venv\Scripts\python.exe launch_dashboard.py defense --check
+```
 
-A fully functional Streamlit dashboard is included to manage the face gallery, test the recognition pipeline, and evaluate live webcam and video feeds.
+The original app normally uses `gallery_data/`. The defense walkthrough and
+verification script use separate galleries under ignored `data/defense/`.
+For a separate manual practice gallery, set an environment override first:
 
-### Features
-- **Dynamic Enrollment:** Enroll new subjects directly from the UI without retraining the underlying model. Extracts 512-d embeddings and saves them to a local JSON/NPZ gallery.
-- **Image & Video Recognition:** Upload files for automated bounding-box annotation and similarity scoring.
-- **Live Webcam:** Real-time face detection and recognition using your local camera.
+```powershell
+$env:DYNACAMPUS_GALLERY_DIR = "$PWD\data\practice_gallery"
+.\.venv\Scripts\python.exe launch_dashboard.py main
+```
 
----
+For the halfFace demonstration crops, enable **Input is a tight face crop**.
+Keep **Frozen research settings** selected. Photo previews are off by default.
 
-## 🚀 Setup Guide
+## Installation on another machine
 
-### 1. Requirements
-- Python 3.10+
-- A working C++ compiler (for InsightFace)
-- Webcam (optional, for live feed)
+The verified machine uses Windows and Python **3.13.3**. From the repository root:
 
-### 2. Installation
-Clone the repository and set up a virtual environment:
-
-```bash
-git clone https://github.com/raisul-hasan/DynaCampus-FR.git
-cd DynaCampus-FR
+```powershell
 python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
 ```
 
-Activate the environment:
-- **Windows:** `.venv\Scripts\activate`
-- **Linux/Mac:** `source .venv/bin/activate`
+For AdaFace research scripts and all tests:
 
-Install dependencies:
-```bash
-pip install -r requirements.txt
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements-dev.txt
 ```
 
-### 3. Model Downloads
-The system uses `insightface`. The first time you run the application, it will attempt to download the `buffalo_l` model bundle (~300MB) to `~/.insightface/models/buffalo_l`.
+`requirements.txt` pins direct runtime dependencies observed working here.
+`requirements-dev.txt` adds PyTorch and pytest. These are not a complete
+transitive lock or proof of a successful installation on a clean machine.
+The current local `.venv` reuses existing system packages and adds pytest and
+FilterPy locally. `pip check` passes. A clean installation remains untested.
+The existing CUDA PyTorch build is `2.9.0+cu126`; the dashboards run ONNX inference
+on CPU and do not require CUDA. Avoid installing a second OpenCV distribution
+alongside `opencv-python` in the same environment. The old
+`requirements-lock.txt` is a historical snapshot and is not the installation
+entry point. `requirements.in` forwards to the current runtime list.
 
-### 4. Running the Dashboard
-To start the Streamlit web application:
+Conda is an alternative: run `conda env create -f environment.yml` from the
+repository root. That installation path has not been freshly tested.
 
-```bash
-python -m streamlit run app.py
+Model files must already exist at:
+
+```text
+~/.insightface/models/buffalo_l/det_10g.onnx
+~/.insightface/models/buffalo_l/w600k_r50.onnx
 ```
-Open your browser and navigate to `http://localhost:8501`.
+
+The app loads those files explicitly and fails if they are missing. It does not
+automatically download the model bundle. Preserve the verified model files on
+this laptop. For another machine, obtain the corresponding official InsightFace
+assets and compare hashes with the saved verification report. AdaFace research
+assets have a separate [setup and provenance guide](docs/ADAFACE_INTEGRATION.md).
+The defense dashboard also needs the local `data/` research inputs and saved
+`results/` artifacts; a source-only clone does not contain the private local
+feature caches, images or model weights.
+
+## What is implemented and validated
+
+The tested still-image pipeline is SCRFD detection, five-point alignment,
+frozen ArcFace embeddings, normalized original-photo template averaging,
+exact cosine search, and calibrated score/margin decisions. Enrollment, gallery
+persistence, removal, known/unknown decisions, ambiguity and capture failure
+are checked. AdaFace is a separate development comparison.
+
+The adapter is a prototype module, not a trained or validated contribution.
+The current tracker is a SORT-style IoU/Kalman implementation, not ByteTrack.
+Video, webcam, RTSP and temporal aggregation controls exist, but their presence
+does not establish real CCTV accuracy, temporal performance or deployment impact.
+
+The defensible contribution is experimental evidence about enrollment and
+decision choices with a working demonstration. The thesis must distinguish
+the original CCTV motivation from what was actually evaluated on public images.
+See [novelty audit](docs/NOVELTY_AUDIT.md), [evidence index](paper_assets/README.md)
+and [defense evidence](docs/DEFENSE_EVIDENCE.md).
+
+## Reproduce local checks
+
+```powershell
+.\.venv\Scripts\python.exe -m pytest -q
+.\.venv\Scripts\python.exe scripts/check_original_workflow.py --output results/validation/manual_original_workflow.json
+.\.venv\Scripts\python.exe scripts/check_defense_app.py
+.\.venv\Scripts\python.exe scripts/verify_final_evaluation.py results/final/heldout_20261019T231512869782Z
+```
+
+The original workflow check runs the unchanged `app.py` through Streamlit
+AppTest with real uploaded-image bytes supplied at the file-uploader boundary.
+Detection, embeddings, decision logic, enrollment and persistence execute for
+real. This is application testing; it is not a browser upload test or a fresh
+screen recording. Genuine earlier browser evidence remains separately indexed
+under `paper_assets/development/demo_v1/`.
+
+Current validation receipts are in `results/validation/setup_20261021/`.
+The full suite passed **89 tests**; dependency checks and UI flow checks have
+their own evidence scopes. The frozen evaluation has not been rerun to obtain
+new predictions.

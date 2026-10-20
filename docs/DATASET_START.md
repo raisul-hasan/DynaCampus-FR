@@ -1,5 +1,11 @@
 # Dataset preparation - 20 October 2026
 
+Update, 21 October: the paired official AdaFace IR-50/ArcFace development
+comparison is complete. See [backbone evidence](../paper_assets/development/backbones_v1/README.md)
+for all policies, separately calibrated thresholds, failure cases and CPU timings.
+Both models use the same 571 development images and shared aligned crops; no new
+held-out inference occurs. The original final result below remains unchanged.
+
 **Current stage:** the frozen held-out evaluation is complete. Primary halfFace
 correct known acceptance is 151/160 (94.38%), with 0/151 observed false known
 acceptances. See `paper_assets/heldout/final_v1/README.md` for final figures and

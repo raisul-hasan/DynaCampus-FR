@@ -1,0 +1,107 @@
+{
+  "utc": "2026-10-20T23:13:39.374374+00:00",
+  "passed": true,
+  "mechanism": "Streamlit AppTest; only file_uploader substituted with real UploadedFile bytes",
+  "fresh_browser_capture": false,
+  "pages": [
+    "\ud83d\udcca Dashboard",
+    "\u2795 Enroll Person",
+    "\ud83d\uddbc\ufe0f Image Recognition",
+    "\ud83c\udfac Video Recognition",
+    "\ud83d\udcf9 Live Webcam",
+    "\ud83d\udce1 Live CCTV (RTSP)",
+    "\u23f3 Pending Approvals",
+    "\ud83d\udccb Gallery Management"
+  ],
+  "presets_checked": true,
+  "real_detector_and_embedder": true,
+  "normal_user_gallery_unchanged": true,
+  "gallery": "data\\defense\\defense_development_20261020T210142299692Z\\sessions\\3b678542dc5c42139a42b297d1a8e48b\\gallery",
+  "events": [
+    {
+      "action": "recognize",
+      "path": "data/raw/halfface/full_face/p013/p013_11m.jpg",
+      "Decision": "UNKNOWN",
+      "Name": "\u2014",
+      "Score": 0.17857593297958374,
+      "Margin": 0.00925956666469574,
+      "Quality": 0.9388,
+      "Det. Conf.": 0.67
+    },
+    {
+      "action": "enroll",
+      "gallery_size": 55,
+      "photos": 3,
+      "independent_template_matches": true
+    },
+    {
+      "action": "recognize",
+      "path": "data/raw/halfface/full_face/p013/p013_11m.jpg",
+      "Decision": "KNOWN",
+      "Name": "Development target",
+      "Score": 0.44223904609680176,
+      "Margin": 0.263663113117218,
+      "Quality": 0.9388,
+      "Det. Conf.": 0.67
+    },
+    {
+      "action": "recognize",
+      "path": "data/raw/halfface/full_face/p006/p006_00f.jpg",
+      "Decision": "UNKNOWN",
+      "Name": "\u2014",
+      "Score": 0.2642518877983093,
+      "Margin": 0.06943665444850922,
+      "Quality": 0.9952,
+      "Det. Conf.": 0.87
+    },
+    {
+      "action": "recognize",
+      "path": "data/raw/halfface/full_face/p092/p092_01m.jpg",
+      "Decision": "AMBIGUOUS",
+      "Name": "\u2014",
+      "Score": 0.41988927125930786,
+      "Margin": 0.12305319309234619,
+      "Quality": 0.9509,
+      "Det. Conf.": 0.857
+    },
+    {
+      "action": "recognize",
+      "path": "data/raw/halfface/full_face/p013/p013_11m.jpg",
+      "Decision": "KNOWN",
+      "Name": "Development target",
+      "Score": 0.44223904609680176,
+      "Margin": 0.263663113117218,
+      "Quality": 0.9388,
+      "Det. Conf.": 0.67
+    },
+    {
+      "action": "reload",
+      "exact_template_preserved": true
+    },
+    {
+      "action": "remove",
+      "gallery_size": 54,
+      "target_absent_on_disk": true
+    },
+    {
+      "action": "recognize",
+      "path": "data/raw/halfface/full_face/p013/p013_11m.jpg",
+      "Decision": "UNKNOWN",
+      "Name": "\u2014",
+      "Score": 0.17857593297958374,
+      "Margin": 0.00925956666469574,
+      "Quality": 0.9388,
+      "Det. Conf.": 0.67
+    },
+    {
+      "action": "capture_failure",
+      "reported": true
+    }
+  ],
+  "app_sha256": "c06922ec9ba89f739d9a1b8da1a698e4a67cc90bd95f24576959f714284adaae",
+  "model_sha256": {
+    "C:\\Users\\msi\\.insightface\\models\\buffalo_l\\det_10g.onnx": "5838f7fe053675b1c7a08b633df49e7af5495cee0493c7dcf6697200b85b5b91",
+    "C:\\Users\\msi\\.insightface\\models\\buffalo_l\\w600k_r50.onnx": "4c06341c33c2ca1f86781dab0e829f88ad5b64be9fba56e56bc9ebdefc619e43"
+  },
+  "models_unchanged": true
+}

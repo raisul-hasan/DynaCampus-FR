@@ -1,0 +1,16 @@
+dataset,method,rule,gallery_identities,enrollment_images_used,known_attempts,unknown_attempts,known_with_embedding,unknown_with_embedding,rank1_correct,correct_known_accepts,false_known_unknowns,wrong_known_identity_accepts,correct_known_accept_rate,fpir_conditional,capture_failures,ambiguous,threshold,margin_threshold
+halfface,one_photo,recalibrated_score,55,55,154,150,148,149,146,129,1,0,0.8376623376623377,0.006711409395973154,7,0,0.3887378871440888,0.0
+halfface,one_photo,frozen_margin_sensitivity,55,55,154,150,148,149,146,131,0,0,0.8506493506493507,0.0,7,3,0.3778589367866516,0.15
+halfface,uniform_mean,recalibrated_score,55,152,154,150,148,149,146,138,1,0,0.8961038961038961,0.006711409395973154,7,0,0.3857181072235108,0.0
+halfface,uniform_mean,frozen_margin_sensitivity,55,152,154,150,148,149,146,139,1,0,0.9025974025974026,0.006711409395973154,7,2,0.3778589367866516,0.15
+halfface,heuristic_weighted,recalibrated_score,55,152,154,150,148,149,146,138,1,0,0.8961038961038961,0.006711409395973154,7,0,0.38600546121597296,0.0
+halfface,heuristic_weighted,frozen_margin_sensitivity,55,152,154,150,148,149,146,138,1,0,0.8961038961038961,0.006711409395973154,7,3,0.3778589367866516,0.15
+halfface,detector_weighted,recalibrated_score,55,152,154,150,148,149,146,139,1,0,0.9025974025974026,0.006711409395973154,7,0,0.3818677365779877,0.0
+halfface,detector_weighted,frozen_margin_sensitivity,55,152,154,150,148,149,146,138,1,0,0.8961038961038961,0.006711409395973154,7,3,0.3778589367866516,0.15
+halfface,best_quality,recalibrated_score,55,55,154,150,148,149,146,129,1,0,0.8376623376623377,0.006711409395973154,7,0,0.3887378871440888,0.0
+halfface,best_quality,frozen_margin_sensitivity,55,55,154,150,148,149,146,131,0,0,0.8506493506493507,0.0,7,3,0.3778589367866516,0.15
+icfd_sample,one_photo,closed_set_engineering,5,5,100,0,100,0,100,,,,,,0,0,,
+icfd_sample,uniform_mean,closed_set_engineering,5,15,100,0,100,0,100,,,,,,0,0,,
+icfd_sample,heuristic_weighted,closed_set_engineering,5,15,100,0,100,0,100,,,,,,0,0,,
+icfd_sample,detector_weighted,closed_set_engineering,5,15,100,0,100,0,100,,,,,,0,0,,
+icfd_sample,best_quality,closed_set_engineering,5,5,100,0,100,0,100,,,,,,0,0,,

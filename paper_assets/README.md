@@ -11,6 +11,9 @@ reporting; changing settings using its results would invalidate a fresh-test cla
 
 | Work completed | Evidence | Paper use |
 |---|---|---|
+| Inspected defense cases and isolated real walkthrough | [Evidence pack, analysis and backup](development/defense_v1/README.md) | Twelve disclosed development examples, real 55-identity ambiguity and gallery lifecycle; fresh browser capture still pending |
+| Paired AdaFace/ArcFace development comparison | [Results, figures and limits](development/backbones_v1/README.md) | Same-crop checkpoint comparison; enrollment/decision interaction, failure cases and CPU timing; different pretraining/runtime engines |
+| Enrollment pooling policies | [Development results and limits](development/pooling_v1/README.md) | Same-probe original-photo mean, quality weighting, detector weighting and best-quality comparison; no consistent weighting advantage |
 | **Final held-out comparison at frozen settings** | [Results, captions and limits](heldout/final_v1/README.md), [numeric table](heldout/final_v1/summary.csv), [LaTeX table](heldout/final_v1/heldout_table.tex) | Primary final result; identity-disjoint within halfFace |
 | Frozen protocol and split diagram | [PNG](heldout/final_v1/fig00_heldout_protocol.png), [SVG](heldout/final_v1/fig00_heldout_protocol.svg) | Development selection followed by reserved-image evaluation |
 | Held-out result graph with uncertainty | [PNG](heldout/final_v1/fig01_heldout_comparison.png), [SVG](heldout/final_v1/fig01_heldout_comparison.svg) | Correct known acceptance and observed false-known counts |
@@ -48,8 +51,8 @@ reporting; changing settings using its results would invalidate a fresh-test cla
 - Keep the same probes for paired comparisons and record exclusions and failures.
 - Report uncertainty and sample counts; avoid treating adjacent images as fully
   independent evidence.
-- Keep diagrams aligned with the implementation. AdaFace, adapter training and
-  temporal tracking have not been evaluated in the evidence linked above.
+- Keep diagrams aligned with the implementation. AdaFace now has development-only
+  comparison evidence; adapter training and temporal tracking remain unevaluated.
   Margin and heuristic quality gates have development evidence; the selected
   quality gate is zero, so do not claim an incremental quality-gating benefit.
 - The dynamic-gallery app flow is validated with development examples, cached

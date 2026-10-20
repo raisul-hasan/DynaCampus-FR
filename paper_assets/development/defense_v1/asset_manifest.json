@@ -1,0 +1,63 @@
+{
+  "source_run": "results/defense/defense_development_20261020T210142299692Z",
+  "verification_sha256": "60b25e58a698290a87f5c1d16d014216d7f8014588190151c06b76c339c7a828",
+  "backup_video_receipt_sha256": "73d9a60df3b07b67e57f4c099f29477754dc080e2fdabfeb0d87e189c102a843",
+  "prior_browser_captures": [
+    {
+      "source": "paper_assets/development/demo_v1/fig03_app_enrollment.png",
+      "destination": "fig_prior_03_app_enrollment.png",
+      "sha256": "7c9f8d956d63408e291f59e012f0138cbb470c107acdef8c1957679fa233e647",
+      "provenance": "Genuine prior browser capture, 20 October 2026, single-identity gallery; not a fresh capture of defense_app.py."
+    },
+    {
+      "source": "paper_assets/development/demo_v1/fig04_app_known.png",
+      "destination": "fig_prior_04_app_known.png",
+      "sha256": "c66fda44430766accf0d3724d9916a925e3a80499210a8bc1ba230509c17b59b",
+      "provenance": "Genuine prior browser capture, 20 October 2026, single-identity gallery; not a fresh capture of defense_app.py."
+    },
+    {
+      "source": "paper_assets/development/demo_v1/fig05_app_unknown.png",
+      "destination": "fig_prior_05_app_unknown.png",
+      "sha256": "b1a81cd77f700cdf639cd445cc4a15ecaedcd98fa3c2209377ff23f6c1c83bd1",
+      "provenance": "Genuine prior browser capture, 20 October 2026, single-identity gallery; not a fresh capture of defense_app.py."
+    },
+    {
+      "source": "paper_assets/development/demo_v1/fig06_app_persistence.png",
+      "destination": "fig_prior_06_app_persistence.png",
+      "sha256": "8e86f938dd522dd002b93211e80ed3f19178c009d4a975f3522f665b35102bf1",
+      "provenance": "Genuine prior browser capture, 20 October 2026, single-identity gallery; not a fresh capture of defense_app.py."
+    },
+    {
+      "source": "paper_assets/development/demo_v1/fig07_app_after_removal.png",
+      "destination": "fig_prior_07_app_after_removal.png",
+      "sha256": "c086dab25f03f3b5a8fa8898324bc2f0c87a544771872bc974b1310fa7a4e005",
+      "provenance": "Genuine prior browser capture, 20 October 2026, single-identity gallery; not a fresh capture of defense_app.py."
+    }
+  ],
+  "public_assets_have_no_photographs": true,
+  "new_browser_capture": false,
+  "asset_sha256": {
+    "CASE_ANALYSIS.md": "ba91bd7b89e262a0bddfa76ee57db0092e36da2e29fc68d2b0403d6bfd345d84",
+    "case_summary.csv": "787e34209ed694a17c6622251ee2b0a8e6e81c328e7843441a4d54cae9491bf9",
+    "fig_case_C01.png": "9cff81c0b7cf7d94be17cfe7e61a4cb0384f9714fd4afacd0b1f966593fbfffe",
+    "fig_case_C02.png": "7c84c7d7058be59341db2990d7bda05b61e8ee040d16acab00ef3577cc991386",
+    "fig_case_C03.png": "fec69f41139e25636d378ec14a80d3e45f29dabff32e885bf9d2bdd8ef854445",
+    "fig_case_C04.png": "657c6a5b176e4648074096a8680008176af343490e6af4f34309ae56b98c25fb",
+    "fig_case_C05.png": "bd27257f3b852aba75ce229d43042d8bc627728deda5f3996e64ea5daf5c6821",
+    "fig_case_C06.png": "e0f6dbbbbc130344924e139aa7922ddeed91ee59f2eecfd7fb7baac77bb4960d",
+    "fig_case_C07.png": "8fa73f0d7e4ec0becd736b0d8a47ff30b1c4f4f7770dd816f6934304fa187b7a",
+    "fig_case_C08.png": "cfa3bb1deb0a1caa5c2dc54be081671c129b13131554c62abd12363ec6822170",
+    "fig_case_C09.png": "b87719d8f7625603391e8800e48120b5d0a6a942eade3d56eb90ea2d61b3cf1c",
+    "fig_case_C10.png": "d7244d3cc6124d6dcf48edf28f01d93a9c0dd96d55abba805213336e97ee64d3",
+    "fig_case_C11.png": "865466fd0729696b41bd7073e071470ab6ddee9b2efc4f6e028849f00ee2cb09",
+    "fig_case_C12.png": "e4ead3e3a017fa4841c0a634f7ea6501129c5132c0b8f58bda4896c252ae98f3",
+    "fig_prior_03_app_enrollment.png": "7c9f8d956d63408e291f59e012f0138cbb470c107acdef8c1957679fa233e647",
+    "fig_prior_04_app_known.png": "c66fda44430766accf0d3724d9916a925e3a80499210a8bc1ba230509c17b59b",
+    "fig_prior_05_app_unknown.png": "b1a81cd77f700cdf639cd445cc4a15ecaedcd98fa3c2209377ff23f6c1c83bd1",
+    "fig_prior_06_app_persistence.png": "8e86f938dd522dd002b93211e80ed3f19178c009d4a975f3522f665b35102bf1",
+    "fig_prior_07_app_after_removal.png": "c086dab25f03f3b5a8fa8898324bc2f0c87a544771872bc974b1310fa7a4e005",
+    "README.md": "ea1d39ea8a4845172c0e7bb62b526f4930b0f544844b96ffbc17df1dbd1a5668",
+    "source_run.json": "3e80c46e526529407814aff84a07fb6f2b41d87d2e11d22284e075df33d9bf98"
+  },
+  "script_sha256": "55d5f9dd9652d97c0f86df0ffa03c71d4a78bf3b9d252ead7bed8a2cea75dd37"
+}

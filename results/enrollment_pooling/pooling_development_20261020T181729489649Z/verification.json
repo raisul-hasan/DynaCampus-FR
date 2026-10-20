@@ -1,0 +1,16 @@
+{
+  "verification": "passed",
+  "attempts": 3540,
+  "successful_cosine_searches": 3470,
+  "summaries_checked": 15,
+  "independent_template_reconstruction": true,
+  "reserved_test_evaluated": false,
+  "image_inference_performed": false,
+  "verified_artifact_sha256": {
+    "comparison.json": "904799011821a2ffea614635b87e7857a44ff773b26ea7829207d11ef5fa521f",
+    "summary.csv": "560b8494642ad0e4f5f6d13858f76684a0d34df8b8db37e1704ab2db21787107",
+    "predictions.csv": "f0b905a45a14dfda3a82dc23652cc49326e06b7321a3764b134a378c4fb1c3b8",
+    "enrollment_weights.csv": "b2c8a448df17e6ad0b3401cdeb2d7342abbfe7d78e043a04819bc9b70115f0ce"
+  },
+  "verifier_sha256": "60c1c25b43ee40f68ece242358068eeab72c024e902f554b5a707aaf3fa4bcfe"
+}

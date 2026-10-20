@@ -1,0 +1,69 @@
+{
+  "utc": "2026-10-20T23:15:31.858189+00:00",
+  "passed": true,
+  "python": "3.13.3",
+  "executable": "F:\\Thesis Final\\DynaCampus-FR\\.venv\\Scripts\\python.exe",
+  "local_environment_reuses_system_packages": true,
+  "clean_machine_installation_tested": false,
+  "versions": {
+    "numpy": "2.3.3",
+    "pandas": "3.0.3",
+    "scipy": "1.18.0",
+    "scikit-learn": "1.9.0",
+    "matplotlib": "3.11.1",
+    "pillow": "11.3.0",
+    "pyyaml": "6.0.3",
+    "tqdm": "4.67.1",
+    "opencv-python": "5.0.0.93",
+    "insightface": "1.0.1",
+    "onnxruntime": "1.27.0",
+    "streamlit": "1.65.0",
+    "filterpy": "1.4.5",
+    "requests": "2.32.5",
+    "torch": "2.9.0+cu126",
+    "pytest": "9.1.1"
+  },
+  "checks": {
+    "pip_check": "passed",
+    "dependency_resolution": "passed",
+    "main_launcher_preflight": "passed",
+    "defense_launcher_preflight": "passed"
+  },
+  "server_health": {
+    "8501": "ok",
+    "8521": "ok",
+    "8502": "ok",
+    "8522": "ok"
+  },
+  "full_test_suite": {
+    "tests": 89,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0
+  },
+  "original_application_flow": "passed",
+  "fresh_browser_capture": false,
+  "source_sha256": {
+    "README.md": "f291aad0fb31ae11a9a44980d97f9d8b2b7d22ba606b5f6f6f070804c2ddfba5",
+    "docs/DASHBOARD_SETUP.md": "e029a458cf9a02b902bdc91f93af48aecd10cf26bceb3a3d57e5c80f5549d9cf",
+    "requirements.txt": "7312ef4252f568a60f60b16deac3e113a407cdf9297b1deb2e656af3ed417774",
+    "requirements-dev.txt": "bb0d5e190af4fcf4bc7e75b45471efa06582f5668f408c70172ac9e7fdb152e0",
+    "requirements.in": "8652e77b4efa6349bbbdf8c71f2eda283a709670ff6c439dbc6bf107a0e423de",
+    "environment.yml": "35f36e4357f2c4ddfb4639975f2b227495e21f784835259dadd85d25bb27532d",
+    "launch_dashboard.py": "9e855905c684630f1ce9fc86cf78d96199f8672a7b4e351226f396986cbaa636",
+    "Start Original Dashboard.cmd": "179e6a7d3bd73e8383abae0491cca3a2fd4254f513030ff695850a82b36ec248",
+    "Start Defense Dashboard.cmd": "d1379d4bff653a3a88eaf16042f21e637aeec3800792ac512422db5fc9d75e95",
+    "scripts/check_original_workflow.py": "caed5434a3152959b536c7314915f77d18a1c74de6c0f79636be96fe9b645c37",
+    "scripts/verify_setup.py": "a6d7ba58a2b5b090c7660867b9334fb68ed90e7366744d60bdf82c1d71febf45",
+    "app.py": "c06922ec9ba89f739d9a1b8da1a698e4a67cc90bd95f24576959f714284adaae",
+    "defense_app.py": "fb09d176e8958b85f3f50422fc5ee6fe3ee4aba4f6acc546b6c55b5a14ba7a23"
+  },
+  "receipt_sha256": {
+    "defense_launcher_preflight.txt": "40574cc73350b4d2f5e7ca65d29978b4dadfbb9cbce83378630d31803806b5ef",
+    "dependency_resolution.txt": "3f5862fac0cf011e1f77e2f470f943389a139ac477e4518be6524b283d8e45ab",
+    "main_launcher_preflight.txt": "f17100855580290b6e4e1a347835b091456509dcdb9fa58362633e61e88b554d",
+    "original_workflow.json": "c94cd265c7946f5efa914d8b8a6a264ccd88bc964095a8358aa749571de56c15",
+    "pip_check.txt": "672aec65a45bed50e70229c70934a7eebf0462595c459b83023027645d57cccf",
+    "pytest.xml": "1fc489d67cd18365b16f45059abcfbcb7a381b095c5154d312b12202d171ec35"
+  }
+}
