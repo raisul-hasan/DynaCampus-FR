@@ -1,0 +1,24 @@
+adapter: false
+augmentation: false
+backbone: insightface_arcface
+calibration_fpir: 0.01
+configuration_revision: 2
+cpu_threads: 2
+crop_padding_fraction: 0.5
+crop_padding_value: 127
+decision: cosine_score_only
+detector_confidence: 0.5
+detector_input_size:
+- 640
+- 640
+development_fraction: 0.5
+enrolled_fraction: 0.6666666666666666
+enrollment: one_unmasked_frontal_image
+halfface_manifest: data/manifests/halfface_usable.csv
+icfd_manifest: data/manifests/icfd_sample.csv
+icfd_usage: engineering_sample_only
+protocol_version: arcface_baseline_v1
+providers:
+- CPUExecutionProvider
+seed: 42
+split_file: configs/splits/arcface_baseline_v1.json

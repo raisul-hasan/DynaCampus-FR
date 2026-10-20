@@ -4,7 +4,7 @@ detector:
   confidence_threshold: 0.50
 
 recognizer:
-  primary: adaface_ir50
+  primary: insightface_arcface  # Verified first baseline; AdaFace remains future work.
   baseline: insightface_arcface
   secondary_comparison: facelivtv2_s
   input_size: [112, 112]

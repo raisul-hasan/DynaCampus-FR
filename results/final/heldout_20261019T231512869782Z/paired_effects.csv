@@ -1,0 +1,4 @@
+comparison,metric,delta_percentage_points,ci95_low_percentage_points,ci95_high_percentage_points,bootstrap_unit,bootstrap_samples,note
+few_photo_score_minus_one_photo_score,correct_known_accept,12.5,6.918238993710692,18.75,known_identity,2000,Paired held-out known-identity bootstrap with fixed development thresholds; calibration and unknown-sample uncertainty excluded.
+few_photo_margin_minus_few_photo_score,correct_known_accept,0.625,-1.282051282051282,2.547770700636943,known_identity,2000,Paired held-out known-identity bootstrap with fixed development thresholds; calibration and unknown-sample uncertainty excluded.
+few_photo_margin_minus_one_photo_score,correct_known_accept,13.125,7.453416149068323,19.620544381455304,known_identity,2000,Paired held-out known-identity bootstrap with fixed development thresholds; calibration and unknown-sample uncertainty excluded.

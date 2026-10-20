@@ -1,0 +1,165 @@
+{
+  "run_directory": "results/enrollment/enrollment_development_20261019T222121709545Z",
+  "baseline_run": "results/baselines/arcface_development_20261019T221350351017Z",
+  "configuration": {
+    "protocol_version": "enrollment_comparison_v1",
+    "baseline_run": "results/baselines/arcface_development_20261019T221350351017Z",
+    "seed": 42,
+    "bootstrap_samples": 2000,
+    "target_conditional_fpir": 0.01,
+    "strategies": [
+      "one_photo",
+      "up_to_three_photos"
+    ],
+    "halfface_known_probes": "masked_original_images_only",
+    "halfface_unknown_probes": "all_original_images_of_development_unknown_ids",
+    "icfd_enrollment_count": 3,
+    "icfd_usage": "engineering_sample_only",
+    "prototype": "l2_normalized_unweighted_mean",
+    "final_test_evaluation": false
+  },
+  "model": {
+    "recognizer": "insightface_arcface",
+    "recognizer_filename": "w600k_r50.onnx",
+    "recognizer_sha256": "4c06341c33c2ca1f86781dab0e829f88ad5b64be9fba56e56bc9ebdefc619e43",
+    "detector_filename": "det_10g.onnx",
+    "detector_sha256": "5838f7fe053675b1c7a08b633df49e7af5495cee0493c7dcf6697200b85b5b91",
+    "providers": [
+      "CPUExecutionProvider"
+    ],
+    "preprocessing": "Fixed neutral border of 0.5 times each source dimension; SCRFD; exactly one face required; five-point norm_crop 112x112; InsightFace BGR input get_feat (swapRB in model wrapper); L2 normalization",
+    "mock": false,
+    "embedding_cache": "data/embeddings/arcface_development_20261019T221350351017Z/arcface_embeddings.npz"
+  },
+  "summaries": [
+    {
+      "dataset": "halfface",
+      "scope": "development_only",
+      "strategy": "one_photo",
+      "gallery_identities": 55,
+      "gallery_images": 55,
+      "mean_gallery_images_per_identity": 1.0,
+      "known_probe_attempts": 154,
+      "known_probes_with_embedding": 148,
+      "rank1_correct": 146,
+      "rank1_end_to_end": 0.948051948051948,
+      "correct_known_accepts": 129,
+      "correct_known_accept_end_to_end": 0.8376623376623377,
+      "unknown_attempts": 150,
+      "unknown_with_embedding": 149,
+      "false_known_count": 1,
+      "fpir_conditional": 0.006711409395973154,
+      "threshold": 0.3887378871440888,
+      "enrollment_image_count_distribution": {
+        "1": 55
+      }
+    },
+    {
+      "dataset": "halfface",
+      "scope": "development_only",
+      "strategy": "up_to_three_photos",
+      "gallery_identities": 55,
+      "gallery_images": 152,
+      "mean_gallery_images_per_identity": 2.7636363636363637,
+      "known_probe_attempts": 154,
+      "known_probes_with_embedding": 148,
+      "rank1_correct": 146,
+      "rank1_end_to_end": 0.948051948051948,
+      "correct_known_accepts": 138,
+      "correct_known_accept_end_to_end": 0.8961038961038961,
+      "unknown_attempts": 150,
+      "unknown_with_embedding": 149,
+      "false_known_count": 1,
+      "fpir_conditional": 0.006711409395973154,
+      "threshold": 0.3857181072235108,
+      "enrollment_image_count_distribution": {
+        "3": 47,
+        "1": 5,
+        "2": 3
+      }
+    },
+    {
+      "dataset": "icfd_sample",
+      "scope": "engineering_sample_only",
+      "strategy": "one_photo",
+      "gallery_identities": 5,
+      "gallery_images": 5,
+      "mean_gallery_images_per_identity": 1.0,
+      "known_probe_attempts": 100,
+      "known_probes_with_embedding": 100,
+      "rank1_correct": 100,
+      "rank1_end_to_end": 1.0,
+      "correct_known_accepts": null,
+      "correct_known_accept_end_to_end": null,
+      "unknown_attempts": 0,
+      "unknown_with_embedding": 0,
+      "false_known_count": null,
+      "fpir_conditional": null,
+      "threshold": null,
+      "enrollment_image_count_distribution": {
+        "1": 5
+      }
+    },
+    {
+      "dataset": "icfd_sample",
+      "scope": "engineering_sample_only",
+      "strategy": "up_to_three_photos",
+      "gallery_identities": 5,
+      "gallery_images": 15,
+      "mean_gallery_images_per_identity": 3.0,
+      "known_probe_attempts": 100,
+      "known_probes_with_embedding": 100,
+      "rank1_correct": 100,
+      "rank1_end_to_end": 1.0,
+      "correct_known_accepts": null,
+      "correct_known_accept_end_to_end": null,
+      "unknown_attempts": 0,
+      "unknown_with_embedding": 0,
+      "false_known_count": null,
+      "fpir_conditional": null,
+      "threshold": null,
+      "enrollment_image_count_distribution": {
+        "3": 5
+      }
+    }
+  ],
+  "paired_effects": [
+    {
+      "dataset": "halfface",
+      "metric": "rank1_correct",
+      "delta_percentage_points": 0.0,
+      "ci95_low_percentage_points": 0.0,
+      "ci95_high_percentage_points": 0.0,
+      "bootstrap_unit": "known_identity",
+      "bootstrap_samples": 2000,
+      "note": "Paired development bootstrap with fixed calibrated thresholds; calibration and unknown-sample uncertainty are not included."
+    },
+    {
+      "dataset": "halfface",
+      "metric": "correct_known_accept",
+      "delta_percentage_points": 5.8441558441558445,
+      "ci95_low_percentage_points": 1.306977336389101,
+      "ci95_high_percentage_points": 11.612903225806452,
+      "bootstrap_unit": "known_identity",
+      "bootstrap_samples": 2000,
+      "note": "Paired development bootstrap with fixed calibrated thresholds; calibration and unknown-sample uncertainty are not included."
+    },
+    {
+      "dataset": "icfd_sample",
+      "metric": "rank1_correct",
+      "delta_percentage_points": 0.0,
+      "ci95_low_percentage_points": 0.0,
+      "ci95_high_percentage_points": 0.0,
+      "bootstrap_unit": "known_identity",
+      "bootstrap_samples": 2000,
+      "note": "Paired development bootstrap with fixed calibrated thresholds; calibration and unknown-sample uncertainty are not included."
+    }
+  ],
+  "additional_icfd_images": 10,
+  "feature_cache": "data/embeddings/enrollment_development_20261019T222121709545Z/embeddings.npz",
+  "final_test_evaluated": false,
+  "source_sha256": "eda48a9cec3adeeb729c47729eb6173a1d218c76d162ef70bf90e72cf4156e5e",
+  "git_commit": "523933d27353ef58b85413eeafc01d5131f08ba2",
+  "evidence_scope": "Development comparison. ICFD public sample is engineering evidence only.",
+  "protocol_note": "halfFace known probes are masked-only for both methods; all development unknown images are unchanged. This denominator differs from the earlier mixed-mask baseline."
+}

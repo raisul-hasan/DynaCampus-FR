@@ -5,7 +5,7 @@ from typing import List, Optional, Tuple, Union
 
 class FaceEmbedder:
     """
-    Face Feature Embedder using InsightFace / AdaFace backbones.
+    ArcFace inference using an explicit local InsightFace ONNX checkpoint.
     Extracts 512-dimensional L2-normalized feature embeddings from 112x112 aligned face crops.
     """
     def __init__(
@@ -13,7 +13,9 @@ class FaceEmbedder:
         config_path: Union[str, Path] = "configs/models.yaml",
         model_name: Optional[str] = None,
         providers: Optional[List[str]] = None,
-        mock: bool = False
+        mock: bool = False,
+        model_path: Optional[Union[str, Path]] = None,
+        cpu_threads: int = 2,
     ):
         if providers is None:
             providers = ["CPUExecutionProvider"]
@@ -28,22 +30,36 @@ class FaceEmbedder:
                 cfg = yaml.safe_load(f)
                 rec_cfg = cfg.get("recognizer", {})
                 if model_name is None:
-                    model_name = rec_cfg.get("primary", "adaface_ir50")
+                    model_name = rec_cfg.get("primary", "insightface_arcface")
                 self.embedding_dim = rec_cfg.get("embedding_dim", 512)
+                if model_path is None:
+                    model_path = rec_cfg.get("model_path")
 
-        self.model_name = model_name or "adaface_ir50"
+        self.model_name = model_name or "insightface_arcface"
         self.model = None
+        self.model_path = None
+        if self.embedding_dim != 512:
+            raise ValueError("This ArcFace implementation requires 512-dimensional embeddings.")
 
         if not self.mock:
+            if self.model_name not in {"insightface_arcface", "arcface", "buffalo_l"}:
+                raise ValueError(f"Backbone {self.model_name!r} is not implemented. Select insightface_arcface.")
+            self.model_name = "insightface_arcface"
+            self.model_path = Path(model_path).expanduser() if model_path else Path.home() / ".insightface/models/buffalo_l/w600k_r50.onnx"
+            if not self.model_path.is_file():
+                raise FileNotFoundError(f"ArcFace checkpoint not found: {self.model_path}. Supply model_path or install the official buffalo_l models.")
             try:
-                from insightface.app import FaceAnalysis
-                self.app = FaceAnalysis(name="buffalo_l", allowed_modules=["detection", "recognition"], providers=self.providers)
-                self.app.prepare(ctx_id=0)
-                if "recognition" in self.app.models:
-                    self.model = self.app.models["recognition"]
+                import onnxruntime as ort
+                from insightface.model_zoo import get_model
+                options = ort.SessionOptions()
+                options.intra_op_num_threads = cpu_threads
+                options.inter_op_num_threads = 1
+                self.model = get_model(str(self.model_path), providers=self.providers, sess_options=options, download=False)
+                if self.model is None or getattr(self.model, "taskname", None) != "recognition":
+                    raise ValueError("The checkpoint is not an ArcFace recognition model.")
+                self.model.prepare(ctx_id=0 if "CUDAExecutionProvider" in self.providers else -1)
             except Exception as e:
-                # If InsightFace models are missing or downloading fails in restricted environments
-                self.model = None
+                raise RuntimeError(f"Failed to load real ArcFace checkpoint {self.model_path}; synthetic fallback is disabled.") from e
 
     def extract_embedding(self, image: np.ndarray) -> np.ndarray:
         """
@@ -60,17 +76,19 @@ class FaceEmbedder:
 
         is_batch = (image.ndim == 4)
         if not is_batch:
-            if image.ndim != 3 or image.shape[:2] != (112, 112):
+            if image.ndim != 3 or image.shape != (112, 112, 3):
                 raise ValueError(f"Expected image crop shape (112, 112, 3), got {image.shape}.")
             batch = np.expand_dims(image, axis=0)
         else:
-            if image.shape[1:3] != (112, 112):
+            if image.shape[1:] != (112, 112, 3) or image.shape[0] == 0:
                 raise ValueError(f"Expected batch crop shape (N, 112, 112, 3), got {image.shape}.")
             batch = image
 
         num_samples = batch.shape[0]
 
-        if self.mock or self.model is None:
+        if not np.isfinite(batch).all():
+            raise ValueError("Face crops contain non-finite values.")
+        if self.mock:
             # Deterministic mock embedding generator based on image pixel stats for offline/test environments
             embeddings = []
             for i in range(num_samples):
@@ -81,6 +99,8 @@ class FaceEmbedder:
                 embeddings.append(vec)
             embeddings = np.array(embeddings, dtype=np.float32)
         else:
+            if self.model is None:
+                raise RuntimeError("Real recognition model is unavailable; synthetic fallback is disabled.")
             embeddings = []
             for i in range(num_samples):
                 feat = self.model.get_feat(batch[i])
@@ -92,6 +112,10 @@ class FaceEmbedder:
                 embeddings.append(feat.astype(np.float32))
             embeddings = np.array(embeddings, dtype=np.float32)
 
+        if embeddings.shape != (num_samples, 512) or not np.isfinite(embeddings).all():
+            raise RuntimeError("Recognizer returned invalid embeddings.")
+        if np.any(np.linalg.norm(embeddings, axis=1) < 1e-10):
+            raise RuntimeError("Recognizer returned a zero-norm embedding.")
         # Re-normalize across feature dimension
         norms = np.linalg.norm(embeddings, axis=-1, keepdims=True)
         norms[norms < 1e-10] = 1.0

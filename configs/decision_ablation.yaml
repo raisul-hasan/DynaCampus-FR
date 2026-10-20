@@ -1,0 +1,23 @@
+protocol_version: decision_ablation_v1
+enrollment_run: results/enrollment/enrollment_development_20261019T222121709545Z
+enrollment_strategy: up_to_three_photos
+dataset: halfface
+target_conditional_fpir: 0.01
+minimum_known_valid_coverage: 0.85
+minimum_unknown_valid_coverage: 0.85
+margin_grid: [0.0, 0.025, 0.05, 0.075, 0.10, 0.15, 0.20]
+quality_grid: [0.0, 0.20, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80, 0.90]
+score_grid: development_observed_scores_and_nextafter_boundaries
+families: [score_only, score_margin, score_margin_quality]
+selection_order:
+  - maximize_correct_known_accepts
+  - minimize_false_known_unknowns
+  - minimize_wrong_known_identity_accepts
+  - maximize_decision_coverage
+  - prefer_lower_quality_and_margin_thresholds
+  - prefer_higher_score_threshold
+zero_gates_allowed: true
+quality_sensitivity_step: 0.025
+bootstrap_samples: 2000
+seed: 42
+final_test_evaluation: false

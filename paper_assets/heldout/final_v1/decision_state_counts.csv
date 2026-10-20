@@ -1,0 +1,11 @@
+truth_status,decision,count,group_total,percentage
+known,KNOWN,151,160,94.375
+known,UNKNOWN,7,160,4.375
+known,AMBIGUOUS,1,160,0.625
+known,INSUFFICIENT_QUALITY,0,160,0.0
+known,CAPTURE_FAILURE,1,160,0.625
+unknown,KNOWN,0,151,0.0
+unknown,UNKNOWN,151,151,100.0
+unknown,AMBIGUOUS,0,151,0.0
+unknown,INSUFFICIENT_QUALITY,0,151,0.0
+unknown,CAPTURE_FAILURE,0,151,0.0

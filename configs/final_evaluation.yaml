@@ -1,0 +1,18 @@
+# Frozen before reserved-image inference. No test-set calibration or selection.
+protocol_version: heldout_original_v1
+decision_run: results/decisions/decisions_development_20261019T222927022126Z
+primary_method: few_photo_margin
+methods: [one_photo_score, few_photo_score, few_photo_margin]
+halfface_known_probes: masked_original_images_only
+halfface_unknown_probes: all_original_images_of_reserved_unknown_ids
+gallery: original_unmasked_up_to_three_views
+prototype: l2_normalized_unweighted_mean
+icfd_usage: reserved_public_sample_closed_set_engineering_only
+icfd_enrollment: [one_photo, up_to_three_photos]
+degradations: none
+bootstrap_samples: 2000
+seed: 42
+retune_on_test: false
+training: false
+quality_gate: disabled_as_selected_on_development
+enrollment_failure: retain_all_known_probe_attempts_and_report_missing_gallery_ids

@@ -1,0 +1,25 @@
+{
+  "source_run": "results/decisions/decisions_development_20261019T222927022126Z",
+  "final_test_evaluated": false,
+  "source_sha256": {
+    "comparison.json": "148680e2e5ac83005a7a2791a121c2e13200ed5863372419bc84ed9a907a8dfd",
+    "ablation.csv": "2a45aae35813fc272a1333d1c1f06f422ed490b7206c4301c087dd4ba5dcf025",
+    "quality_sensitivity.csv": "5e65eb245ce7625f2cb040ea3d0e6523882b2bfa56787296897f51ac856d346f",
+    "paired_effects.csv": "03fcc213442de2b63d6caba2c7fa273dfd692aed934a88368e6f41d08334bd74",
+    "verification.json": "cc20fb10eae9d1f6b293b03a1d3d00246ea394bddf06ab38b6c73041ec7070b4"
+  },
+  "renderer_sha256": "330b349f04630773534f4e7681dd17c246ea6c5ab37a936f6741493abe7b5c81",
+  "assets_sha256": {
+    "ablation.csv": "2a45aae35813fc272a1333d1c1f06f422ed490b7206c4301c087dd4ba5dcf025",
+    "decision_table.tex": "b9e9b9a988d5768b68a09f1059d0908e2fafb228c5ff16080b8d4a2b1368d55e",
+    "fig01_decision_rule.png": "773acc2b47fcce1751e83dacb8a883f68242817ebbb01127e64f8cdb470521b2",
+    "fig01_decision_rule.svg": "a7a22a0f2342614fd0af4a4bfe85a82f549394907b73f5b4cd6422f7b5d43837",
+    "fig02_decision_ablation.png": "af638577afae5f2e45b788e74710257d65c72250371782a93c30ffdf79250208",
+    "fig02_decision_ablation.svg": "1038a94ff515d4a7f919ac471c4fdb2eac080adcc66e390dc0b6d26206c59df3",
+    "fig03_quality_sensitivity.png": "bba68cb93416adf7e39866d47a10c9b5200b01a6f99d37b4b20d2d73cfe9d3d8",
+    "fig03_quality_sensitivity.svg": "c1ce8eff66dc98da8a5ba1e7674d63057853ea6087c384674c3fdf2bf053bbaf",
+    "paired_effects.csv": "03fcc213442de2b63d6caba2c7fa273dfd692aed934a88368e6f41d08334bd74",
+    "quality_sensitivity.csv": "5e65eb245ce7625f2cb040ea3d0e6523882b2bfa56787296897f51ac856d346f",
+    "README.md": "f062a0dac66b277d4942b0ad9d9b6cd630a0da310e21dc0f18e41835a753a9a7"
+  }
+}

@@ -1,0 +1,6 @@
+path,subject_id,max_embedding_difference,quality_matches
+data/raw/halfface/full_face/p001/p001_00m.jpeg,halfface_001,0.0,True
+data/raw/halfface/full_face/p001/p001_01m.jpeg,halfface_001,0.0,True
+data/raw/halfface/full_face/p001/p001_02m.jpeg,halfface_001,0.0,True
+data/raw/halfface/full_face/p001/p001_10m.jpeg,halfface_001,0.0,True
+data/raw/halfface/full_face/p006/p006_00f.jpg,halfface_006,0.0,True

@@ -1,0 +1,34 @@
+{
+  "incremental_attempts_verified": 1824,
+  "source_and_checkpoint_hashes_match": true,
+  "final_304_predictions_match_prior_development": true,
+  "ui_uploaded_template_matches_cached_original_mean": true,
+  "ui_known_unknown_scores_match_reference": {
+    "known_probe": {
+      "decision": "KNOWN",
+      "score": 0.4977048635482788,
+      "accepted_id": "halfface_001"
+    },
+    "unknown_probe": {
+      "decision": "UNKNOWN",
+      "score": 0.020787078887224197,
+      "accepted_id": null
+    }
+  },
+  "screenshot_states_verified": [
+    "fig06_app_persistence.png",
+    "fig03_app_enrollment.png",
+    "fig04_app_known.png",
+    "fig05_app_unknown.png",
+    "fig07_app_after_removal.png"
+  ],
+  "gallery_reload_and_remove_observed": true,
+  "photo_previews_disabled": true,
+  "reserved_test_images_used": false,
+  "verifier_sha256": "d28b8ee77a1cadc33b260683bc3b71e8875ae9e23d3cb88bb3ae03b062e4b201",
+  "browser_events_sha256": "15726896c0e6a09894097456ff6b1444824a358fd11b8c679e295e3baf37643a",
+  "ui_gallery_snapshot_sha256": {
+    "embeddings.npz": "28c09136576365fa5d9628fd209f8d7e2d2a4200cc3efaa2c739fcaee2d6315a",
+    "gallery_meta.json": "1df57a6d58e1a954e17f99b91b1e0487e9b3dfaa67901af7950d50d7a9dd3ca9"
+  }
+}

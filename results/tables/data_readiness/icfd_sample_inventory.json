@@ -1,0 +1,39 @@
+{
+  "dataset": "icfd_sample",
+  "access_status": "sample_only",
+  "images": 400,
+  "identities": 10,
+  "roles": {
+    "gallery": 200,
+    "probe": 200
+  },
+  "unique_image_hashes": 400,
+  "cross_role_duplicate_groups": 0,
+  "by_role": {
+    "gallery": {
+      "images": 200,
+      "identities": 10,
+      "width_range": [
+        189,
+        457
+      ],
+      "height_range": [
+        229,
+        580
+      ]
+    },
+    "probe": {
+      "images": 200,
+      "identities": 10,
+      "width_range": [
+        28,
+        136
+      ],
+      "height_range": [
+        33,
+        167
+      ]
+    }
+  },
+  "notes": "Official gallery/probe roles preserved; no train/test protocol or accuracy is claimed."
+}

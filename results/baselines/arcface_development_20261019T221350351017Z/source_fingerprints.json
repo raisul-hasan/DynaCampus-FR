@@ -1,0 +1,8 @@
+{
+  "src/recognition/embedder.py": "2537c4366baadc97a38436fa2f3ae3b4b64f85f551e1dc5e3ffd345f672087f2",
+  "src/detection/detector.py": "9ba918ffef7cad6abc6d8d378e516bbd961ac8b32a09b972180e0808da2b17d2",
+  "src/alignment/aligner.py": "b4cc54376db77f29c4b0372cfcb414742d43212e8550c85053ff28df58a6e4b2",
+  "src/quality/estimator.py": "a17fe143621dd624dca9d9f4bc1a33a83d8a001f093de59f5b7453d794489d5f",
+  "scripts/run_arcface_baseline.py": "5cb842a9d0140e701945ab5bc2e655a328da842874caa9b45a3639ac2ceaacba",
+  "configs/arcface_baseline.yaml": "cbe41d7a17f6487bb072ce37c49a70eda586cf84f64339c81a48aafafb1dd17c"
+}

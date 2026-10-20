@@ -1,0 +1,4 @@
+dataset,metric,delta_percentage_points,ci95_low_percentage_points,ci95_high_percentage_points,bootstrap_unit,bootstrap_samples,note
+halfface,rank1_correct,0.0,0.0,0.0,known_identity,2000,Paired development bootstrap with fixed calibrated thresholds; calibration and unknown-sample uncertainty are not included.
+halfface,correct_known_accept,5.8441558441558445,1.306977336389101,11.612903225806452,known_identity,2000,Paired development bootstrap with fixed calibrated thresholds; calibration and unknown-sample uncertainty are not included.
+icfd_sample,rank1_correct,0.0,0.0,0.0,known_identity,2000,Paired development bootstrap with fixed calibrated thresholds; calibration and unknown-sample uncertainty are not included.

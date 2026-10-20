@@ -1,0 +1,3 @@
+dataset,evaluation_scope,gallery_attempts,gallery_successes,known_probe_attempts,known_with_embedding_and_gallery,unknown_probe_attempts,unknown_with_embedding,rank1_conditional,rank1_end_to_end,correct_known_accept_end_to_end,fpir_conditional,fpir_end_to_end,threshold
+halfface,development_only,55,55,251,245,150,149,0.9918367346938776,0.9681274900398407,0.896414342629482,0.006711409395973154,0.006666666666666667,0.3887378871440888
+icfd_sample,engineering_sample_only,5,5,100,100,0,0,1.0,1.0,,,,

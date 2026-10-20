@@ -1,0 +1,23 @@
+{
+  "verified_prediction_attempts": 6080,
+  "verified_cosine_searches": 2960,
+  "source_images_unchanged": 304,
+  "conditions": 10,
+  "unchanged_gallery_and_thresholds": true,
+  "reserved_identity_overlap": 0,
+  "verifier_sha256": "b6d0d7189562c70425142368750282178459b72054788e2413c9757c06aa268f",
+  "prediction_sha256": "2f39822ed338b23e20b993516e51a3125bc77702122bd73c972b4e62919caeb7",
+  "cache_sha256": {
+    "blur_003.npz": "62c78af033bf495943abcb97d1177c65a313ca8078c90f0227466ebac2abae32",
+    "blur_006.npz": "7c77e580d0004df233d26b4c4a56120537dcc280d4ac28f6241ca3488ca7cf7a",
+    "blur_012.npz": "4a1fbede07c7249ce54909d6430f83c48dc7eea3313b46e7ec8dd6dc635d94ba",
+    "gallery.npz": "5b1045dfd1a759f1cf64b4e6f48076b33dda27462a3730a5f57825a85d722562",
+    "jpeg_10.npz": "6ce47ea9364084b7a275f47d087d5711e9c5fae3aaa98529af6b4dbce3b163be",
+    "jpeg_30.npz": "6bfea3ae514531f453815895ef47acaed95f6c320a48c4bad7a4eb61c5f8fecf",
+    "jpeg_70.npz": "5acd3e2fc88aaf2fb7ccdd5a8370a1521a0a967fca79768561ae1cf0b5d99ba0",
+    "original.npz": "8a1226725e7d5bdd384ada2ddf9f36d320cc5efe581919a915b8d2f9b7bcc9df",
+    "resolution_128.npz": "9514dcdb23972c974082623cfdeef356a2db7f857e38f22c9c1991a5361087c0",
+    "resolution_32.npz": "1c7d7a80c7055af55db0776c5df4ca8a24039b52cb103974ca163eaeb0780c5c",
+    "resolution_64.npz": "12867ad6083f4d494a165edc46b8bea60fcb036dc8fe1cfd106e3362abb090de"
+  }
+}

@@ -6,6 +6,7 @@ Demonstrates training-free dynamic enrollment with the full pipeline:
   SCRFD detection → alignment → embedding → gallery cosine search → decision
 """
 
+import os
 import streamlit as st
 import cv2
 import numpy as np
@@ -28,7 +29,7 @@ from src.gallery import FaceGallery
 from src.tracking import FaceTracker
 from src.aggregation import FeatureAggregator
 from src.open_set import OpenSetDecisionEngine
-from src.augmentation import CCTVAugmentor
+from src.demo_workflow import process_image, recognize, SCORE_THRESHOLD, MARGIN_THRESHOLD
 
 # ── Page configuration ───────────────────────────────────────
 st.set_page_config(
@@ -104,11 +105,8 @@ def load_aligner():
 
 @st.cache_resource(show_spinner=False)
 def load_embedder():
-    """Load face embedder (falls back to mock if models unavailable)."""
-    try:
-        return FaceEmbedder(config_path=str(ROOT / "configs" / "models.yaml"))
-    except Exception:
-        return FaceEmbedder(mock=True)
+    """Load the real recognizer; model failures must remain visible."""
+    return FaceEmbedder(config_path=str(ROOT / "configs" / "models.yaml"))
 
 
 @st.cache_resource(show_spinner=False)
@@ -121,7 +119,7 @@ def get_gallery():
     """Get or create the face gallery (stored in session state)."""
     if "gallery" not in st.session_state or not hasattr(st.session_state.gallery, "list_pending"):
         st.session_state.gallery = FaceGallery(
-            gallery_dir=str(ROOT / "gallery_data"),
+            gallery_dir=os.environ.get("DYNACAMPUS_GALLERY_DIR", str(ROOT / "gallery_data")),
             similarity_threshold=0.40,
         )
     return st.session_state.gallery
@@ -138,43 +136,11 @@ def load_uploaded_image(uploaded_file) -> np.ndarray:
     return image
 
 
-def process_faces(image, detector, aligner, embedder, quality_est):
-    """
-    Run full pipeline on an image: detect → align → embed → quality.
-
-    Returns list of dicts, each with keys:
-      bbox, score, kps, aligned, embedding, quality
-    """
+def process_faces(image, detector, aligner, embedder, quality_est, face_crop=False):
+    """Use the real-model still-image path matching the evaluated protocol."""
     if detector is None:
         return []
-    faces = detector.detect(image)
-    processed = []
-    for face in faces:
-        kps = face.get("kps")
-        if kps is None:
-            continue
-        kps_arr = np.array(kps, dtype=np.float32) if not isinstance(kps, np.ndarray) else kps
-        if kps_arr.shape != (5, 2):
-            continue
-        try:
-            aligned = aligner.align(image, kps_arr)
-            embedding = embedder.extract_embedding(aligned)
-            quality = quality_est.estimate_quality(
-                aligned, bbox=face["bbox"], landmarks=kps_arr
-            )
-            processed.append(
-                {
-                    "bbox": face["bbox"],
-                    "score": face["score"],
-                    "kps": kps_arr,
-                    "aligned": aligned,
-                    "embedding": embedding,
-                    "quality": quality,
-                }
-            )
-        except Exception:
-            continue
-    return processed
+    return process_image(image, detector, aligner, embedder, quality_est, face_crop)
 
 
 def annotate_frame(image, processed_faces, gallery, threshold):
@@ -188,16 +154,21 @@ def annotate_frame(image, processed_faces, gallery, threshold):
     results = []
 
     for face in processed_faces:
-        result = gallery.search(face["embedding"], threshold=threshold)
+        result = recognize(gallery, face["embedding"], face["quality"]["overall_quality"],
+                           threshold, margin_threshold, quality_threshold)
         bbox = face["bbox"]
         x1, y1, x2, y2 = int(bbox[0]), int(bbox[1]), int(bbox[2]), int(bbox[3])
 
         if result["decision"] == "KNOWN":
             color = (0, 200, 100)  # Green (BGR)
             label = f"{result['top1_name']} ({result['top1_score']:.2f})"
+        elif result["decision"] == "AMBIGUOUS":
+            color, label = (0, 220, 255), "AMBIGUOUS"
+        elif result["decision"] == "INSUFFICIENT_QUALITY":
+            color, label = (150, 150, 150), "LOW QUALITY"
         else:
-            color = (80, 80, 255)  # Red (BGR)
-            label = f"Not Recognized ({result['top1_score']:.2f})"
+            color = (80, 80, 255)
+            label = f"UNKNOWN ({result['top1_score']:.2f})"
 
         # Bounding box
         cv2.rectangle(annotated, (x1, y1), (x2, y2), color, 2)
@@ -238,7 +209,7 @@ def annotate_frame(image, processed_faces, gallery, threshold):
         results.append(
             {
                 "Decision": result["decision"],
-                "Name": result.get("top1_name") or "—",
+                "Name": result.get("accepted_name") or "—",
                 "Score": result.get("top1_score", 0.0),
                 "Margin": result.get("margin", 0.0),
                 "Quality": q,
@@ -282,7 +253,7 @@ def bgr_to_rgb(image):
 # ═══════════════════════════════════════════════════════════════
 with st.sidebar:
     st.markdown("## 🎓 DynaCampus-FR")
-    st.caption("Domain-Adaptive Open-Set\nFace Recognition Dashboard")
+    st.caption("ArcFace Open-Set\nFace Recognition Dashboard")
     st.markdown('<div class="header-bar"></div>', unsafe_allow_html=True)
 
     page = st.radio(
@@ -301,27 +272,37 @@ with st.sidebar:
     )
 
     st.divider()
-    threshold = st.slider(
-        "Recognition Threshold",
-        min_value=0.10,
-        max_value=0.90,
-        value=0.40,
-        step=0.05,
-        help="Minimum cosine similarity to classify a face as KNOWN.",
-    )
+    preset = st.radio("Decision settings", ["Frozen research settings", "Manual demo settings"])
+    if preset == "Frozen research settings":
+        threshold, margin_threshold, quality_threshold = SCORE_THRESHOLD, MARGIN_THRESHOLD, 0.0
+        st.caption("Score 0.3779 · margin 0.15 · quality filtering off")
+    else:
+        threshold = st.slider("Recognition threshold", 0.10, 0.90, 0.40, 0.01)
+        margin_threshold = st.slider("Minimum top-two margin", 0.0, 0.5, 0.15, 0.01)
+        quality_threshold = st.slider("Minimum quality", 0.0, 1.0, 0.0, 0.05)
+        st.caption("Manual settings are for demonstration; reported test settings stay frozen.")
+    face_crop_input = st.checkbox("Input is a tight face crop", value=False,
+        help="For enrollment and image uploads already cropped around one face.")
+    show_previews = st.checkbox("Show photo previews", value=False)
+    auto_capture = st.checkbox("Queue unknown faces for review", value=False)
 
     st.divider()
     gallery = get_gallery()
-    st.metric("Enrolled Identities", gallery.size)
+    gallery_counter = st.empty()
+    gallery_counter.metric("Enrolled Identities", gallery.size)
 
 
 # ═══════════════════════════════════════════════════════════════
 #  LOAD MODELS  (with spinner on first load)
 # ═══════════════════════════════════════════════════════════════
-with st.spinner("⏳ Loading face detection & recognition models (first run downloads ~300 MB)…"):
+with st.spinner("⏳ Loading face detection and ArcFace recognition models…"):
     detector = load_detector()
     aligner = load_aligner()
-    embedder = load_embedder()
+    try:
+        embedder = load_embedder()
+    except (RuntimeError, ValueError, FileNotFoundError) as error:
+        st.error(f"Recognition model unavailable: {error}")
+        st.stop()
     quality_est = load_quality()
 
 if detector is None:
@@ -341,7 +322,7 @@ if "📊 Dashboard" in page:
 
     c1, c2, c3, c4 = st.columns(4)
     c1.metric("👤 Enrolled", gallery.size)
-    c2.metric("🧠 Backbone", "ArcFace / AdaFace")
+    c2.metric("🧠 Backbone", "ArcFace")
     c3.metric("🔍 Detector", "SCRFD")
     c4.metric("📏 Embedding", "512-d")
 
@@ -355,7 +336,8 @@ if "📊 Dashboard" in page:
             with cols[i % len(cols)]:
                 thumb = gallery.get_thumbnail(identity["subject_id"])
                 if thumb is not None:
-                    st.image(bgr_to_rgb(thumb), caption=identity["name"], width=120)
+                    if show_previews:
+                        st.image(bgr_to_rgb(thumb), caption=identity["name"], width=120)
                 else:
                     st.info(identity["name"])
     else:
@@ -404,6 +386,10 @@ elif "➕ Enroll" in page:
             accept_multiple_files=True,
         )
 
+    if uploaded_files and len(uploaded_files) > 3:
+        st.error("Choose up to three original enrollment photos.")
+        st.stop()
+
     if uploaded_files and name.strip():
         all_embeddings = []
         all_qualities = []
@@ -417,24 +403,18 @@ elif "➕ Enroll" in page:
                     st.warning(f"Could not read {uploaded.name}")
                     continue
 
-                faces = process_faces(image, detector, aligner, embedder, quality_est)
+                faces = process_faces(image, detector, aligner, embedder, quality_est, face_crop=face_crop_input)
                 if not faces:
                     st.warning(f"⚠️ No face detected in **{uploaded.name}**")
                     continue
 
-                # Take the largest face (highest bbox area)
-                face = max(faces, key=lambda f: (f["bbox"][2] - f["bbox"][0]) * (f["bbox"][3] - f["bbox"][1]))
+                if len(faces) != 1:
+                    st.warning("Use an enrollment photo containing exactly one face.")
+                    continue
+                face = faces[0]
 
-                # Apply CCTV-Aware Data Augmentation to generate robust synthetic variants
-                augmentor = CCTVAugmentor()
-                variants = augmentor.generate_cctv_variants(face["aligned"])
-                
-                for var_img in variants:
-                    emb = embedder.extract_embedding(var_img)
-                    q_meta = quality_est.estimate_quality(var_img, bbox=face["bbox"], landmarks=face["kps"])
-                    q_score = q_meta["overall_quality"]
-                    all_embeddings.append(emb)
-                    all_qualities.append(q_score)
+                all_embeddings.append(face["embedding"])
+                all_qualities.append(face["quality"]["overall_quality"])
 
                 if face["quality"]["overall_quality"] > best_quality:
                     best_quality = face["quality"]["overall_quality"]
@@ -446,27 +426,23 @@ elif "➕ Enroll" in page:
                     disp = image.copy()
                     bx = face["bbox"]
                     cv2.rectangle(disp, (int(bx[0]), int(bx[1])), (int(bx[2]), int(bx[3])), (0, 200, 100), 2)
-                    st.image(bgr_to_rgb(disp), caption=f"Detected — {uploaded.name}", use_container_width=True)
+                    if show_previews:
+                        st.image(bgr_to_rgb(disp), caption=f"Detected — {uploaded.name}", use_container_width=True)
                 with c2:
-                    st.image(bgr_to_rgb(face["aligned"]), caption="Aligned 112×112 Crop", width=150)
+                    if show_previews:
+                        st.image(bgr_to_rgb(face["aligned"]), caption="Aligned 112×112 Crop", width=150)
                     st.markdown(
                         f"**Clean Quality:** `{face['quality']['overall_quality']:.3f}`  |  "
                         f"Blur: `{face['quality']['blur_score']:.2f}`  "
                         f"Res: `{face['quality']['resolution_score']:.2f}`"
                     )
 
-                with st.expander("🎨 CCTV-Aware Synthetic Augmentations (4 variants generated)"):
-                    v_cols = st.columns(4)
-                    labels = ["Motion Blur", "Low-Res Scale", "JPEG Noise", "Shadow Shift"]
-                    for idx_v, var_crop in enumerate(variants[1:]):
-                        with v_cols[idx_v % 4]:
-                            st.image(bgr_to_rgb(var_crop), caption=labels[idx_v], use_container_width=True)
 
         if all_embeddings:
             st.divider()
             st.info(
-                f"✅ **{len(all_embeddings)}** total feature vector(s) generated (including CCTV synthetic variants).  "
-                f"Weighted quality score: **{np.mean(all_qualities):.3f}**"
+                f"✅ **{len(all_embeddings)}** original-photo feature vector(s) ready.  "
+                f"Mean image quality: **{np.mean(all_qualities):.3f}**"
             )
 
             if st.button("✅ Confirm Enrollment", type="primary", use_container_width=True):
@@ -481,6 +457,7 @@ elif "➕ Enroll" in page:
                 if success:
                     # Force gallery reload in session state
                     st.session_state.gallery = gallery
+                    gallery_counter.metric("Enrolled Identities", gallery.size)
                     st.success(
                         f"🎉 **{name.strip()}** enrolled as **{subject_id}**!  "
                         f"Gallery now has **{gallery.size}** identities.  \n"
@@ -517,21 +494,23 @@ elif "🖼️ Image" in page:
             st.error("Failed to read image.")
         else:
             with st.spinner("Detecting and recognizing faces…"):
-                faces = process_faces(image, detector, aligner, embedder, quality_est)
+                faces = process_faces(image, detector, aligner, embedder, quality_est, face_crop=face_crop_input)
 
             if not faces:
                 st.warning("No faces detected in this image.")
-                st.image(bgr_to_rgb(image), caption="Original Image", use_container_width=True)
+                if show_previews:
+                    st.image(bgr_to_rgb(image), caption="Original Image", use_container_width=True)
             else:
                 annotated, results = annotate_frame(image, faces, gallery, threshold)
                 annotated = add_info_bar(annotated, gallery.size)
 
                 # Display
-                st.image(
-                    bgr_to_rgb(annotated),
-                    caption=f"{len(faces)} face(s) detected",
-                    use_container_width=True,
-                )
+                if show_previews:
+                    st.image(
+                        bgr_to_rgb(annotated),
+                        caption=f"{len(faces)} face(s) detected",
+                        use_container_width=True,
+                    )
 
                 # Results table
                 st.divider()
@@ -540,7 +519,8 @@ elif "🖼️ Image" in page:
                 for i, r in enumerate(results):
                     c1, c2 = st.columns([1, 3])
                     with c1:
-                        st.image(bgr_to_rgb(faces[i]["aligned"]), width=90)
+                        if show_previews:
+                            st.image(bgr_to_rgb(faces[i]["aligned"]), width=90)
                     with c2:
                         if r["Decision"] == "KNOWN":
                             st.markdown(
@@ -549,7 +529,7 @@ elif "🖼️ Image" in page:
                             )
                         else:
                             st.markdown(
-                                '<span class="badge-unknown">❌ NOT RECOGNIZED</span>',
+                                f'<span class="badge-unknown">{r["Decision"]}</span>',
                                 unsafe_allow_html=True,
                             )
                         st.caption(
@@ -730,7 +710,7 @@ elif "📹 Live" in page:
             try:
                 tracker = FaceTracker(max_age=15, min_hits=2, iou_threshold=0.3)
                 aggregator = FeatureAggregator(strategy="quality_weighted")
-                osde = OpenSetDecisionEngine(base_threshold=threshold, quality_threshold=0.3)
+                osde = OpenSetDecisionEngine(base_threshold=threshold, quality_threshold=quality_threshold, margin_threshold=margin_threshold)
                 
                 while True:
                     ret, frame = cap.read()
@@ -792,14 +772,11 @@ elif "📹 Live" in page:
                         
                         if agg_feat is not None:
                             search_res = gallery.search(agg_feat, threshold=0.1) # search raw top matches
-                            # Use OSDE 4-state engine
-                            # Mock top_matches format: [(id, score, meta)]
-                            if search_res["decision"] != "UNKNOWN" or search_res["top1_score"] > 0:
-                                top_matches = [(search_res["top1_id"], search_res["top1_score"], None)]
-                            else:
-                                top_matches = []
-                                
-                            decision, match_id, match_score = osde.evaluate(top_matches, q if best_face else 0.5)
+                            decision, match_id, match_score = osde.evaluate_scores(
+                                search_res["top1_id"], search_res["top1_score"],
+                                search_res["top2_score"] if gallery.size > 1 else None,
+                                q if best_face else 0.5,
+                            )
                             
                             if decision == "KNOWN":
                                 color = (0, 200, 100) # Green
@@ -816,7 +793,7 @@ elif "📹 Live" in page:
                                 results.append({"Time": now, "Decision": "UNKNOWN", "Name": "-", "Score": match_score})
                                 
                                 # Auto-Enrollment trigger
-                                if best_face and q > 0.70:
+                                if auto_capture and best_face and q > 0.70:
                                     # High quality unknown face detected continuously!
                                     # Auto-enroll logic
                                     new_id = f"AutoID_{track_id}"
@@ -890,7 +867,7 @@ elif "📡 Live CCTV" in page:
             st.success(f"Connected to RTSP stream: `{rtsp_url}`")
             tracker = FaceTracker(max_age=15, min_hits=2, iou_threshold=0.3)
             aggregator = FeatureAggregator(strategy="quality_weighted")
-            osde = OpenSetDecisionEngine(base_threshold=threshold, quality_threshold=0.3)
+            osde = OpenSetDecisionEngine(base_threshold=threshold, quality_threshold=quality_threshold, margin_threshold=margin_threshold)
             recent_log = []
             frame_count = 0
             t_start = time.time()
@@ -937,8 +914,10 @@ elif "📡 Live CCTV" in page:
 
                         if agg_feat is not None:
                             search_res = gallery.search(agg_feat, threshold=0.1)
-                            top_matches = [(search_res["top1_id"], search_res["top1_score"], None)] if search_res["top1_id"] else []
-                            decision, match_id, match_score = osde.evaluate(top_matches, q)
+                            decision, match_id, match_score = osde.evaluate_scores(
+                                search_res["top1_id"], search_res["top1_score"],
+                                search_res["top2_score"] if gallery.size > 1 else None, q,
+                            )
 
                             if decision == "KNOWN":
                                 color = (0, 200, 100)
@@ -950,10 +929,18 @@ elif "📡 Live CCTV" in page:
                                 label = f"UNKNOWN ({match_score:.2f})"
                                 results.append({"Time": now, "Cam": "CCTV-1", "Decision": "UNKNOWN", "Name": "-", "Score": match_score})
 
-                                if best_face and q > 0.70:
+                                if auto_capture and best_face and q > 0.70:
                                     auto_id = f"AutoID_{track_id}"
                                     if auto_id not in gallery._identities:
                                         gallery.enroll(auto_id, auto_id, agg_feat, best_face["aligned"], q)
+                            elif decision == "AMBIGUOUS":
+                                color = (0, 255, 255)
+                                label = f"AMBIGUOUS ({match_score:.2f})"
+                                results.append({"Time": now, "Cam": "CCTV-1", "Decision": decision, "Name": "-", "Score": match_score})
+                            elif decision == "INSUFFICIENT_QUALITY":
+                                color = (150, 150, 150)
+                                label = "LOW QUALITY"
+                                results.append({"Time": now, "Cam": "CCTV-1", "Decision": decision, "Name": "-", "Score": match_score})
 
                         cv2.rectangle(annotated, (x1, y1), (x2, y2), color, 2, cv2.LINE_AA)
                         cv2.putText(annotated, label, (x1, max(y1 - 8, 15)), cv2.FONT_HERSHEY_SIMPLEX, 0.55, color, 2, cv2.LINE_AA)
@@ -1004,7 +991,8 @@ elif "⏳ Pending" in page:
                 st.markdown(f"### 👤 `{sid}`")
                 thumb = gallery.get_thumbnail(sid)
                 if thumb is not None:
-                    st.image(bgr_to_rgb(thumb), use_container_width=True)
+                    if show_previews:
+                        st.image(bgr_to_rgb(thumb), use_container_width=True)
 
                 st.caption(f"Quality Score: `{item.get('quality_score', 0):.3f}`  \nCaptured: {item.get('enrolled_at', '')[:19]}")
 
@@ -1016,6 +1004,7 @@ elif "⏳ Pending" in page:
                         if new_name.strip():
                             gallery.approve_pending(sid, new_name.strip())
                             st.session_state.gallery = gallery
+                            gallery_counter.metric("Enrolled Identities", gallery.size)
                             st.success(f"Enrolled `{new_name.strip()}`!")
                             st.rerun()
                         else:
@@ -1025,6 +1014,7 @@ elif "⏳ Pending" in page:
                     if st.button("🗑️ Discard", key=f"disc_{sid}"):
                         gallery.remove(sid)
                         st.session_state.gallery = gallery
+                        gallery_counter.metric("Enrolled Identities", gallery.size)
                         st.info("Discarded entry.")
                         st.rerun()
 
@@ -1053,7 +1043,8 @@ elif "📋 Gallery" in page:
                     sid = identity["subject_id"]
                     thumb = gallery.get_thumbnail(sid)
                     if thumb is not None:
-                        st.image(bgr_to_rgb(thumb), use_container_width=True)
+                        if show_previews:
+                            st.image(bgr_to_rgb(thumb), use_container_width=True)
                     else:
                         st.markdown("👤")
 
@@ -1067,6 +1058,7 @@ elif "📋 Gallery" in page:
                     if st.button(f"🗑️ Remove", key=f"del_{sid}"):
                         gallery.remove(sid)
                         st.session_state.gallery = gallery
+                        gallery_counter.metric("Enrolled Identities", gallery.size)
                         st.rerun()
 
         st.divider()
@@ -1074,5 +1066,6 @@ elif "📋 Gallery" in page:
             for identity in identities:
                 gallery.remove(identity["subject_id"])
             st.session_state.gallery = gallery
+            gallery_counter.metric("Enrolled Identities", gallery.size)
             st.success("Gallery cleared.")
             st.rerun()

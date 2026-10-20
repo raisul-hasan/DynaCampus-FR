@@ -14,6 +14,7 @@ from pathlib import Path
 from typing import Dict, List, Optional, Any
 from datetime import datetime
 import logging
+import re
 
 logger = logging.getLogger(__name__)
 
@@ -24,7 +25,7 @@ class FaceGallery:
 
     Key operations:
     - enroll(): Add a new identity prototype to the gallery
-    - enroll_multi(): Create quality-weighted prototype from multiple images
+    - enroll_multi(): Create a normalized mean prototype from original images
     - search(): Find the best matching identity using exact cosine similarity
     - remove(): Remove an identity from the gallery
     - list_identities(): List all enrolled identities
@@ -76,18 +77,24 @@ class FaceGallery:
         Returns:
             True if enrollment succeeded.
         """
-        if embedding is None or not isinstance(embedding, np.ndarray) or embedding.size == 0:
+        if not isinstance(subject_id, str) or not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_.-]{0,127}', subject_id):
+            return False
+        if not np.isfinite(quality_score) or not 0 <= quality_score <= 1:
+            return False
+        if embedding is None or not isinstance(embedding, np.ndarray) or embedding.size != 512 or not np.isfinite(embedding).all():
             logger.warning("Enrollment failed: invalid embedding for %s", subject_id)
             return False
 
         # L2 normalize
         emb = embedding.flatten().astype(np.float32)
         norm = np.linalg.norm(emb)
-        if norm < 1e-10:
+        if not np.isfinite(norm) or norm < 1e-10:
             logger.warning("Enrollment failed: zero-norm embedding for %s", subject_id)
             return False
-        emb = emb / norm
+        if abs(float(norm)-1.) > 1e-6:
+            emb = emb / norm
 
+        approved_at = self._identities.get(subject_id, {}).get('approved_at')
         self._embeddings[subject_id] = emb
         self._identities[subject_id] = {
             "name": name,
@@ -95,6 +102,9 @@ class FaceGallery:
             "quality_score": round(float(quality_score), 4),
             "embedding_dim": int(emb.shape[0]),
         }
+
+        if approved_at:
+            self._identities[subject_id]['approved_at'] = approved_at
 
         # Save thumbnail
         if face_thumbnail is not None:
@@ -111,9 +121,11 @@ class FaceGallery:
         embeddings: List[np.ndarray],
         qualities: List[float],
         face_thumbnail: Optional[np.ndarray] = None,
+        weighting: str = 'mean',
     ) -> bool:
         """
-        Enroll using quality-weighted prototype from multiple images.
+        Enroll using an unweighted normalized mean by default.
+        The optional weighting='quality' mode has no validated paper result.
 
         p = normalize( Σ q_k · z_k  /  Σ q_k )
 
@@ -127,24 +139,28 @@ class FaceGallery:
         Returns:
             True if enrollment succeeded.
         """
-        if not embeddings or not qualities or len(embeddings) != len(qualities):
+        if not embeddings or not qualities or len(embeddings) != len(qualities) or weighting not in {'mean','quality'}:
+            return False
+        if any(np.asarray(e).size != 512 or not np.isfinite(e).all() for e in embeddings):
+            return False
+        if not np.isfinite(qualities).all() or any(not 0 <= q <= 1 for q in qualities):
             return False
 
         weighted_sum = np.zeros(embeddings[0].flatten().shape, dtype=np.float64)
         total_weight = 0.0
         for emb, q in zip(embeddings, qualities):
-            w = max(q, 0.01)
+            w = 1.0 if weighting == 'mean' else max(q, 0.01)
             weighted_sum += w * emb.flatten().astype(np.float64)
             total_weight += w
 
         if total_weight < 1e-10:
             return False
 
-        prototype = (weighted_sum / total_weight).astype(np.float32)
+        prototype = weighted_sum / total_weight
         norm = np.linalg.norm(prototype)
         if norm < 1e-10:
             return False
-        prototype = prototype / norm
+        prototype = (prototype / norm).astype(np.float32)
 
         avg_quality = float(np.mean(qualities))
         return self.enroll(subject_id, name, prototype, face_thumbnail, avg_quality)
@@ -181,38 +197,31 @@ class FaceGallery:
             "margin": 0.0,
         }
 
-        if len(self._embeddings) == 0:
+        ids = [sid for sid in self._embeddings if not sid.startswith('AutoID_') or self._identities[sid].get('approved_at')]
+        if not ids:
             empty_result["decision"] = "NO_GALLERY"
             return empty_result
 
         # Normalize probe
+        if probe_embedding is None or np.asarray(probe_embedding).size != 512 or not np.isfinite(probe_embedding).all():
+            return empty_result
         probe = probe_embedding.flatten().astype(np.float32)
         norm = np.linalg.norm(probe)
-        if norm < 1e-10:
+        if not np.isfinite(norm) or norm < 1e-10:
             return empty_result
-        probe = probe / norm
+        if abs(float(norm)-1.) > 1e-6:
+            probe = probe / norm
 
-        # Fast exact search using FAISS IndexFlatIP if available
-        ids = list(self._embeddings.keys())
+        # Exact NumPy search, matching the evaluated small-gallery pipeline.
         try:
-            import faiss
-            gallery_matrix = np.stack([self._embeddings[sid] for sid in ids]).astype(np.float32)
-            faiss_index = faiss.IndexFlatIP(512)
-            faiss_index.add(gallery_matrix)
-            k = min(2, len(ids))
-            D, I = faiss_index.search(probe.reshape(1, -1), k)
-            
-            top1_idx = int(I[0][0])
-            s1 = float(D[0][0])
-            s2 = float(D[0][1]) if k > 1 else 0.0
-        except Exception:
-            # Fallback to NumPy matrix multiplication
             gallery_matrix = np.stack([self._embeddings[sid] for sid in ids])
             scores = gallery_matrix @ probe
             ranked = np.argsort(scores)[::-1]
             top1_idx = int(ranked[0])
             s1 = float(scores[top1_idx])
             s2 = float(scores[ranked[1]]) if len(ranked) > 1 else 0.0
+        except ValueError as error:
+            raise ValueError('Gallery contains incompatible vectors') from error
 
         top1_id = ids[top1_idx]
         top1_name = self._identities[top1_id]["name"]
@@ -223,10 +232,10 @@ class FaceGallery:
             "decision": decision,
             "top1_id": top1_id,
             "top1_name": top1_name,
-            "top1_score": round(s1, 4),
-            "top2_score": round(s2, 4),
-            "margin": round(s1 - s2, 4),
-            "search_backend": "FAISS IndexFlatIP",
+            "top1_score": s1,
+            "top2_score": s2,
+            "margin": s1 - s2,
+            "search_backend": "NumPy exact cosine",
         }
 
     # ── Management ──────────────────────────────────────────────────
@@ -235,7 +244,7 @@ class FaceGallery:
         """List all auto-enrolled identities waiting for approval."""
         result = []
         for sid, meta in self._identities.items():
-            if sid.startswith("AutoID_"):
+            if sid.startswith("AutoID_") and not meta.get('approved_at'):
                 entry = {"subject_id": sid, **meta}
                 thumb = self.gallery_dir / "thumbnails" / f"{sid}.jpg"
                 entry["has_thumbnail"] = thumb.exists()
@@ -268,6 +277,8 @@ class FaceGallery:
         """List all enrolled identities with metadata."""
         result = []
         for sid, meta in self._identities.items():
+            if sid.startswith('AutoID_') and not meta.get('approved_at'):
+                continue
             entry = {"subject_id": sid, **meta}
             thumb = self.gallery_dir / "thumbnails" / f"{sid}.jpg"
             entry["has_thumbnail"] = thumb.exists()
@@ -290,7 +301,7 @@ class FaceGallery:
     @property
     def size(self) -> int:
         """Number of enrolled identities."""
-        return len(self._identities)
+        return sum(not sid.startswith('AutoID_') or bool(meta.get('approved_at')) for sid, meta in self._identities.items())
 
     def next_id(self) -> str:
         """Generate the next available subject ID (S001, S002, ...)."""
@@ -313,7 +324,7 @@ class FaceGallery:
             matrix = np.stack([self._embeddings[sid] for sid in ids])
             np.savez(
                 str(self.gallery_dir / "embeddings.npz"),
-                ids=np.array(ids, dtype=object),
+                ids=np.array(ids, dtype=str),
                 embeddings=matrix,
             )
         else:

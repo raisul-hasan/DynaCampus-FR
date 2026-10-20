@@ -1,0 +1,21 @@
+{
+  "verified_prediction_attempts": 1133,
+  "verified_cosine_searches": 1126,
+  "source_images_unchanged": 585,
+  "development_identity_overlap": 0,
+  "frozen_before_inference": true,
+  "unchanged_development_thresholds": true,
+  "primary_method_preserved": true,
+  "verifier_sha256": "ea88baa69e4467a80e124c2e27f6a712675a98a4a37a765417a9a823b3d2c075",
+  "freeze_sha256": "24b8a269fe27a6327d4be08e315df61996318ab713e6e55edfbcbb23158fab94",
+  "predictions_sha256": "6d5adb7cc2a00829984a8e23bbcb4afe3ee5b66080d804693186708de353e000",
+  "icfd_predictions_sha256": "af3ab79775c980bcebfeed45dfee3c50af56cb93a1ae030edaf32373b2d77c11",
+  "cache_sha256": {
+    "arcface_embeddings.npz": "73b0573529d48f2e9a3429b84e6f0056de95d6944102bef9a29b377d5e2c8134",
+    "few_photo_margin_gallery.npz": "029334cea5b87280c8407704655f524fedb4c0cdac05ddffe9b7ab84f786a301",
+    "few_photo_score_gallery.npz": "029334cea5b87280c8407704655f524fedb4c0cdac05ddffe9b7ab84f786a301",
+    "icfd_one_photo_gallery.npz": "a9273400f97d54232439eb5bd5e0f60bd39494dda3896223fb34348e41c54dce",
+    "icfd_up_to_three_photos_gallery.npz": "7b83bacd4826e11596dc7fa682d92cc607afe21032703f2b0f23f19fad8713d6",
+    "one_photo_score_gallery.npz": "97c4373512cb84f33936f3f938e67cf484fe66f66805653e0c34b28b299ad6a7"
+  }
+}

@@ -1,0 +1,9 @@
+dataset,subject_id,path,mask_status,pose,evaluation_role,truth_status,status,embedding_index,face_count,native_width,native_height,det_score,quality,detector_ms,recognizer_ms
+halfface,halfface_001,data/raw/halfface/full_face/p001/p001_00m.jpeg,unmasked,front,gallery,known,ok,0,1,345,449,0.9037045240402222,0.9898,93.59959996072575,28.32369995303452
+halfface,halfface_001,data/raw/halfface/full_face/p001/p001_01m.jpeg,unmasked,left,probe,known,ok,1,1,391,517,0.8772861361503601,0.953,94.61009997176006,49.919200013391674
+halfface,halfface_001,data/raw/halfface/full_face/p001/p001_02m.jpeg,unmasked,right,probe,known,ok,2,1,408,509,0.8903660774230957,0.9456,83.56910001020879,46.52500001247972
+halfface,halfface_001,data/raw/halfface/full_face/p001/p001_10m.jpeg,masked,front,probe,known,ok,3,1,378,495,0.8461772203445435,0.9923,90.25770000880584,49.63500000303611
+halfface,halfface_001,data/raw/halfface/full_face/p001/p001_11m.jpeg,masked,left,probe,known,ok,4,1,370,484,0.8198013305664062,0.9584,85.32210002886131,44.69449998578057
+halfface,halfface_001,data/raw/halfface/full_face/p001/p001_12m.jpeg,masked,right,probe,known,ok,5,1,359,472,0.8434435725212097,0.9404,83.37680000113323,52.680700027849525
+halfface,halfface_003,data/raw/halfface/full_face/p003/p003_00m.jpg,unmasked,front,gallery,known,ok,6,1,108,121,0.824243426322937,0.9151,99.51499995077029,43.57590002473444
+halfface,halfface_003,data/raw/halfface/full_face/p003/p003_10m.jpg,masked,front,probe,known,ok,7,1,137,170,0.8505749106407166,0.9907,94.90880003431812,45.00400001415983

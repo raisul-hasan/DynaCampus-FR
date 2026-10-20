@@ -1,0 +1,93 @@
+{
+  "run_directory": "results/demo/dynamic_development_20261019T233918475526Z",
+  "scope": "development_engineering_only",
+  "stages": [
+    0,
+    10,
+    20,
+    30,
+    40,
+    55
+  ],
+  "summaries": [
+    {
+      "gallery_identities": 0,
+      "active_known_attempts": 0,
+      "correct_known_accepts": 0,
+      "not_enrolled_attempts": 304,
+      "false_known_not_enrolled": 0,
+      "search_median_ms": 0.001,
+      "search_p95_ms": 0.0012
+    },
+    {
+      "gallery_identities": 10,
+      "active_known_attempts": 24,
+      "correct_known_accepts": 23,
+      "not_enrolled_attempts": 280,
+      "false_known_not_enrolled": 0,
+      "search_median_ms": 0.029,
+      "search_p95_ms": 0.030820000000000007
+    },
+    {
+      "gallery_identities": 20,
+      "active_known_attempts": 50,
+      "correct_known_accepts": 47,
+      "not_enrolled_attempts": 254,
+      "false_known_not_enrolled": 0,
+      "search_median_ms": 0.036,
+      "search_p95_ms": 0.041205
+    },
+    {
+      "gallery_identities": 30,
+      "active_known_attempts": 80,
+      "correct_known_accepts": 72,
+      "not_enrolled_attempts": 224,
+      "false_known_not_enrolled": 1,
+      "search_median_ms": 0.0435,
+      "search_p95_ms": 0.048600000000000046
+    },
+    {
+      "gallery_identities": 40,
+      "active_known_attempts": 110,
+      "correct_known_accepts": 100,
+      "not_enrolled_attempts": 194,
+      "false_known_not_enrolled": 1,
+      "search_median_ms": 0.0515,
+      "search_p95_ms": 0.06660500000000001
+    },
+    {
+      "gallery_identities": 55,
+      "active_known_attempts": 154,
+      "correct_known_accepts": 139,
+      "not_enrolled_attempts": 150,
+      "false_known_not_enrolled": 1,
+      "search_median_ms": 0.0631,
+      "search_p95_ms": 0.07910500000000001
+    }
+  ],
+  "insertions": 55,
+  "old_templates_unchanged": true,
+  "persistence_reload_exact": true,
+  "remove_and_reinsert_verified": true,
+  "full_gallery_predictions_match_development_reference": 304,
+  "actual_image_checks": 5,
+  "backbone_checkpoint_hashes_unchanged": {
+    "w600k_r50.onnx": "4c06341c33c2ca1f86781dab0e829f88ad5b64be9fba56e56bc9ebdefc619e43",
+    "det_10g.onnx": "5838f7fe053675b1c7a08b633df49e7af5495cee0493c7dcf6697200b85b5b91"
+  },
+  "training_performed": false,
+  "reserved_test_images_used": false,
+  "probe_method_attempts": 1824,
+  "source_sha256": {
+    "src/gallery/gallery.py": "f041d9f14a575fe28120dd252f465e86561c2b1726f3ca91a14b47139d81e5dd",
+    "src/demo_workflow.py": "cd165216567ab8764452a2c7f194b7531f56dfe6f15b091d612ca173c5d97729",
+    "scripts/validate_dynamic_enrollment.py": "7060c39fb89ad072c8d3930586a351b0af1c0e720d46429c293dea88262b9003",
+    "app.py": "c06922ec9ba89f739d9a1b8da1a698e4a67cc90bd95f24576959f714284adaae"
+  },
+  "input_sha256": {
+    "results/enrollment/enrollment_development_20261019T222121709545Z/combined_extraction.csv": "09575a0c063011419b8bc502736932d3e7af161a74552e98c1aba4042583563d",
+    "data/embeddings/enrollment_development_20261019T222121709545Z/embeddings.npz": "c884fda16a0344675f6778cbd82ede86fc57c083731ff535850b6cca0fddcad9",
+    "results/decisions/decisions_development_20261019T222927022126Z/predictions.csv": "60fc8463fa481234d16d9ccb3c7dbf523dc272b8c36a62b019dd7669c7272552"
+  },
+  "timings_scope": "Search class call includes matrix construction; excludes detection, embedding, UI and video. Insert timings include disk persistence."
+}

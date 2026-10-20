@@ -11,6 +11,10 @@ private/
 *.jpeg
 *.png
 
+# Generated research charts and diagrams (no participant photographs).
+!paper_assets/**/fig*.png
+!results/baselines/**/development_scores.png
+
 # Weights, Models & Binary Data
 *.npy
 *.npz

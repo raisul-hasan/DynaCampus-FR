@@ -1,0 +1,3 @@
+comparison,metric,delta_percentage_points,ci95_low_percentage_points,ci95_high_percentage_points,bootstrap_unit,bootstrap_samples,note
+score_margin_minus_score_only,correct_known_accept,0.6493506493506493,0.0,1.9740109794353415,known_identity,2000,Paired development bootstrap with fixed calibrated thresholds; calibration and unknown-sample uncertainty are not included.
+score_margin_quality_minus_score_only,correct_known_accept,0.6493506493506493,0.0,1.9740109794353415,known_identity,2000,Paired development bootstrap with fixed calibrated thresholds; calibration and unknown-sample uncertainty are not included.

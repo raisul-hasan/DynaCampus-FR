@@ -1,0 +1,32 @@
+{
+  "run_id": "arcface_smoke_20261019T221326828777Z",
+  "git_commit": "523933d27353ef58b85413eeafc01d5131f08ba2",
+  "source_script_sha256": "5cb842a9d0140e701945ab5bc2e655a328da842874caa9b45a3639ac2ceaacba",
+  "python": "3.13.3",
+  "numpy": "2.3.3",
+  "opencv": "5.0.0",
+  "onnxruntime": "1.27.0",
+  "model": {
+    "recognizer": "insightface_arcface",
+    "recognizer_filename": "w600k_r50.onnx",
+    "recognizer_sha256": "4c06341c33c2ca1f86781dab0e829f88ad5b64be9fba56e56bc9ebdefc619e43",
+    "detector_filename": "det_10g.onnx",
+    "detector_sha256": "5838f7fe053675b1c7a08b633df49e7af5495cee0493c7dcf6697200b85b5b91",
+    "providers": [
+      "CPUExecutionProvider"
+    ],
+    "preprocessing": "Fixed neutral border of 0.5 times each source dimension; SCRFD; exactly one face required; five-point norm_crop 112x112; InsightFace BGR input get_feat (swapRB in model wrapper); L2 normalization",
+    "mock": false,
+    "embedding_cache": "data/embeddings/arcface_smoke_20261019T221326828777Z/arcface_embeddings.npz"
+  },
+  "images_processed": 8,
+  "successful_embeddings": 8,
+  "final_test_evaluated": false,
+  "summaries": [],
+  "limitations": [
+    "Development results only; not final test evidence.",
+    "ICFD uses only the public sample, not the full dataset.",
+    "Exact duplicates were filtered; near-duplicate and pretraining overlap are not ruled out.",
+    "No adaptation, quality gate, augmentation or temporal aggregation is applied in this baseline."
+  ]
+}

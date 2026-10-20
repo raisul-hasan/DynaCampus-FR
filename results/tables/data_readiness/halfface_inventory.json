@@ -1,0 +1,67 @@
+{
+  "dataset": "halfface",
+  "source_doi": "10.17632/pk44mkx9vm.2",
+  "original_archive": "data/downloads/halfface/halfFace A face covering mask dataset of South Asian people.zip",
+  "original_archive_sha256": "0185eab1726520581df366039ec6af9f6a5165f9a103d4cf71945ecdb7d6d8b8",
+  "inner_archive_crc": "passed",
+  "archive_image_counts": {
+    "Dataset1_Full Facial Image": 941,
+    "Dataset2_Upper Face Images Without Augmentation": 933,
+    "Dataset3_Upper Face Images With Augmentation": 3741
+  },
+  "prepared_collection": "Dataset1_Full Facial Image",
+  "images": 941,
+  "identities": 166,
+  "mask_status_counts": {
+    "unmasked": 468,
+    "masked": 470,
+    "unknown": 3
+  },
+  "pose_counts": {
+    "front": 331,
+    "left": 304,
+    "right": 303,
+    "unknown": 3
+  },
+  "images_per_identity_distribution": {
+    "2": 6,
+    "3": 4,
+    "4": 3,
+    "5": 13,
+    "6": 140
+  },
+  "unique_image_hashes": 935,
+  "exact_duplicate_groups": 6,
+  "cross_identity_duplicate_groups": 6,
+  "condition_labels_needing_review": 3,
+  "invalid_image_count": 0,
+  "usable_images": 926,
+  "usable_identities": 164,
+  "excluded_images": 15,
+  "excluded_conflicting_identity_ids": [
+    "halfface_039",
+    "halfface_090"
+  ],
+  "usable_mask_status_counts": {
+    "unmasked": 462,
+    "masked": 464
+  },
+  "preparation_status": "ready_with_documented_exclusions",
+  "width_range": [
+    87,
+    2139
+  ],
+  "height_range": [
+    108,
+    2826
+  ],
+  "people_with_unmasked_and_masked_images": 165,
+  "maximum_documented_unmasked_images_per_identity": 3,
+  "notes": [
+    "Only original full-face images were prepared; upper-face and augmented versions remain archived.",
+    "Nonstandard source filenames are flagged rather than guessing their condition labels.",
+    "All conflicting source identities and images with unknown condition labels are excluded from the usable manifest; original files remain intact.",
+    "Identity comes from source folders; masks and pose come from documented filenames, not inferred appearance.",
+    "No final evaluation split or accuracy result has been created. Exact hashes do not rule out near-duplicates."
+  ]
+}

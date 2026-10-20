@@ -14,7 +14,9 @@ class SCRFDDetector:
         config_path: Union[str, Path] = "configs/models.yaml",
         confidence_threshold: Optional[float] = None,
         input_size: Tuple[int, int] = (640, 640),
-        providers: Optional[List[str]] = None
+        providers: Optional[List[str]] = None,
+        model_path: Optional[Union[str, Path]] = None,
+        cpu_threads: int = 2,
     ):
         if providers is None:
             providers = ["CPUExecutionProvider"]
@@ -35,10 +37,20 @@ class SCRFDDetector:
         self.input_size = input_size
         self.providers = providers
 
-        # Import insightface lazily
-        from insightface.app import FaceAnalysis
-        self.app = FaceAnalysis(name="buffalo_l", allowed_modules=["detection"], providers=self.providers)
-        self.app.prepare(ctx_id=0, det_thresh=self.conf_thresh, det_size=self.input_size)
+        # Load only the detector, without initializing every buffalo_l model.
+        import onnxruntime as ort
+        from insightface.model_zoo import get_model
+        self.model_path = Path(model_path).expanduser() if model_path else Path.home() / ".insightface/models/buffalo_l/det_10g.onnx"
+        if not self.model_path.is_file():
+            raise FileNotFoundError(f"SCRFD checkpoint not found: {self.model_path}")
+        options = ort.SessionOptions()
+        options.intra_op_num_threads = cpu_threads
+        options.inter_op_num_threads = 1
+        self.model = get_model(str(self.model_path), providers=self.providers, sess_options=options, download=False)
+        if self.model is None or getattr(self.model, "taskname", None) != "detection":
+            raise RuntimeError("Checkpoint is not a face detection model.")
+        self.model.prepare(ctx_id=0 if "CUDAExecutionProvider" in providers else -1,
+                           det_thresh=self.conf_thresh, input_size=self.input_size)
 
     def detect(self, image: np.ndarray) -> List[Dict[str, Any]]:
         """
@@ -56,12 +68,12 @@ class SCRFDDetector:
         if image is None or not isinstance(image, np.ndarray) or image.size == 0:
             return []
 
-        faces = self.app.get(image)
+        boxes, landmarks = self.model.detect(image, max_num=0)
         results = []
-        for face in faces:
+        for index, box in enumerate(boxes):
             results.append({
-                "bbox": face.bbox.astype(float).tolist(),
-                "score": float(face.det_score),
-                "kps": face.kps.astype(float) if hasattr(face, "kps") and face.kps is not None else None
+                "bbox": box[:4].astype(float).tolist(),
+                "score": float(box[4]),
+                "kps": landmarks[index].astype(float) if landmarks is not None else None
             })
         return results

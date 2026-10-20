@@ -1,0 +1,12 @@
+protocol_version: enrollment_comparison_v1
+baseline_run: results/baselines/arcface_development_20261019T221350351017Z
+seed: 42
+bootstrap_samples: 2000
+target_conditional_fpir: 0.01
+strategies: [one_photo, up_to_three_photos]
+halfface_known_probes: masked_original_images_only
+halfface_unknown_probes: all_original_images_of_development_unknown_ids
+icfd_enrollment_count: 3
+icfd_usage: engineering_sample_only
+prototype: l2_normalized_unweighted_mean
+final_test_evaluation: false

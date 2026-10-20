@@ -1,0 +1,9 @@
+{
+  "verified_attempts": 912,
+  "input_probes": 304,
+  "grid_configurations": 42316,
+  "reserved_identity_overlap": 0,
+  "source_hashes_match": true,
+  "rule_and_selected_grid_match": true,
+  "verifier_sha256": "60ba4338b36c44734c982dead153cbd28ebf0bf691730a25e0b6d0842b8f3b87"
+}

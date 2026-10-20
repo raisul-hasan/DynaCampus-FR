@@ -1,0 +1,42 @@
+{
+  "pages": [
+    {
+      "page": "\ud83d\udcca Dashboard",
+      "rendered_without_exception": true
+    },
+    {
+      "page": "\u2795 Enroll Person",
+      "rendered_without_exception": true
+    },
+    {
+      "page": "\ud83d\uddbc\ufe0f Image Recognition",
+      "rendered_without_exception": true
+    },
+    {
+      "page": "\ud83c\udfac Video Recognition",
+      "rendered_without_exception": true
+    },
+    {
+      "page": "\ud83d\udcf9 Live Webcam",
+      "rendered_without_exception": true
+    },
+    {
+      "page": "\ud83d\udce1 Live CCTV (RTSP)",
+      "rendered_without_exception": true
+    },
+    {
+      "page": "\u23f3 Pending Approvals",
+      "rendered_without_exception": true
+    },
+    {
+      "page": "\ud83d\udccb Gallery Management",
+      "rendered_without_exception": true
+    }
+  ],
+  "manual_and_frozen_presets_render": true,
+  "real_models_loaded": true,
+  "normal_user_gallery_untouched": true,
+  "webcam_or_rtsp_connected": false,
+  "upload_flow_browser_check": "separate",
+  "app_sha256": "c06922ec9ba89f739d9a1b8da1a698e4a67cc90bd95f24576959f714284adaae"
+}

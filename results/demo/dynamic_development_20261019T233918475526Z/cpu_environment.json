@@ -1,0 +1,7 @@
+{
+  "platform": "Windows-11-10.0.26200-SP0",
+  "machine": "AMD64",
+  "logical_processors": 12,
+  "processor_model": "Not collected: optional WMI query denied in sandbox",
+  "measurement_scope": "CPU gallery search only; not end-to-end throughput"
+}

@@ -1,0 +1,5 @@
+dataset,scope,strategy,gallery_identities,gallery_images,mean_gallery_images_per_identity,known_probe_attempts,known_probes_with_embedding,rank1_correct,rank1_end_to_end,correct_known_accepts,correct_known_accept_end_to_end,unknown_attempts,unknown_with_embedding,false_known_count,fpir_conditional,threshold
+halfface,development_only,one_photo,55,55,1.0,154,148,146,0.948051948051948,129,0.8376623376623377,150,149,1,0.006711409395973154,0.3887378871440888
+halfface,development_only,up_to_three_photos,55,152,2.7636363636363637,154,148,146,0.948051948051948,138,0.8961038961038961,150,149,1,0.006711409395973154,0.3857181072235108
+icfd_sample,engineering_sample_only,one_photo,5,5,1.0,100,100,100,1.0,,,0,0,,,
+icfd_sample,engineering_sample_only,up_to_three_photos,5,15,3.0,100,100,100,1.0,,,0,0,,,

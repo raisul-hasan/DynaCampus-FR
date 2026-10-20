@@ -1,0 +1,12 @@
+{
+  "subject_id": "halfface_001",
+  "display_name": "Development Example",
+  "enrollment_paths": [
+    "data/raw/halfface/full_face/p001/p001_00m.jpeg",
+    "data/raw/halfface/full_face/p001/p001_01m.jpeg",
+    "data/raw/halfface/full_face/p001/p001_02m.jpeg"
+  ],
+  "known_probe": "data/raw/halfface/full_face/p001/p001_10m.jpeg",
+  "unknown_probe": "data/raw/halfface/full_face/p006/p006_00f.jpg",
+  "note": "Selected successful development example for engineering demonstration, not an accuracy sample."
+}

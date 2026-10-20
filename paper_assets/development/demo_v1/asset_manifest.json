@@ -1,0 +1,29 @@
+{
+  "source_run": "results/demo/dynamic_development_20261019T233918475526Z",
+  "scope": "development_engineering_only",
+  "source_sha256": {
+    "comparison.json": "aedb26fbeb5a90b0e08a17a33c87ae4b5680a47ba0f4852412618f9493d46174",
+    "verification.json": "c6f1d12381a89fca10a088ae3d08f98c3c6a4db267733a7afd05212d9f39a0f2",
+    "app_page_checks.json": "a7bf91a88c051dd308abff3ee2a47941a10cf91b77a84b59a01980daeca27cd2",
+    "browser_events.jsonl": "15726896c0e6a09894097456ff6b1444824a358fd11b8c679e295e3baf37643a",
+    "cpu_environment.json": "d00c1e0e15109a687d9314c3e351a4b3319c7514b5f8f0efc5c72e32fa0bdf61"
+  },
+  "renderer_sha256": "ca07d7800a9cf579833043080b0a54f988cdeb348f80f0b1eddc34d569ab47c1",
+  "assets_sha256": {
+    "fig00_dynamic_workflow.png": "89a761923b86e70489a6558745fae3d8d2dcff4d6eb2794821f99be55e417464",
+    "fig00_dynamic_workflow.svg": "5e6d95761479dedb2ebad811c82d79a2a22c2492d185d8face96757d1d30a822",
+    "fig01_dynamic_growth.png": "c5a7195e4abdcbac2a215156af29c53ecec3ee0fb68942c24accf0bdc5e3730d",
+    "fig01_dynamic_growth.svg": "8de51bbd901e9e77ae80eaf269708734f87d6d305fb4526e01a21ddf070c533d",
+    "fig02_search_latency.png": "a80ba95b11d0d6a4b27775e9a3314fe8d7b37cbc33ccc5678fb6ced2bfa28456",
+    "fig02_search_latency.svg": "c2451e753325b2be5b939d69754f99c63f06a8df0728d0380250a3c945d93931",
+    "fig03_app_enrollment.png": "7c9f8d956d63408e291f59e012f0138cbb470c107acdef8c1957679fa233e647",
+    "fig04_app_known.png": "c66fda44430766accf0d3724d9916a925e3a80499210a8bc1ba230509c17b59b",
+    "fig05_app_unknown.png": "b1a81cd77f700cdf639cd445cc4a15ecaedcd98fa3c2209377ff23f6c1c83bd1",
+    "fig06_app_persistence.png": "8e86f938dd522dd002b93211e80ed3f19178c009d4a975f3522f665b35102bf1",
+    "fig07_app_after_removal.png": "c086dab25f03f3b5a8fa8898324bc2f0c87a544771872bc974b1310fa7a4e005",
+    "image_equivalence.csv": "788a1a8d6fe1ece78ebe732364436e702e8ceeff6b552f1e6687cb6c4619ad50",
+    "insertions.csv": "93c0108ccab2ef636fbcdc3370565934588ae8724015864fb09b8192b4254fb6",
+    "README.md": "c50ed239916e7cf1d5ffc92bc87f6c8e1a281eb203ad938d8e1f7020fbe6108e",
+    "stage_summary.csv": "3e136a5d1066fcbdf49fa2fae120a21e9496885d0f7583383b61826d37d6c145"
+  }
+}

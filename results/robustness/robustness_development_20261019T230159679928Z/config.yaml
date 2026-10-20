@@ -1,0 +1,46 @@
+protocol_version: robustness_development_v1
+decision_run: results/decisions/decisions_development_20261019T222927022126Z
+families:
+- score_only
+- score_margin
+conditions:
+- name: original
+  type: original
+  value: 0
+- name: blur_003
+  type: blur
+  value: 0.003
+- name: blur_006
+  type: blur
+  value: 0.006
+- name: blur_012
+  type: blur
+  value: 0.012
+- name: resolution_128
+  type: resolution
+  value: 128
+- name: resolution_64
+  type: resolution
+  value: 64
+- name: resolution_32
+  type: resolution
+  value: 32
+- name: jpeg_70
+  type: jpeg
+  value: 70
+- name: jpeg_30
+  type: jpeg
+  value: 30
+- name: jpeg_10
+  type: jpeg
+  value: 10
+blur_sigma: fraction_of_original_short_edge
+resolution: downsample_long_edge_without_upscaling_preserve_aspect
+resize_interpolation: INTER_AREA
+jpeg: reencode_decoded_original_once_then_decode
+degradations_combined: false
+gallery_changed: false
+thresholds_retuned: false
+bootstrap_samples: 2000
+seed: 42
+final_test_evaluation: false

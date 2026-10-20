@@ -1,0 +1,4 @@
+family,known_probe_attempts,unknown_probe_attempts,known_with_embedding,unknown_with_embedding,correct_known_accepts,correct_known_accept_end_to_end,false_known_unknowns,fpir_conditional,wrong_known_identity_accepts,valid_decision_coverage,end_to_end_decision_coverage,accuracy_among_covered,score_threshold,margin_threshold,quality_threshold
+score_only,154,150,148,149,138,0.8961038961038961,1,0.006711409395973154,0,1.0,0.9769736842105263,0.9629629629629629,0.3978477716445923,0.0,0.0
+score_margin,154,150,148,149,139,0.9025974025974026,1,0.006711409395973154,0,0.9932659932659933,0.9703947368421053,0.9661016949152542,0.3778589367866516,0.15,0.0
+score_margin_quality,154,150,148,149,139,0.9025974025974026,1,0.006711409395973154,0,0.9932659932659933,0.9703947368421053,0.9661016949152542,0.3778589367866516,0.15,0.0

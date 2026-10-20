@@ -1,0 +1,204 @@
+{
+  "run_directory": "results/decisions/decisions_development_20261019T222927022126Z",
+  "configuration": {
+    "protocol_version": "decision_ablation_v1",
+    "enrollment_run": "results/enrollment/enrollment_development_20261019T222121709545Z",
+    "enrollment_strategy": "up_to_three_photos",
+    "dataset": "halfface",
+    "target_conditional_fpir": 0.01,
+    "minimum_known_valid_coverage": 0.85,
+    "minimum_unknown_valid_coverage": 0.85,
+    "margin_grid": [
+      0.0,
+      0.025,
+      0.05,
+      0.075,
+      0.1,
+      0.15,
+      0.2
+    ],
+    "quality_grid": [
+      0.0,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9
+    ],
+    "score_grid": "development_observed_scores_and_nextafter_boundaries",
+    "families": [
+      "score_only",
+      "score_margin",
+      "score_margin_quality"
+    ],
+    "selection_order": [
+      "maximize_correct_known_accepts",
+      "minimize_false_known_unknowns",
+      "minimize_wrong_known_identity_accepts",
+      "maximize_decision_coverage",
+      "prefer_lower_quality_and_margin_thresholds",
+      "prefer_higher_score_threshold"
+    ],
+    "zero_gates_allowed": true,
+    "quality_sensitivity_step": 0.025,
+    "bootstrap_samples": 2000,
+    "seed": 42,
+    "final_test_evaluation": false
+  },
+  "selected_thresholds": {
+    "score_only": {
+      "family": "score_only",
+      "score_threshold": 0.3978477716445923,
+      "margin_threshold": 0.0,
+      "quality_threshold": 0.0,
+      "correct_known_accepts": 138,
+      "false_known_unknowns": 1,
+      "wrong_known_identity_accepts": 0,
+      "valid_decision_coverage": 1.0,
+      "known_valid_coverage": 1.0,
+      "unknown_valid_coverage": 1.0,
+      "fpir_conditional": 0.006711409395973154,
+      "feasible": true
+    },
+    "score_margin": {
+      "family": "score_margin",
+      "score_threshold": 0.3778589367866516,
+      "margin_threshold": 0.15,
+      "quality_threshold": 0.0,
+      "correct_known_accepts": 139,
+      "false_known_unknowns": 1,
+      "wrong_known_identity_accepts": 0,
+      "valid_decision_coverage": 0.9932659932659933,
+      "known_valid_coverage": 1.0,
+      "unknown_valid_coverage": 0.9865771812080537,
+      "fpir_conditional": 0.006711409395973154,
+      "feasible": true
+    },
+    "score_margin_quality": {
+      "family": "score_margin_quality",
+      "score_threshold": 0.3778589367866516,
+      "margin_threshold": 0.15,
+      "quality_threshold": 0.0,
+      "correct_known_accepts": 139,
+      "false_known_unknowns": 1,
+      "wrong_known_identity_accepts": 0,
+      "valid_decision_coverage": 0.9932659932659933,
+      "known_valid_coverage": 1.0,
+      "unknown_valid_coverage": 0.9865771812080537,
+      "fpir_conditional": 0.006711409395973154,
+      "feasible": true
+    }
+  },
+  "summaries": [
+    {
+      "family": "score_only",
+      "known_probe_attempts": 154,
+      "unknown_probe_attempts": 150,
+      "known_with_embedding": 148,
+      "unknown_with_embedding": 149,
+      "correct_known_accepts": 138,
+      "correct_known_accept_end_to_end": 0.8961038961038961,
+      "false_known_unknowns": 1,
+      "fpir_conditional": 0.006711409395973154,
+      "wrong_known_identity_accepts": 0,
+      "valid_decision_coverage": 1.0,
+      "end_to_end_decision_coverage": 0.9769736842105263,
+      "accuracy_among_covered": 0.9629629629629629,
+      "decision_counts": {
+        "KNOWN": 139,
+        "UNKNOWN": 158,
+        "CAPTURE_FAILURE": 7
+      },
+      "score_threshold": 0.3978477716445923,
+      "margin_threshold": 0.0,
+      "quality_threshold": 0.0
+    },
+    {
+      "family": "score_margin",
+      "known_probe_attempts": 154,
+      "unknown_probe_attempts": 150,
+      "known_with_embedding": 148,
+      "unknown_with_embedding": 149,
+      "correct_known_accepts": 139,
+      "correct_known_accept_end_to_end": 0.9025974025974026,
+      "false_known_unknowns": 1,
+      "fpir_conditional": 0.006711409395973154,
+      "wrong_known_identity_accepts": 0,
+      "valid_decision_coverage": 0.9932659932659933,
+      "end_to_end_decision_coverage": 0.9703947368421053,
+      "accuracy_among_covered": 0.9661016949152542,
+      "decision_counts": {
+        "KNOWN": 140,
+        "UNKNOWN": 155,
+        "CAPTURE_FAILURE": 7,
+        "AMBIGUOUS": 2
+      },
+      "score_threshold": 0.3778589367866516,
+      "margin_threshold": 0.15,
+      "quality_threshold": 0.0
+    },
+    {
+      "family": "score_margin_quality",
+      "known_probe_attempts": 154,
+      "unknown_probe_attempts": 150,
+      "known_with_embedding": 148,
+      "unknown_with_embedding": 149,
+      "correct_known_accepts": 139,
+      "correct_known_accept_end_to_end": 0.9025974025974026,
+      "false_known_unknowns": 1,
+      "fpir_conditional": 0.006711409395973154,
+      "wrong_known_identity_accepts": 0,
+      "valid_decision_coverage": 0.9932659932659933,
+      "end_to_end_decision_coverage": 0.9703947368421053,
+      "accuracy_among_covered": 0.9661016949152542,
+      "decision_counts": {
+        "KNOWN": 140,
+        "UNKNOWN": 155,
+        "CAPTURE_FAILURE": 7,
+        "AMBIGUOUS": 2
+      },
+      "score_threshold": 0.3778589367866516,
+      "margin_threshold": 0.15,
+      "quality_threshold": 0.0
+    }
+  ],
+  "paired_effects": [
+    {
+      "comparison": "score_margin_minus_score_only",
+      "metric": "correct_known_accept",
+      "delta_percentage_points": 0.6493506493506493,
+      "ci95_low_percentage_points": 0.0,
+      "ci95_high_percentage_points": 1.9740109794353415,
+      "bootstrap_unit": "known_identity",
+      "bootstrap_samples": 2000,
+      "note": "Paired development bootstrap with fixed calibrated thresholds; calibration and unknown-sample uncertainty are not included."
+    },
+    {
+      "comparison": "score_margin_quality_minus_score_only",
+      "metric": "correct_known_accept",
+      "delta_percentage_points": 0.6493506493506493,
+      "ci95_low_percentage_points": 0.0,
+      "ci95_high_percentage_points": 1.9740109794353415,
+      "bootstrap_unit": "known_identity",
+      "bootstrap_samples": 2000,
+      "note": "Paired development bootstrap with fixed calibrated thresholds; calibration and unknown-sample uncertainty are not included."
+    }
+  ],
+  "source_predictions_sha256": "43d8a1719b96f50a3283e5fa61913c9b4f4bb18b20c0f116648e46b2ce8da306",
+  "source_extraction_sha256": "09575a0c063011419b8bc502736932d3e7af161a74552e98c1aba4042583563d",
+  "script_sha256": "3ede964597ed85d3bba012152502ed3b87e4b871eec8086eacc34049ae38bb71",
+  "engine_sha256": "bfeb953c38720660999f91d953d8574879a1b764e846c1a9bde315768de408fd",
+  "grid_configurations": 42316,
+  "final_test_evaluated": false,
+  "new_model_inference": false,
+  "git_commit": "523933d27353ef58b85413eeafc01d5131f08ba2",
+  "limitations": [
+    "Development calibration and evaluation reuse the same identities; not held-out performance.",
+    "Zero margin/quality gates are valid nested choices; do not claim benefit when a gate selects zero.",
+    "Conditional unknown FPIR denominator includes all extracted unknowns, even those refused by gates.",
+    "Capture failures stay in end-to-end known counts and are separate from the four decision states."
+  ]
+}

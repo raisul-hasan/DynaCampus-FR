@@ -1,0 +1,24 @@
+{
+  "source_run": "results/robustness/robustness_development_20261019T230159679928Z",
+  "final_test_evaluated": false,
+  "thresholds_retuned": false,
+  "source_sha256": {
+    "comparison.json": "dedbe70af0fa44d56d4d84fa45504c5b10009ed49385f7077d59064ab9f55c8f",
+    "summary.csv": "dce9611c0897335280947a2353a3f85e87863681e576d6b4c658ab94ade0081d",
+    "paired_effects.csv": "9023e2f7b0c14bf5ab8797257388a34ae72fd5f81daf139e9a331bc4e94c0f35",
+    "verification.json": "c72899a1ec54e2fc67f7df2b4c730b33b68560b9b76327f78979f1456220dd59"
+  },
+  "renderer_sha256": "36e065d104e9e20e6b4f7a1eb9d21b8e9dcafc44287ee79172991988af1547f0",
+  "assets_sha256": {
+    "fig00_stress_protocol.png": "d75042e3ddb1ac905e415c34de667e735174a1415064549e694e54f394b29f23",
+    "fig00_stress_protocol.svg": "8dacae820c41d2df2d15588e47dd5921606abaab3a48ee050653406124fa6385",
+    "fig01_stress_recognition.png": "9599ff1019b172510d1d7ef3f919c83be83144bae80950a2208cc95fe48369f6",
+    "fig01_stress_recognition.svg": "e58b4f82f1baac787eff40355c6c785885fdba6e60e06cdf9a4d52dd07b1a4ce",
+    "fig02_stress_failures.png": "1e0f8f15252bb8cef4c95586950a69510e7b4dd66206a0176fb3300af9015e47",
+    "fig02_stress_failures.svg": "7fdc5dbed103e18011e2c1fe6c9dfecab1382545266a9aa01c3f0239485aa10c",
+    "paired_effects.csv": "9023e2f7b0c14bf5ab8797257388a34ae72fd5f81daf139e9a331bc4e94c0f35",
+    "README.md": "a3a615f6d7560fc4cda217658e925460d572aa67d460daa06d96713b9f02bf2d",
+    "robustness_table.tex": "e7364d4a989a91321e7ad7db93bcbff4ea838ad0748a917d49cb589fe6a8a54d",
+    "summary.csv": "dce9611c0897335280947a2353a3f85e87863681e576d6b4c658ab94ade0081d"
+  }
+}

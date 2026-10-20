@@ -7,6 +7,34 @@ United International University
 
 ---
 
+## Current verified stage
+
+The implemented experiments use **ArcFace** with real SCRFD detection, alignment
+and exact cosine search on halfFace development identities and the ICFD public
+engineering sample. Saved comparisons cover one-photo versus up-to-three-photo
+enrollment and calibrated score, top-two margin and heuristic quality decisions.
+The selected development quality gate is disabled because it added no benefit.
+Controlled development stress tests also cover Gaussian blur, lower resolution
+and JPEG recompression with fixed models, gallery and decision thresholds.
+Missing model files cause explicit errors; synthetic embeddings are restricted to
+explicit offline test mode.
+
+See [project evidence](paper_assets/README.md) and [dataset and experiment status](docs/DATASET_START.md)
+for figures, captions, tables and reproduction commands. A frozen evaluation on
+reserved halfFace identities is complete: the primary few-photo margin method
+correctly accepts 151/160 known probes (94.38%), with 0/151 observed false known
+acceptances. These counts apply to this public-dataset test; they are not a
+population error guarantee. The separate reserved ICFD sample scores 98/100 in
+closed-set retrieval. See the [held-out evidence](paper_assets/heldout/final_v1/README.md).
+The still-image app flow is checked with real development uploads, including
+original-photo enrollment, known/unknown recognition, reload and removal.
+See [application evidence](paper_assets/development/demo_v1/README.md) for actual
+screenshots and reproduction. Camera/RTSP and temporal performance are unvalidated.
+AdaFace, the domain adapter
+and the full original architecture below are planned work, not validated results.
+
+---
+
 ## 📌 Overview
 DynaCampus-FR is a four-month research project developing an open-set campus CCTV face recognition framework. It addresses the domain gap between clean enrollment photographs and degraded CCTV probe tracks without retraining the core recognition backbone when new identities enroll.
 

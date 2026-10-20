@@ -1,0 +1,11 @@
+dataset,subject_id,path,mask_status,pose,evaluation_role,truth_status,status,embedding_index,face_count,native_width,native_height,det_score,quality,detector_ms,recognizer_ms
+icfd_sample,icfd_01,data/raw/icfd_sample/ICFD_Samples/Gallery/01/sub01_0048.jpg,unspecified,unspecified,gallery,known,ok,0,1,438,554,0.879095733165741,0.9475,111.16670002229512,45.60700000729412
+icfd_sample,icfd_01,data/raw/icfd_sample/ICFD_Samples/Gallery/01/sub01_0081.jpg,unspecified,unspecified,gallery,known,ok,1,1,427,552,0.874718427658081,0.9402,87.88380003534257,54.1228000074625
+icfd_sample,icfd_02,data/raw/icfd_sample/ICFD_Samples/Gallery/02/sub04_0077.jpg,unspecified,unspecified,gallery,known,ok,2,1,340,441,0.8898319005966187,0.9649,91.7403000057675,53.72769996756688
+icfd_sample,icfd_02,data/raw/icfd_sample/ICFD_Samples/Gallery/02/sub04_0121.jpg,unspecified,unspecified,gallery,known,ok,3,1,333,436,0.873268723487854,0.9478,82.3505999869667,48.20860002655536
+icfd_sample,icfd_04,data/raw/icfd_sample/ICFD_Samples/Gallery/04/sub07_0056.jpg,unspecified,unspecified,gallery,known,ok,4,1,306,361,0.8401587009429932,0.9489,88.62429996952415,48.669799987692386
+icfd_sample,icfd_04,data/raw/icfd_sample/ICFD_Samples/Gallery/04/sub07_0082.jpg,unspecified,unspecified,gallery,known,ok,5,1,304,380,0.8737437129020691,0.9424,95.76279995962977,49.17289997683838
+icfd_sample,icfd_07,data/raw/icfd_sample/ICFD_Samples/Gallery/07/sub11_0168.jpg,unspecified,unspecified,gallery,known,ok,6,1,315,408,0.8880079984664917,0.9632,98.16640004282817,51.26790003851056
+icfd_sample,icfd_07,data/raw/icfd_sample/ICFD_Samples/Gallery/07/sub11_0216.jpg,unspecified,unspecified,gallery,known,ok,7,1,303,390,0.8824443817138672,0.9544,94.72739999182522,38.54600002523512
+icfd_sample,icfd_09,data/raw/icfd_sample/ICFD_Samples/Gallery/09/sub13_0237.jpg,unspecified,unspecified,gallery,known,ok,8,1,305,402,0.8828228712081909,0.9616,98.64689997630194,44.422100007068366
+icfd_sample,icfd_09,data/raw/icfd_sample/ICFD_Samples/Gallery/09/sub13_0334.jpg,unspecified,unspecified,gallery,known,ok,9,1,308,416,0.873412013053894,0.9488,89.1519000288099,43.544799962546676

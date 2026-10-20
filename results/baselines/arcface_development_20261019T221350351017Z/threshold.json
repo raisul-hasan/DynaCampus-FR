@@ -1,0 +1,7 @@
+{
+  "scope": "halfface_development_only",
+  "threshold": 0.3887378871440888,
+  "target_conditional_fpir": 0.01,
+  "acceptance_rule": "score >= threshold",
+  "note": "Empirical calibration on development non-mated searches; this is not held-out performance or a statistical guarantee."
+}

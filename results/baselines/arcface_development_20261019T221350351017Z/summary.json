@@ -1,0 +1,41 @@
+[
+  {
+    "dataset": "halfface",
+    "evaluation_scope": "development_only",
+    "gallery_attempts": 55,
+    "gallery_successes": 55,
+    "known_probe_attempts": 251,
+    "known_with_embedding_and_gallery": 245,
+    "unknown_probe_attempts": 150,
+    "unknown_with_embedding": 149,
+    "rank1_conditional": 0.9918367346938776,
+    "rank1_end_to_end": 0.9681274900398407,
+    "correct_known_accept_end_to_end": 0.896414342629482,
+    "fpir_conditional": 0.006711409395973154,
+    "fpir_end_to_end": 0.006666666666666667,
+    "threshold": 0.3887378871440888,
+    "extraction_status_counts": {
+      "ok": 449,
+      "no_face": 7
+    }
+  },
+  {
+    "dataset": "icfd_sample",
+    "evaluation_scope": "engineering_sample_only",
+    "gallery_attempts": 5,
+    "gallery_successes": 5,
+    "known_probe_attempts": 100,
+    "known_with_embedding_and_gallery": 100,
+    "unknown_probe_attempts": 0,
+    "unknown_with_embedding": 0,
+    "rank1_conditional": 1.0,
+    "rank1_end_to_end": 1.0,
+    "correct_known_accept_end_to_end": null,
+    "fpir_conditional": null,
+    "fpir_end_to_end": null,
+    "threshold": null,
+    "extraction_status_counts": {
+      "ok": 105
+    }
+  }
+]

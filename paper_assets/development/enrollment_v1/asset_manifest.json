@@ -1,0 +1,22 @@
+{
+  "source_run": "results/enrollment/enrollment_development_20261019T222121709545Z",
+  "scope": "development_only",
+  "source_predictions_sha256": "43d8a1719b96f50a3283e5fa61913c9b4f4bb18b20c0f116648e46b2ce8da306",
+  "comparison_json_sha256": "1bde84d1c5c0099542bc327b32f120b847c5993470bcc39945df5d25244d3b3d",
+  "renderer_sha256": "c87b98c7c09f8888bd5d267b8a2ff588ecc71ada4a90b19e31e1d99422d3a426",
+  "assets": {
+    "comparison.csv": "00caa456ccd083a302540125d38ed0dc34c392d70bea3e6167164a9899cd8af3",
+    "enrollment_table.tex": "32b585aecbb6a5050dba3b2b58f8c25a30aa7b923cb824f866b48a9740708fe0",
+    "fig00_data_protocol.png": "0014c2dc22e906c4f41bae7bfac124488ff30f9d585dda1fe49107a59c7e5142",
+    "fig00_data_protocol.svg": "b90f275ba88a22e122588cb620aa53743ff4fa11387aaab3126f2bf8aa9092fc",
+    "fig01_enrollment_method.png": "335ddf6918d93f40ecaa63f4b20f96d367b7a3b2512fcf2c53642bc4c9adbe11",
+    "fig01_enrollment_method.svg": "a1ac878427ca179c57c55d7d4d2694defe0c565120dc7b873966afa5264f59f1",
+    "fig02_enrollment_comparison.png": "428279632a8b36716d667df76fb2064df58be3b00b98cef7ea42865650b531a3",
+    "fig02_enrollment_comparison.svg": "f4b62a44a240b12cb7b23a573215dd9a3d9d1b2ce22d4c3f1d393877d495cd4d",
+    "fig03_open_set_tradeoff.png": "0e7d5bf35248669f070d592e596dcb68096c2994d7be31be4bf2b0edadf1bea2",
+    "fig03_open_set_tradeoff.svg": "9b5a51bf5b61b62cf348940336a6c5df703a6ef5578103ede3b5c5dc41726322",
+    "open_set_curve_points.csv": "adb260f377446999a9dd54cfcc3801801d9c418e8b921841737cc51d369494ac",
+    "paired_bootstrap.csv": "ddc7ca99c502634c3475c58c82c88dbdbfd93aa108d7136695e335197246430c",
+    "README.md": "3d7d68e7d1608cad892e283d66ebd59d2d80d69b53ef3fb7ffebc4ace56daae5"
+  }
+}
