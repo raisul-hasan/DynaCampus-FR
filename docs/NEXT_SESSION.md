@@ -1,4 +1,82 @@
-# Current priorities - 21 October 2026
+# Latest checkpoint - enrollment, growth, runtime and thesis, 23 October 2026
+
+The user authorized all four next steps. They are now complete:
+[evidence pack](ENROLLMENT_EXTENSIONS.md), [integrated content draft](THESIS_DRAFT.md).
+
+- Run: `results/enrollment_extensions/extensions_20261022T193101706934Z`.
+  Prepared protocol/config/source/input hashes precede inference. Inputs are
+  halfFace development only; both checkpoint caches and original source crops
+  are verified. Learned adapters, final-test inference and app changes are absent.
+- Augmentation: one frontal original vs that original plus five mild variants
+  vs up to three original views, both ArcFace/AdaFace. The same 154 known and 150
+  unknown attempts are retained, including seven extraction failures. Fixed
+  one-photo rules and separate development calibration are both saved.
+- Recalibrated score-only acceptance: ArcFace 129 -> 128 -> 138/154; AdaFace
+  112 -> 111 -> 122/154. Synthetic variants do not consistently replace originals.
+  Margin results differ: ArcFace 139 -> 135 -> 139; AdaFace 120 -> 123 -> 133.
+  Report unknown accepts and coverage with these counts; fixed-rule gains can
+  accompany more unknown accepts. Paired known-identity intervals are saved.
+- Growth: ten fixed core identities, 28 known and 150 unknown attempts at every
+  size. One 10-person, five seeded 25-person and one 55-person gallery. Prior
+  55-person few-photo thresholds stay fixed. Rank-1 is 26/28 for both models
+  throughout; score/margin unknown acceptance varies non-monotonically because
+  new competitors can cause ambiguity. Composition repetitions are not new people.
+- Runtime: 180 real image calls, 1,800 actual gallery searches, 5,220 stage samples.
+  ArcFace median/p95 image-to-decision 143.81/175.57 ms; AdaFace 207.03/241.83 ms.
+  ArcFace 55-person search microbenchmark 0.0637/0.0708 ms. Two CPU inference
+  threads per engine; full pool/environment details and timing boundaries saved.
+  Browser transfer, camera/RTSP and cold loading are excluded; do not claim FPS.
+- Separate verifier replays all 550 synthetic variant forwards and checks 12,280
+  predictions, 12,056 searches, 28,608 calibration candidates and all summaries.
+  All 104 tests pass (two upstream warnings). The final audit still verifies
+  all 585 input hashes, frozen thresholds and original final predictions.
+- Four new PNG/SVG figure pairs and a LaTeX table are in
+  `paper_assets/development/extensions_v1`. The report and thesis section link
+  raw predictions, candidate grids, compositions and measured runtime samples.
+- The integrated thesis draft has abstract, research questions, literature
+  boundaries, methods, data integrity/splits, all results, uncertainty, limits,
+  reproducibility and checked primary-source references. It is not an
+  institution-formatted/submitted thesis. Next submission work: supervisor review,
+  formatting, slides and an offline defense rehearsal with fresh live capture.
+
+# Previous checkpoint - ChokePoint, 23 October 2026
+
+The user authorized turning the supplied ChokePoint notebook/manuscript into
+verified supplementary experiments. This is complete:
+[results and thesis section](CHOKEPOINT_RESULTS.md).
+
+- Official P1E crops (66.4 MB) and ground truth downloaded sequentially, published
+  MD5s verified, license/source receipts retained under ignored data/.
+- Frozen custom protocol: one-photo gallery P1E_S1_C1; calibration P1E_S2_C2;
+  evaluation P1E_S3_C3/P1E_S4_C1. Five consecutive frames per track for both known
+  and unknown queries; 143/66 calibration and 303/143 evaluation known/unknown.
+- Run: `results/chokepoint/temporal_20261022T185858644292Z`. Real ArcFace raw norms
+  and unit features stay under ignored data/embeddings/chokepoint. All nine
+  predeclared policies, four tiers plus mixed, fixed/AOSM, and two paired
+  contamination controls are computed. The supplied notebook remains unedited.
+- Separate verifier passes: 41,265 predictions, 701,505 gallery scores, 13,168
+  corrupted arrays, 4,776 original crops, 42 paired intervals and eight repeated
+  real inference checks. The verifier materializes compressed arrays once.
+- Severe Rank-1: first 295/303 (97.36%), mean 302/303 (99.67%), paired improvement
+  +2.31 points, 95% identity-cluster interval +0.96 to +3.75. No mixed-track Rank-1
+  gain from norm-softmax beta 1 over the mean. Mean remains 303/303 under both
+  contamination controls while best-norm selection drops substantially.
+- Calibration transfer limitation: mixed mean accepts 303/303 known but also
+  12/143 unknown tracks (8.39% FPIR) at the frozen fixed threshold. Do not claim
+  that a <=1% calibration target achieved 1% evaluation or population FPIR.
+- Five portrait-free PNG/SVG figures, a LaTeX table and draft `thesis_section.md`
+  are in paper_assets/supplementary/chokepoint_v1. This is a corrected exploratory
+  analysis, not replication of the PDF's numbers, actual tracker validation,
+  campus deployment or a fresh unseen-identity test. Same identities recur across
+  sequence roles, and the supplied pilot already examined P1E data.
+- All 98 tests pass. `pytest.ini` restricts discovery to tests/ so the ignored
+  checkpoint checkout no longer causes duplicate-module collection errors.
+  Validation receipt: results/validation/chokepoint_protocol_checks.json.
+- Existing halfFace final audit still passes with all 585 input hashes and
+  frozen settings intact. Dashboard defaults and recognition modules were not
+  changed. Augmented enrollment/gallery growth below remain separate priorities.
+
+# Previous priorities - 21 October 2026
 
 The user supplied a 30 October submission deadline and confirmed that an
 experimental contribution with a working dashboard is acceptable. A new method

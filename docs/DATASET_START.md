@@ -1,5 +1,10 @@
 # Dataset preparation - 20 October 2026
 
+Update, 23 October: [new development enrollment/growth/runtime experiments](ENROLLMENT_EXTENSIONS.md)
+and the [corrected ChokePoint supplement](CHOKEPOINT_RESULTS.md) are complete.
+They are integrated into the [thesis content draft](THESIS_DRAFT.md), while the
+existing identity-disjoint final evaluation retains its original protocol.
+
 Update, 21 October: the paired official AdaFace IR-50/ArcFace development
 comparison is complete. See [backbone evidence](../paper_assets/development/backbones_v1/README.md)
 for all policies, separately calibrated thresholds, failure cases and CPU timings.

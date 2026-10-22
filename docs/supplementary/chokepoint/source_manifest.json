@@ -1,0 +1,37 @@
+{
+  "review_date": "2026-10-23",
+  "timezone": "Asia/Dhaka",
+  "status": "supplied_exploratory_sources_not_independently_reproduced",
+  "notebook_executed_during_review": false,
+  "files": [
+    {
+      "filename": "FYDP-2.pdf",
+      "source_path": "C:\\Users\\msi\\Downloads\\FYDP-2.pdf",
+      "bytes": 1245809,
+      "sha256": "a172cf25da76005564b0d89ee5e1db9d74ffb361ccf4fc56002d343919c05b17",
+      "copied_without_modification": true
+    },
+    {
+      "filename": "fydp-reseach.ipynb",
+      "source_path": "C:\\Users\\msi\\Downloads\\fydp-reseach.ipynb",
+      "bytes": 210475,
+      "sha256": "40f2d1fc7261661eb18a058f548d652ee5697236ccf575c2a2e6f3271d741f4e",
+      "copied_without_modification": true
+    }
+  ],
+  "notebook": {
+    "cell_count": 49,
+    "cells_with_execution_count": [
+      0,
+      1
+    ],
+    "saved_errors": [
+      {
+        "cell_index_zero_based": 1,
+        "name": "NameError",
+        "message": "name 'os' is not defined"
+      }
+    ]
+  },
+  "external_context_source": "https://arma.sourceforge.net/chokepoint/"
+}

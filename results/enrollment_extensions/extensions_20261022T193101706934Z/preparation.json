@@ -1,0 +1,38 @@
+{
+  "prepared_utc": "2026-10-22T19:31:05.072435+00:00",
+  "scope": "Descriptive paired development ablations; calibration reuses development probes and is not held-out evidence. Growth repeats vary composition, not independent people.",
+  "source_sha256": {
+    "scripts/run_enrollment_extensions.py": "e7d31ff4456e671411c5afaf1200b309b913b0319d97a978c984b94cbbc480f2",
+    "scripts/measure_extension_runtime.py": "af537a83a47a166c2e55d7a5c5ad1defb0ccf78fda1e09675fe27ea833614909",
+    "src/evaluation/enrollment_extensions.py": "26216822302e35fca18e13702db0fce509cc41848871f66f647a80f4ab7ef518",
+    "scripts/compare_decisions.py": "3ede964597ed85d3bba012152502ed3b87e4b871eec8086eacc34049ae38bb71",
+    "scripts/compare_enrollment.py": "eda48a9cec3adeeb729c47729eb6173a1d218c76d162ef70bf90e72cf4156e5e",
+    "src/recognition/embedder.py": "2537c4366baadc97a38436fa2f3ae3b4b64f85f551e1dc5e3ffd345f672087f2",
+    "src/recognition/adaface.py": "9ae8dcc40b9a83648a4f234dd63af916d7cf51b1bb21d44cca1d7eca8607cc59",
+    "src/detection/detector.py": "9ba918ffef7cad6abc6d8d378e516bbd961ac8b32a09b972180e0808da2b17d2",
+    "src/alignment/aligner.py": "b4cc54376db77f29c4b0372cfcb414742d43212e8550c85053ff28df58a6e4b2",
+    "src/quality/estimator.py": "a17fe143621dd624dca9d9f4bc1a33a83d8a001f093de59f5b7453d794489d5f",
+    "src/open_set/decision.py": "bfeb953c38720660999f91d953d8574879a1b764e846c1a9bde315768de408fd",
+    "src/gallery/gallery.py": "f041d9f14a575fe28120dd252f465e86561c2b1726f3ca91a14b47139d81e5dd"
+  },
+  "input_sha256": {
+    "results/backbones/backbones_development_20261020T200004286474Z/comparison.json": "be26459613bfb7b27d4d13584413fbec37abd83110e3d77f6cbfe45ce57e75fb",
+    "results/backbones/backbones_development_20261020T200004286474Z/extraction.csv": "d106fdcf504fc0c9c8e4f4614ccbd014651dd0c64c4417e3568986d0e168e081",
+    "results/backbones/backbones_development_20261020T200004286474Z/split_snapshot.json": "a7e8556ccedc987765f0b90285efe52ce58ff6bd28543aa5187876cbb91b42ac",
+    "data/embeddings/backbones_development_20261020T200004286474Z/embeddings.npz": "d349fe795f1bdf0715c1570e53d230e974ea5c744f2b31baec04c069e0797d58"
+  },
+  "prepared_sha256": {
+    "config.json": "e4720096cc01266276450eb5b807cff5c43aac806811082cf13bdee44d8f9974",
+    "inputs.csv": "867d0db80d47114ef056326c85b7d237820b79596740059bfd61c5bf70042c19",
+    "selection.json": "fdfd10514d71106dbde1089b900a179b3cdbc86b1c531a8dbc6cf2fdfb7a0dd6",
+    "split.json": "c53a6b431186f537de3c598e4fad17e8fef7b1af1354b4847ae1d8273f01760f"
+  },
+  "counts": {
+    "development_known": 55,
+    "development_unknown": 27,
+    "augmentation_known_probes": 154,
+    "augmentation_unknown_probes": 150,
+    "growth_known_probes": 28,
+    "growth_unknown_probes": 150
+  }
+}

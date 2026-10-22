@@ -1,0 +1,23 @@
+{
+  "completed_utc": "2026-10-22T19:07:37.498166+00:00",
+  "elapsed_seconds": 497.32584239996504,
+  "independently_verified": false,
+  "scope": "Exploratory sequence-separated supplementary study; not a fresh unseen-identity test or reproduction of supplied numbers",
+  "output_sha256": {
+    "cache_receipt.json": "3b5d569d1078e951c066eec99bb0340d235379ee874cd58e525f4b26aa43df84",
+    "calibration.csv": "fd51cb3b8a51f7cc79560bcdbd3e2cc8163186773ea47dd9b7643f88ad3d38b7",
+    "config.json": "078b7ee53951734e59b0c2a2f43cb0ef6a0a651d5ec1c4affaf24c5ed3572c2c",
+    "frame_quality.csv": "f95a7695097df0ee075156e1bade2966c9634f947e5d04eea6fd32e7e412c2d7",
+    "gallery.csv": "69f8a2870ce42e62fc747ec0d0806f56da34d792d50b6e6843c9d9f4a1543e3c",
+    "inventory.csv": "78d087a7320ade30422ccfaf71637328e8433d167dcc5e4c32b247f2b08adc22",
+    "paired_intervals.csv": "f686416e4be67b55d8828f2e0d18281dba8ad0b7f1f9ea6382755db70ec92317",
+    "pairwise_verification.csv": "ab97a3caff6363333ecda411ae6f73b3ec3b1f22764968baff68f882fdcfcb74",
+    "predictions.csv": "11262b7457a41a525b3f9078a4a96f7ddd1674f3bf55851e63ffe31f682f7924",
+    "preparation.json": "a582c3d032ad9468848ecd901c7731df02ac4a43b82d090c15db0edb62b98c16",
+    "quality_diagnostics.csv": "da97a320b2c12df3f508e7b1881eb7b4995487278b4bf1db4be1c428db26b59d",
+    "selection_accounting.csv": "17aa60c4c92177c731a2493b0c61b44fe839b80484407bb386c18c27b6d32eb0",
+    "split.json": "15310d3bd6da697c1cf29481db1decb321009d8b66f30fa81d01cfb303c215b3",
+    "summary.csv": "279f6687945d5a83e2d228f83535bf9b7a723fba80e548adcac658abc8f51a0e",
+    "tracks.json": "35ec1e7a26ac3372e891d2ea034057d73b3cd543c9f840f193877abf11d24a97"
+  }
+}

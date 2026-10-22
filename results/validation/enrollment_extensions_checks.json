@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-23",
+  "timezone": "Asia/Dhaka",
+  "full_suite_command": ".\\.venv\\Scripts\\python.exe -m pytest -q",
+  "tests_passed": 104,
+  "upstream_warnings": 2,
+  "test_seconds": 12.17,
+  "extension_verification": {
+    "verified_utc": "2026-10-22T19:35:24.544780+00:00",
+    "status": "passed",
+    "verifier_sha256": "523586591bef09247ce0802b021e797283555f0e00eb4c4229a9cced088151b2",
+    "completion_sha256": "cbf9dbe07a8e89b8585d626a8dfc51de1d7482c55d77c859ba4c2c14ad886d2f",
+    "real_variant_forward_passes_replayed": 550,
+    "predictions_checked": 12280,
+    "cosine_searches_checked": 12056,
+    "calibration_candidates_checked": 28608,
+    "summary_rows_checked": 52,
+    "runtime_searches_checked": 1800,
+    "runtime_image_calls_checked": 180,
+    "runtime_stage_samples_checked": 5220,
+    "reserved_id_overlap": 0,
+    "final_test_inference": false,
+    "scope": "Descriptive paired development ablations; calibration reuses development probes and is not held-out evidence. Growth repeats vary composition, not independent people."
+  },
+  "persisted_benchmark_galleries_checked": 6,
+  "benchmark_temporary_insertions_restored": true,
+  "figure_pairs": 4,
+  "figures_visually_inspected": true,
+  "rendered_asset_hashes_match": true,
+  "local_links_checked": 36,
+  "thesis_draft_sha256": "e85503fde6c3d1060dbbe4b163c447f0ecbd763a64a7aa79a160aa7b361421d8",
+  "heldout_final_audit": "passed: 1133 attempts, 1126 searches, all 585 images and frozen settings intact"
+}

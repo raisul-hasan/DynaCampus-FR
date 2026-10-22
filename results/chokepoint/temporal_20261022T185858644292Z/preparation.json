@@ -1,0 +1,30 @@
+{
+  "prepared_utc": "2026-10-22T18:58:58.667879+00:00",
+  "status": "prepared_before_inference",
+  "config_sha256": "078b7ee53951734e59b0c2a2f43cb0ef6a0a651d5ec1c4affaf24c5ed3572c2c",
+  "source_sha256": {
+    "src/evaluation/chokepoint.py": "b162b1723539619a6baf2fff2aed4dccf6848eb5ac6fbfcbe67692eb92469ed4",
+    "scripts/run_chokepoint_temporal.py": "a01e309de705ccddceedc19f256968f72b24bc595f4d057c0d359f1073662935",
+    "src/recognition/embedder.py": "2537c4366baadc97a38436fa2f3ae3b4b64f85f551e1dc5e3ffd345f672087f2"
+  },
+  "manifest_sha256": {
+    "tracks.json": "35ec1e7a26ac3372e891d2ea034057d73b3cd543c9f840f193877abf11d24a97",
+    "inventory.csv": "78d087a7320ade30422ccfaf71637328e8433d167dcc5e4c32b247f2b08adc22",
+    "gallery.csv": "69f8a2870ce42e62fc747ec0d0806f56da34d792d50b6e6843c9d9f4a1543e3c",
+    "split.json": "15310d3bd6da697c1cf29481db1decb321009d8b66f30fa81d01cfb303c215b3"
+  },
+  "groundtruth_sha256": {
+    "data/raw/chokepoint/groundtruth/P1E_S1_C1.xml": "41a23f85b5306df1c77459bb6a9adbcd12d5a7587c6f73bdcbae97f2fcc98e42",
+    "data/raw/chokepoint/groundtruth/P1E_S2_C2.xml": "ab153a86cae66295f12c2ef99d7a8053d2d4fc1fed284c0f66f91ad6f1e3080a",
+    "data/raw/chokepoint/groundtruth/P1E_S3_C3.xml": "c97458d45b2a2ea6d1a686f98c49441bb1035eae8a6b8d803aa64f4aff0c1ce8",
+    "data/raw/chokepoint/groundtruth/P1E_S4_C1.xml": "41489aaf3b98b8254e15de44fd74a148351921d354f91d89ba82f4714b84abc6"
+  },
+  "dataset_receipt_sha256": "ee9c7ba6fc35e0f416ec814bfc043e0774f50f1c93890c9bef0f5899a658ef64",
+  "counts": {
+    "calibration_known": 143,
+    "calibration_unknown": 66,
+    "evaluation_known": 303,
+    "evaluation_unknown": 143
+  },
+  "scope": "Exploratory sequence-separated supplementary study; not a fresh unseen-identity test or reproduction of supplied numbers"
+}

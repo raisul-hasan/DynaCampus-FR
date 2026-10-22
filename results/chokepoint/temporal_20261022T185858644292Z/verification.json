@@ -1,0 +1,15 @@
+{
+  "verified_utc": "2026-10-22T19:10:27.502097+00:00",
+  "status": "passed",
+  "verifier_sha256": "e7eeaf3e9a092e695b2f164cff2a72af9abaa5b35215ee82813a9f6610853c7b",
+  "original_crops_checked": 4776,
+  "corrupted_pixels_checked": 13168,
+  "gallery_scores_checked": 701505,
+  "query_predictions_checked": 41265,
+  "summary_rows_checked": 252,
+  "paired_intervals_checked": 42,
+  "repeated_real_inference_checks": 8,
+  "completion_sha256": "07b8baaafe91a47b26e16d5cd5a9e91ffa352c6c0ad3bfcfbd6425c1db6be5ac",
+  "query_score_cache_sha256": "bfbde23f450864aa5e0309ba0b782a552df22c2d1e2aafb76c0660f7fcb28db5",
+  "scope": "Exploratory sequence-separated supplementary study; not a fresh unseen-identity test or reproduction of supplied numbers"
+}

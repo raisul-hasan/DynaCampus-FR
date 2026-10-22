@@ -1,0 +1,61 @@
+{
+  "python": "3.13.3",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "processor": "AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD",
+  "logical_cpu_count": 12,
+  "cpu_threads": 2,
+  "torch": "2.9.0+cu126",
+  "numpy": "2.3.3",
+  "onnxruntime": "1.27.0",
+  "opencv": "5.0.0",
+  "cuda_used": false,
+  "onnx_providers": [
+    "CPUExecutionProvider"
+  ],
+  "threadpools": [
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 2,
+      "prefix": "libscipy_openblas",
+      "filepath": "C:\\Users\\msi\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy.libs\\libscipy_openblas64_-860d95b1c38e637ce4509f5fa24fbf2a.dll",
+      "version": "0.3.30",
+      "threading_layer": "pthreads",
+      "architecture": "Haswell"
+    },
+    {
+      "user_api": "openmp",
+      "internal_api": "openmp",
+      "num_threads": 2,
+      "prefix": "libiomp",
+      "filepath": "C:\\Users\\msi\\AppData\\Roaming\\Python\\Python313\\site-packages\\torch\\lib\\libiomp5md.dll",
+      "version": null
+    },
+    {
+      "user_api": "openmp",
+      "internal_api": "openmp",
+      "num_threads": 1,
+      "prefix": "libiomp",
+      "filepath": "C:\\Users\\msi\\AppData\\Roaming\\Python\\Python313\\site-packages\\torch\\lib\\libiompstubs5md.dll",
+      "version": null
+    },
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 12,
+      "prefix": "libscipy_openblas",
+      "filepath": "C:\\Users\\msi\\AppData\\Roaming\\Python\\Python313\\site-packages\\scipy.libs\\libscipy_openblas-197ee2fc9b4d071f7e048078cac74115.dll",
+      "version": "0.3.31.dev",
+      "threading_layer": "pthreads",
+      "architecture": "Haswell"
+    }
+  ],
+  "boundaries": {
+    "enrollment": "direct wall from image decode through fresh persistent insertion into a 55-identity gallery (55 to 56); restoration excluded",
+    "recognition": "direct wall from image decode through actual gallery search and four-state decision; capture failures retained separately",
+    "search": "actual FaceGallery.search including normalization, rebuilding matrix, sorting and metadata lookup; not a cached matrix microkernel",
+    "decision": "actual OpenSetDecisionEngine.evaluate_scores only; instance construction excluded",
+    "excluded": "model loading, warmup, browser/UI transfer, webcam capture, network/RTSP and camera FPS"
+  },
+  "repetitions_note": "Repeated calls on fixed inputs measure latency, not independent accuracy samples; warm CPU and filesystem-cache conditions."
+}

@@ -1,0 +1,28 @@
+{
+  "cache": "data/embeddings/chokepoint/temporal_20261022T185858644292Z",
+  "files": {
+    "clean.json": "4aaca961cd599e2e8de7797467af52f5903870440bb7768656e625ab71e265b1",
+    "clean.npz": "c885fd3a02822d11e46e86c744a8159c97f79d190e543f5bcace2b47a5af0a94",
+    "medium.json": "c4398202a6256e725451cdea48c13445d58fdc686da03511e374cc9738b508ba",
+    "medium.npz": "b62c6b9e599d98696b05dd94de42962786a04d551813c7220519e137ba30eb2a",
+    "mild.json": "338d400c6d08a3f28aa414009e82925da0cf061c2dd7a44532115fa74c40286e",
+    "mild.npz": "fe8dad6465af1c2e95b027b0367468e24544851d77d332c695c237bbe6df6a67",
+    "runtime.json": "5950033d0dc95ee84185268a253229721ba6d318d9e50626bec961f1c3a2a660",
+    "severe.json": "34fe0c1813295280d22206c5fdd6073c54067907b1d184b9fee15890819a05e9",
+    "severe.npz": "084e2a5c2178307198efa4bd0ba8e7de210efd965ce5a8d41857f812c9e4a2ae"
+  },
+  "runtime": {
+    "python": "3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "opencv": "5.0.0",
+    "numpy": "2.3.3",
+    "onnxruntime": "1.27.0",
+    "providers": [
+      "CPUExecutionProvider"
+    ],
+    "model_sha256": "4c06341c33c2ca1f86781dab0e829f88ad5b64be9fba56e56bc9ebdefc619e43",
+    "model_path": "C:\\Users\\msi\\.insightface\\models\\buffalo_l\\w600k_r50.onnx",
+    "cpu_threads": 4,
+    "batch_size": 16
+  }
+}

@@ -27,6 +27,10 @@ plan; it does not mean institutional approval of the revised scope is evidenced.
 
 ## Sources and how they were read
 
+The two planning PDFs listed below are retained locally and excluded from the
+current Git tree, together with their text extracts. This dated audit preserves
+the findings from their review.
+
 - `Face Identification Research.pdf`: 49 pages. Its five contributions are on
   page 6; research questions on page 7; enrollment, adapter and temporal plans
   on pages 27-34; paper outline on pages 47-49.

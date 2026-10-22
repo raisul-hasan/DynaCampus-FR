@@ -1,0 +1,32 @@
+{
+  "completed_utc": "2026-10-22T19:33:01.715861+00:00",
+  "scope": "Descriptive paired development ablations; calibration reuses development probes and is not held-out evidence. Growth repeats vary composition, not independent people.",
+  "training_performed": false,
+  "final_test_evaluated": false,
+  "cache": "data/embeddings/extensions_20261022T193101706934Z",
+  "cache_sha256": {
+    "augmentation_features.npz": "285ad0dd185c5a3cb45e75d7a6654159f28fe750381939dd34105caf4cba28ba",
+    "templates.npz": "1d937ce1743cb7f568b627e2438cacdfd03805ed6e27c6c044b1e4e8af7c9301"
+  },
+  "output_sha256": {
+    "augmentation_grid.csv": "6798a3a2c0233b255c97a4c042164dad9a87588f585cc42a27ab7d3aaa3de7e4",
+    "augmentation_predictions.csv": "9d6d6683fc30c78d2072ef3f20fb3ddc466226191ae38f073ce7a94a998967fb",
+    "augmentation_sources.csv": "1e9c9aa5b50ba02e664b21c38f69af5774af9146670a5ef9b40ccb2037c69ac6",
+    "augmentation_summary.csv": "845cdb21f54b34e599ffb44e4d99ef1ab4e12fc9ee09aa2b44a20c78bfff5a14",
+    "augmentation_thresholds.csv": "91210aff5a5447a87de671c4de0bb36f65bbc2fed4c697d1b87a81b7668ea786",
+    "config.json": "e4720096cc01266276450eb5b807cff5c43aac806811082cf13bdee44d8f9974",
+    "growth_predictions.csv": "d1c4e6536918e76a7e4b6731c76c82ceb6883a53d80123849be781a8664ed281",
+    "growth_summary.csv": "0a21829c214d71938db847f45527fc7ec3d4b2abc29eb3ab615d164a0367acc0",
+    "inputs.csv": "867d0db80d47114ef056326c85b7d237820b79596740059bfd61c5bf70042c19",
+    "paired_effects.csv": "c1bf99e81e3c4133f82e799b942ef195eb22e001bbfb1da468b1431214c9d379",
+    "preparation.json": "2c7dbc252d601f9a000f11203b2dfc8aadbcf234d00bdf60af4fedf70c2b3ade",
+    "runtime_environment.json": "2547f1de1a0c332fc332f1587eb045e0c01529c99c6e2f7c3f3e96770d081147",
+    "runtime_images.csv": "9984b8ee8aed304d6c056b39015c047dcee772bbbf4042b7b416a424bc46b923",
+    "runtime_samples.csv": "f2f836737c22d90078819de078b3d4b861e7943bc6851a0e8710725cce7f5b04",
+    "runtime_search.csv": "29719a8213bd2207dd11d69daa8cf261b6f59691b08b31e4d2615042224bc094",
+    "runtime_summary.csv": "79786be59e7b96129c7384de4f6050694abdbeec27974c87149b26fdb72219af",
+    "selection.json": "fdfd10514d71106dbde1089b900a179b3cdbc86b1c531a8dbc6cf2fdfb7a0dd6",
+    "split.json": "c53a6b431186f537de3c598e4fad17e8fef7b1af1354b4847ae1d8273f01760f",
+    "template_sources.csv": "4138f871519b75e93af66835d000721571929d864cc3f2a34e6feff561f33968"
+  }
+}

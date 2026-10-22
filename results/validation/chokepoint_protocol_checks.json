@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-23",
+  "timezone": "Asia/Dhaka",
+  "test_command": ".\\.venv\\Scripts\\python.exe -m pytest -q",
+  "passed": 98,
+  "warnings": 3,
+  "elapsed_seconds": 12.91,
+  "warnings_scope": [
+    "upstream AdaFace tensor construction performance warning",
+    "upstream InsightFace alignment deprecation",
+    "pytest cache directory access denied; test outcomes unaffected"
+  ],
+  "pytest_discovery_fix": "pytest.ini limits collection to tests/, avoiding duplicate modules from ignored checkpoint checkout",
+  "frozen_final_audit_command": ".\\.venv\\Scripts\\python.exe scripts/verify_final_evaluation.py results/final/heldout_20261019T231512869782Z",
+  "frozen_final_audit": "passed: 1133 attempts, 1126 cosine searches, all 585 source images unchanged, no development identity overlap"
+}

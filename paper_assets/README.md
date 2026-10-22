@@ -1,6 +1,6 @@
 # Paper evidence index
 
-Updated: 20 October 2026. The frozen held-out halfFace evaluation is complete.
+Updated: 23 October 2026. The frozen held-out halfFace evaluation is complete.
 The primary method accepts 151/160 known probes (94.38%), with 0/151 observed
 false known acceptances. Earlier development evidence is retained separately.
 The reserved ICFD public-sample check is closed-set engineering evidence.
@@ -11,6 +11,8 @@ reporting; changing settings using its results would invalidate a fresh-test cla
 
 | Work completed | Evidence | Paper use |
 |---|---|---|
+| Augmented one-photo enrollment, fixed-probe gallery growth and CPU runtime | [Verified results, four figures and paper tables](development/extensions_v1/README.md), [integrated thesis draft](../docs/THESIS_DRAFT.md) | Descriptive development findings for both checkpoints; two threshold views, five background compositions and actual persistence/search timings |
+| Corrected ChokePoint temporal/quality study | [Verified results, five figures and thesis section](supplementary/chokepoint_v1/README.md) | Exploratory sequence-separated probe pooling; paired contamination controls and failure of calibration transfer; separate from halfFace final results |
 | Inspected defense cases and isolated real walkthrough | [Evidence pack, analysis and backup](development/defense_v1/README.md) | Twelve disclosed development examples, real 55-identity ambiguity and gallery lifecycle; fresh browser capture still pending |
 | Paired AdaFace/ArcFace development comparison | [Results, figures and limits](development/backbones_v1/README.md) | Same-crop checkpoint comparison; enrollment/decision interaction, failure cases and CPU timing; different pretraining/runtime engines |
 | Enrollment pooling policies | [Development results and limits](development/pooling_v1/README.md) | Same-probe original-photo mean, quality weighting, detector weighting and best-quality comparison; no consistent weighting advantage |
@@ -40,6 +42,12 @@ reporting; changing settings using its results would invalidate a fresh-test cla
 | Extraction and false acceptance under degradation | [PNG](development/robustness_v1/fig02_stress_failures.png), [SVG](development/robustness_v1/fig02_stress_failures.svg) | Separate capture failures and false-known counts; 304 paired source probes |
 
 ## Evidence standards for remaining steps
+
+ChokePoint added 23 October 2026: [pilot alignment review](../docs/CHOKEPOINT_ALIGNMENT_REVIEW.md)
+and [verified corrected experiment](supplementary/chokepoint_v1/README.md).
+The supplied manuscript's original scores remain unreproduced. Only newly
+computed, separately verified corrected-run results belong in the supplementary
+tables; keep these separate from the halfFace final evaluation.
 
 - Save raw per-probe predictions, configurations, source/model hashes and split
   identifiers before writing a result into the paper.

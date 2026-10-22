@@ -1,0 +1,18 @@
+{
+  "run": "results/enrollment_extensions/extensions_20261022T193101706934Z",
+  "verification_sha256": "c39bc6adddbcbe818c5ba329ecf88b9085dec6a463c64ceef601c048e0685d81",
+  "renderer_sha256": "ea60f417198594776a3b1cb278cbdaa83c0e92a161c1e38d18110ac8a3277604",
+  "files": {
+    "augmentation_table.tex": "91873802cec1f2323a137d2792b01db6166fd4a084963a0abe948c5496924441",
+    "fig01_augmented_enrollment.png": "a009a6bda803cfa5984c1424fb6db86661502f7ed310700560ab8d6f2ec77dbe",
+    "fig01_augmented_enrollment.svg": "5a5d24ea3eeab4a0d5a1966e86dda59b9798b4aa3f382e1d84a65a2b11ec24c0",
+    "fig02_gallery_growth.png": "66ba47e9a725dc3195ceab88b5105c566724fdaaa7bd9c4d348de5de95e93983",
+    "fig02_gallery_growth.svg": "e51ac1b2f73dbbea8f478c205d69a65e209cfbdf92fe0d9a8fe7ddfc5a072f25",
+    "fig03_runtime.png": "283e56d9f395c9e5ea2f5b607f8d7634d349a9d176338bdf61fc4b0943c0e538",
+    "fig03_runtime.svg": "f3a7631bacc72dbd6aa7152762c9d6cf3b8d3a246cc65d0fc94989dfea40d4fc",
+    "fig04_search_scaling.png": "f107f97c17f9d7ec1597ab831c8484c225c4b75bbea62c75142883f7e608b7c5",
+    "fig04_search_scaling.svg": "7b610d8e73c5eedc191a50dabfecf735d75680badd84770ba4852a92aebaaf5e",
+    "README.md": "049c8a736aefe632721664b3e1bad3289ca634100c8960e98bf16e98174e6f47",
+    "thesis_section.md": "5bc24ff8b5ec2e33e35bc40300d3e32695f240689ca60895ba7692b2bef8ff16"
+  }
+}

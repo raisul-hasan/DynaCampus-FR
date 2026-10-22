@@ -29,7 +29,7 @@ closed-set retrieval. See the [held-out evidence](paper_assets/heldout/final_v1/
 The still-image app flow is checked with real development uploads, including
 original-photo enrollment, known/unknown recognition, reload and removal.
 See [application evidence](paper_assets/development/demo_v1/README.md) for actual
-screenshots and reproduction. Camera/RTSP and temporal performance are unvalidated.
+screenshots and reproduction. Camera/RTSP and temporal tracking remain unvalidated.
 A paired **AdaFace IR-50 versus ArcFace development comparison** is also complete,
 using the same SCRFD crops and original enrollment photos. It includes calibrated
 score/margin results, failure cases and CPU stage timings. Enrollment effects
@@ -38,7 +38,23 @@ known acceptance in this comparison. These are descriptive development results,
 with different checkpoint pretraining and runtime engines, and do not replace
 the frozen held-out evaluation. See [backbone evidence](paper_assets/development/backbones_v1/README.md)
 and [integration details](docs/ADAFACE_INTEGRATION.md). The dashboard still uses
-ArcFace. The domain adapter and validated temporal pipeline remain planned work.
+ArcFace. The domain adapter and validated temporal tracking remain planned work.
+
+A corrected [ChokePoint temporal study](docs/CHOKEPOINT_RESULTS.md) is now complete,
+with nine pooling policies, four corruption tiers, mixed tracks and paired
+contamination controls. Severe-tier Rank-1 improves from 295/303 to 302/303 with
+five-frame mean pooling. Mixed-track mean pooling also falsely accepts 12/143
+unknowns at frozen thresholds: the calibration target did not reliably transfer.
+The supplementary pack includes five figures, verified tables and a thesis
+section. All 98 tests pass. This is exploratory sequence-separated crop evidence;
+the original supplied paper scores remain unreproduced.
+
+The remaining [enrollment, gallery-growth and backend runtime experiments](docs/ENROLLMENT_EXTENSIONS.md)
+are also complete on development inputs for both checkpoints. Synthetic variants
+do not consistently replace original photos, and gallery composition affects
+unknown acceptance and ambiguity. The full suite passes 104 tests. An
+[integrated thesis content draft](docs/THESIS_DRAFT.md) combines the frozen main
+results, development extensions, ChokePoint findings and literature boundaries.
 
 ---
 
@@ -166,7 +182,37 @@ real. This is application testing; it is not a browser upload test or a fresh
 screen recording. Genuine earlier browser evidence remains separately indexed
 under `paper_assets/development/demo_v1/`.
 
-Current validation receipts are in `results/validation/setup_20261021/`.
-The full suite passed **89 tests**; dependency checks and UI flow checks have
-their own evidence scopes. The frozen evaluation has not been rerun to obtain
-new predictions.
+The 21 October setup receipts are in `results/validation/setup_20261021/`.
+The expanded suite passed **104 tests** on 23 October; dependency checks and UI
+flow checks have their own evidence scopes. The frozen evaluation has not been
+rerun to obtain new predictions.
+
+## Thesis writing and supplementary evidence
+
+The self-contained [UIU FYDP thesis writing guide](docs/UIU_FYDP_Complete_Thesis_Writing_Guide.pdf)
+contains the section-by-section writing instructions, diagrams, result tables,
+limitations, references and the complete original departmental template.
+Personal details and actual expenses that still require the team's input are
+marked in the guide.
+
+The [enrollment extensions](docs/ENROLLMENT_EXTENSIONS.md) and
+[ChokePoint supplementary study](docs/CHOKEPOINT_RESULTS.md) have saved results,
+rendered paper assets and verification scripts. ChokePoint is an exploratory
+crop-based temporal study; it does not validate a deployed CCTV tracking system.
+FaceLiVT files remain unfinished development drafts with no validated results;
+they are not part of the completed model comparison.
+
+## Repository contents
+
+Git tracks first-party code, tests, experiment configurations, numerical
+research evidence, paper figures and thesis documentation. Local datasets,
+participant photos, model weights, feature caches, enrollment galleries,
+credentials, virtual environments and temporary output are ignored. Existing
+local enrollment data and planning exports are retained on this machine but
+removed from the current tracked tree. The application creates its local
+gallery metadata when it first saves an enrollment.
+
+The earlier planning PDFs, their extracted text and the superseded Cline
+handoff are local reference material, rather than GitHub deliverables. Historical
+audit documents describe the files present on their stated review dates;
+temporary scratch programs identified in those audits have since been removed.

@@ -43,6 +43,31 @@ tested. See [the detailed handoff](NEXT_SESSION.md).
 
 ## Current state
 
+- **Completed 23 October:** [augmented enrollment, gallery growth and runtime](ENROLLMENT_EXTENSIONS.md)
+  on development inputs, both checkpoints. One original vs one + five variants vs
+  up to three originals, with fixed and separately calibrated decisions. Growth
+  keeps 28 known and 150 unknown attempts fixed across seven 10/25/55-person
+  compositions. Actual CPU stages, persistent insertion and search are timed.
+  Separate verification replays 550 variant forwards, 12,280 decisions, 28,608
+  calibration candidates and 5,220 latency samples. All 104 tests pass. The
+  [integrated thesis content draft](THESIS_DRAFT.md) now includes the main held-out
+  results, all development extensions, ChokePoint and literature boundaries.
+
+- **Completed 23 October:** [corrected ChokePoint supplementary experiment](CHOKEPOINT_RESULTS.md).
+  Nine predeclared temporal pooling policies, four tiers plus mixed tracks,
+  fixed/AOSM decisions and paired contamination controls. Separate verifier checks
+  41,265 predictions, 701,505 gallery scores and 13,168 corrupted pixel arrays.
+  Five figures, traceable tables and a draft thesis section are prepared. Severe
+  Rank-1 improves from 295/303 to 302/303 with mean pooling; mixed-track mean
+  falsely accepts 12/143 unknowns at frozen thresholds, so the calibration target
+  did not reliably transfer. This is exploratory crop/track evidence, not a real
+  tracker, campus deployment or fresh unseen-identity test. All 98 tests pass.
+
+- **Source review retained:** [ChokePoint alignment audit](CHOKEPOINT_ALIGNMENT_REVIEW.md)
+  and original manuscript/notebook archive explain the corrections. Original
+  supplied scores remain unreproduced; the corrected run above supplies new
+  exploratory results. Neither replaces halfFace or validates actual tracking.
+
 - **Complete:** real ArcFace development baseline, enrollment/decision ablations,
   blur/resolution/JPEG stress tests, frozen final evaluation, original dynamic
   gallery demonstration and genuine browser evidence.
@@ -59,15 +84,16 @@ tested. See [the detailed handoff](NEXT_SESSION.md).
   redacted case cards, failure explanations, isolated defense dashboard, ten real
   inference/gallery lifecycle steps and AppTest checks. A labelled 149-second
   backup video combines cards/charts and genuine prior screenshots.
-- **Remaining:** fresh browser captures and a live recording of the defense
-  dashboard (browser connection pending), search/decision and UI timing beyond
-  image-to-embedding stages, paper/slides, complete cards and an end-user offline
-  rehearsal on the defense laptop. Clean-machine installation remains untested.
+- **Remaining:** supervisor review and institutional thesis formatting, defense
+  slides, fresh browser captures and a live recording, complete cards and an
+  offline rehearsal. Backend search/decision and persistence timings are complete;
+  browser/UI transfer timing is outside their measured boundary. Clean-machine
+  installation remains untested.
 - **Also complete:** original app lifecycle checks with real uploaded-image bytes
   supplied through AppTest, all 89 tests, runtime/dev requirements, setup guide
   and double-click launchers. These checks are not fresh browser interaction.
-- **Newly planned:** augmented one-photo enrollment for both backbones and gallery
-  growth at 10/25/55 identities, using development data and fixed declared protocols.
+- **Previously planned additions now complete:** augmented one-photo enrollment,
+  fixed-probe growth at 10/25/55 identities, backend runtime and thesis integration.
 - **Outside validated scope:** learned adapter, local campus dataset, temporal
   tracking performance, live CCTV accuracy, deployment or population guarantees.
 

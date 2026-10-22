@@ -1,0 +1,1172 @@
+{
+  "core_ids": [
+    "halfface_054",
+    "halfface_137",
+    "halfface_053",
+    "halfface_068",
+    "halfface_150",
+    "halfface_104",
+    "halfface_025",
+    "halfface_128",
+    "halfface_148",
+    "halfface_052"
+  ],
+  "scenarios": [
+    {
+      "scenario": "g10",
+      "size": 10,
+      "seed": null,
+      "ids": [
+        "halfface_025",
+        "halfface_052",
+        "halfface_053",
+        "halfface_054",
+        "halfface_068",
+        "halfface_104",
+        "halfface_128",
+        "halfface_137",
+        "halfface_148",
+        "halfface_150"
+      ]
+    },
+    {
+      "scenario": "g25_seed42",
+      "size": 25,
+      "seed": 42,
+      "ids": [
+        "halfface_001",
+        "halfface_005",
+        "halfface_025",
+        "halfface_029",
+        "halfface_038",
+        "halfface_048",
+        "halfface_052",
+        "halfface_053",
+        "halfface_054",
+        "halfface_068",
+        "halfface_095",
+        "halfface_102",
+        "halfface_103",
+        "halfface_104",
+        "halfface_107",
+        "halfface_125",
+        "halfface_126",
+        "halfface_128",
+        "halfface_136",
+        "halfface_137",
+        "halfface_148",
+        "halfface_150",
+        "halfface_159",
+        "halfface_160",
+        "halfface_164"
+      ]
+    },
+    {
+      "scenario": "g25_seed123",
+      "size": 25,
+      "seed": 123,
+      "ids": [
+        "halfface_001",
+        "halfface_003",
+        "halfface_005",
+        "halfface_009",
+        "halfface_013",
+        "halfface_021",
+        "halfface_025",
+        "halfface_038",
+        "halfface_040",
+        "halfface_052",
+        "halfface_053",
+        "halfface_054",
+        "halfface_064",
+        "halfface_068",
+        "halfface_104",
+        "halfface_110",
+        "halfface_114",
+        "halfface_122",
+        "halfface_128",
+        "halfface_130",
+        "halfface_137",
+        "halfface_148",
+        "halfface_150",
+        "halfface_158",
+        "halfface_160"
+      ]
+    },
+    {
+      "scenario": "g25_seed2026",
+      "size": 25,
+      "seed": 2026,
+      "ids": [
+        "halfface_004",
+        "halfface_010",
+        "halfface_013",
+        "halfface_021",
+        "halfface_025",
+        "halfface_026",
+        "halfface_029",
+        "halfface_034",
+        "halfface_052",
+        "halfface_053",
+        "halfface_054",
+        "halfface_068",
+        "halfface_072",
+        "halfface_102",
+        "halfface_104",
+        "halfface_110",
+        "halfface_114",
+        "halfface_128",
+        "halfface_129",
+        "halfface_136",
+        "halfface_137",
+        "halfface_147",
+        "halfface_148",
+        "halfface_150",
+        "halfface_159"
+      ]
+    },
+    {
+      "scenario": "g25_seed7",
+      "size": 25,
+      "seed": 7,
+      "ids": [
+        "halfface_001",
+        "halfface_004",
+        "halfface_005",
+        "halfface_021",
+        "halfface_025",
+        "halfface_040",
+        "halfface_048",
+        "halfface_052",
+        "halfface_053",
+        "halfface_054",
+        "halfface_058",
+        "halfface_068",
+        "halfface_077",
+        "halfface_091",
+        "halfface_103",
+        "halfface_104",
+        "halfface_107",
+        "halfface_110",
+        "halfface_115",
+        "halfface_126",
+        "halfface_128",
+        "halfface_137",
+        "halfface_148",
+        "halfface_150",
+        "halfface_166"
+      ]
+    },
+    {
+      "scenario": "g25_seed99",
+      "size": 25,
+      "seed": 99,
+      "ids": [
+        "halfface_003",
+        "halfface_005",
+        "halfface_009",
+        "halfface_010",
+        "halfface_025",
+        "halfface_034",
+        "halfface_052",
+        "halfface_053",
+        "halfface_054",
+        "halfface_056",
+        "halfface_064",
+        "halfface_068",
+        "halfface_077",
+        "halfface_102",
+        "halfface_104",
+        "halfface_107",
+        "halfface_110",
+        "halfface_115",
+        "halfface_125",
+        "halfface_128",
+        "halfface_137",
+        "halfface_148",
+        "halfface_150",
+        "halfface_158",
+        "halfface_166"
+      ]
+    },
+    {
+      "scenario": "g55",
+      "size": 55,
+      "seed": null,
+      "ids": [
+        "halfface_001",
+        "halfface_003",
+        "halfface_004",
+        "halfface_005",
+        "halfface_009",
+        "halfface_010",
+        "halfface_013",
+        "halfface_021",
+        "halfface_025",
+        "halfface_026",
+        "halfface_029",
+        "halfface_033",
+        "halfface_034",
+        "halfface_038",
+        "halfface_040",
+        "halfface_048",
+        "halfface_052",
+        "halfface_053",
+        "halfface_054",
+        "halfface_056",
+        "halfface_058",
+        "halfface_064",
+        "halfface_068",
+        "halfface_072",
+        "halfface_077",
+        "halfface_084",
+        "halfface_087",
+        "halfface_091",
+        "halfface_095",
+        "halfface_096",
+        "halfface_102",
+        "halfface_103",
+        "halfface_104",
+        "halfface_107",
+        "halfface_110",
+        "halfface_114",
+        "halfface_115",
+        "halfface_120",
+        "halfface_122",
+        "halfface_125",
+        "halfface_126",
+        "halfface_128",
+        "halfface_129",
+        "halfface_130",
+        "halfface_136",
+        "halfface_137",
+        "halfface_145",
+        "halfface_147",
+        "halfface_148",
+        "halfface_150",
+        "halfface_158",
+        "halfface_159",
+        "halfface_160",
+        "halfface_164",
+        "halfface_166"
+      ]
+    }
+  ],
+  "one_photo": {
+    "halfface_001": [
+      "data/raw/halfface/full_face/p001/p001_00m.jpeg"
+    ],
+    "halfface_003": [
+      "data/raw/halfface/full_face/p003/p003_00m.jpg"
+    ],
+    "halfface_004": [
+      "data/raw/halfface/full_face/p004/p004_00m.jpeg"
+    ],
+    "halfface_005": [
+      "data/raw/halfface/full_face/p005/p005_00m.jpg"
+    ],
+    "halfface_009": [
+      "data/raw/halfface/full_face/p009/p009_00m.jpg"
+    ],
+    "halfface_010": [
+      "data/raw/halfface/full_face/p010/p010_00f.jpg"
+    ],
+    "halfface_013": [
+      "data/raw/halfface/full_face/p013/p013_00m.jpg"
+    ],
+    "halfface_021": [
+      "data/raw/halfface/full_face/p021/p021_00m.jpg"
+    ],
+    "halfface_025": [
+      "data/raw/halfface/full_face/p025/p025_00f.jpg"
+    ],
+    "halfface_026": [
+      "data/raw/halfface/full_face/p026/p026_00f.jpg"
+    ],
+    "halfface_029": [
+      "data/raw/halfface/full_face/p029/p029_00f.jpg"
+    ],
+    "halfface_033": [
+      "data/raw/halfface/full_face/p033/p033_00f.jpg"
+    ],
+    "halfface_034": [
+      "data/raw/halfface/full_face/p034/p034_00m.jpg"
+    ],
+    "halfface_038": [
+      "data/raw/halfface/full_face/p038/p038_00m.jpeg"
+    ],
+    "halfface_040": [
+      "data/raw/halfface/full_face/p040/p040_00m.jpg"
+    ],
+    "halfface_048": [
+      "data/raw/halfface/full_face/p048/p048_00f.jpg"
+    ],
+    "halfface_052": [
+      "data/raw/halfface/full_face/p052/p052_00m.jpeg"
+    ],
+    "halfface_053": [
+      "data/raw/halfface/full_face/p053/p053_00m.jpg"
+    ],
+    "halfface_054": [
+      "data/raw/halfface/full_face/p054/p054_00m.jpg"
+    ],
+    "halfface_056": [
+      "data/raw/halfface/full_face/p056/p056_00m.jpg"
+    ],
+    "halfface_058": [
+      "data/raw/halfface/full_face/p058/p058_00m.jpeg"
+    ],
+    "halfface_064": [
+      "data/raw/halfface/full_face/p064/p064_00m.jpeg"
+    ],
+    "halfface_068": [
+      "data/raw/halfface/full_face/p068/p068_00m.jpg"
+    ],
+    "halfface_072": [
+      "data/raw/halfface/full_face/p072/p072_00m.jpeg"
+    ],
+    "halfface_077": [
+      "data/raw/halfface/full_face/p077/p077_00m.JPG"
+    ],
+    "halfface_084": [
+      "data/raw/halfface/full_face/p084/p084_00m.jpeg"
+    ],
+    "halfface_087": [
+      "data/raw/halfface/full_face/p087/p087_00m.jpg"
+    ],
+    "halfface_091": [
+      "data/raw/halfface/full_face/p091/p091_00m.jpg"
+    ],
+    "halfface_095": [
+      "data/raw/halfface/full_face/p095/p095_00m.jpg"
+    ],
+    "halfface_096": [
+      "data/raw/halfface/full_face/p096/p096_00m.jpeg"
+    ],
+    "halfface_102": [
+      "data/raw/halfface/full_face/p102/p102_00m.jpeg"
+    ],
+    "halfface_103": [
+      "data/raw/halfface/full_face/p103/p103_00m.JPG"
+    ],
+    "halfface_104": [
+      "data/raw/halfface/full_face/p104/p104_00m.jpeg"
+    ],
+    "halfface_107": [
+      "data/raw/halfface/full_face/p107/p107_00m.JPG"
+    ],
+    "halfface_110": [
+      "data/raw/halfface/full_face/p110/p110_00m.jpg"
+    ],
+    "halfface_114": [
+      "data/raw/halfface/full_face/p114/p114_00m.jpeg"
+    ],
+    "halfface_115": [
+      "data/raw/halfface/full_face/p115/p115_00m.jpeg"
+    ],
+    "halfface_120": [
+      "data/raw/halfface/full_face/p120/p120_00m.jpeg"
+    ],
+    "halfface_122": [
+      "data/raw/halfface/full_face/p122/p122_00m.jpeg"
+    ],
+    "halfface_125": [
+      "data/raw/halfface/full_face/p125/p125_00m.JPG"
+    ],
+    "halfface_126": [
+      "data/raw/halfface/full_face/p126/p126_00m.jpeg"
+    ],
+    "halfface_128": [
+      "data/raw/halfface/full_face/p128/p128_00m.jpeg"
+    ],
+    "halfface_129": [
+      "data/raw/halfface/full_face/p129/p129_00m.jpeg"
+    ],
+    "halfface_130": [
+      "data/raw/halfface/full_face/p130/p130_00m.jpg"
+    ],
+    "halfface_136": [
+      "data/raw/halfface/full_face/p136/p136_00m.jpeg"
+    ],
+    "halfface_137": [
+      "data/raw/halfface/full_face/p137/p137_00m.jpg"
+    ],
+    "halfface_145": [
+      "data/raw/halfface/full_face/p145/p145_00m.jpg"
+    ],
+    "halfface_147": [
+      "data/raw/halfface/full_face/p147/p147_00m.jpeg"
+    ],
+    "halfface_148": [
+      "data/raw/halfface/full_face/p148/p148_00m.jpeg"
+    ],
+    "halfface_150": [
+      "data/raw/halfface/full_face/p150/p150_00m.jpg"
+    ],
+    "halfface_158": [
+      "data/raw/halfface/full_face/p158/p158_00m.jpeg"
+    ],
+    "halfface_159": [
+      "data/raw/halfface/full_face/p159/p159_00m.jpg"
+    ],
+    "halfface_160": [
+      "data/raw/halfface/full_face/p160/p160_00m.jpeg"
+    ],
+    "halfface_164": [
+      "data/raw/halfface/full_face/p164/p164_00m.jpg"
+    ],
+    "halfface_166": [
+      "data/raw/halfface/full_face/p166/p166_00m.jpeg"
+    ]
+  },
+  "few_photos": {
+    "halfface_001": [
+      "data/raw/halfface/full_face/p001/p001_00m.jpeg",
+      "data/raw/halfface/full_face/p001/p001_01m.jpeg",
+      "data/raw/halfface/full_face/p001/p001_02m.jpeg"
+    ],
+    "halfface_003": [
+      "data/raw/halfface/full_face/p003/p003_00m.jpg"
+    ],
+    "halfface_004": [
+      "data/raw/halfface/full_face/p004/p004_00m.jpeg",
+      "data/raw/halfface/full_face/p004/p004_01m.jpeg",
+      "data/raw/halfface/full_face/p004/p004_02m.jpeg"
+    ],
+    "halfface_005": [
+      "data/raw/halfface/full_face/p005/p005_00m.jpg"
+    ],
+    "halfface_009": [
+      "data/raw/halfface/full_face/p009/p009_00m.jpg",
+      "data/raw/halfface/full_face/p009/p009_01m.jpg",
+      "data/raw/halfface/full_face/p009/p009_02m.jpg"
+    ],
+    "halfface_010": [
+      "data/raw/halfface/full_face/p010/p010_00f.jpg"
+    ],
+    "halfface_013": [
+      "data/raw/halfface/full_face/p013/p013_00m.jpg",
+      "data/raw/halfface/full_face/p013/p013_01m.jpg",
+      "data/raw/halfface/full_face/p013/p013_02m.jpg"
+    ],
+    "halfface_021": [
+      "data/raw/halfface/full_face/p021/p021_00m.jpg",
+      "data/raw/halfface/full_face/p021/p021_01m.jpg",
+      "data/raw/halfface/full_face/p021/p021_02m.jpg"
+    ],
+    "halfface_025": [
+      "data/raw/halfface/full_face/p025/p025_00f.jpg",
+      "data/raw/halfface/full_face/p025/p025_01f.jpg",
+      "data/raw/halfface/full_face/p025/p025_02f.jpg"
+    ],
+    "halfface_026": [
+      "data/raw/halfface/full_face/p026/p026_00f.jpg",
+      "data/raw/halfface/full_face/p026/p026_01f.jpg",
+      "data/raw/halfface/full_face/p026/p026_02f.jpg"
+    ],
+    "halfface_029": [
+      "data/raw/halfface/full_face/p029/p029_00f.jpg",
+      "data/raw/halfface/full_face/p029/p029_02f.jpg"
+    ],
+    "halfface_033": [
+      "data/raw/halfface/full_face/p033/p033_00f.jpg"
+    ],
+    "halfface_034": [
+      "data/raw/halfface/full_face/p034/p034_00m.jpg",
+      "data/raw/halfface/full_face/p034/p034_01m.jpg",
+      "data/raw/halfface/full_face/p034/p034_02m.jpg"
+    ],
+    "halfface_038": [
+      "data/raw/halfface/full_face/p038/p038_00m.jpeg",
+      "data/raw/halfface/full_face/p038/p038_01m.jpeg",
+      "data/raw/halfface/full_face/p038/p038_02m.jpeg"
+    ],
+    "halfface_040": [
+      "data/raw/halfface/full_face/p040/p040_00m.jpg",
+      "data/raw/halfface/full_face/p040/p040_01m.jpg",
+      "data/raw/halfface/full_face/p040/p040_02m.jpg"
+    ],
+    "halfface_048": [
+      "data/raw/halfface/full_face/p048/p048_00f.jpg",
+      "data/raw/halfface/full_face/p048/p048_01f.jpg",
+      "data/raw/halfface/full_face/p048/p048_02f.jpg"
+    ],
+    "halfface_052": [
+      "data/raw/halfface/full_face/p052/p052_00m.jpeg",
+      "data/raw/halfface/full_face/p052/p052_01m.jpeg",
+      "data/raw/halfface/full_face/p052/p052_02m.jpeg"
+    ],
+    "halfface_053": [
+      "data/raw/halfface/full_face/p053/p053_00m.jpg"
+    ],
+    "halfface_054": [
+      "data/raw/halfface/full_face/p054/p054_00m.jpg",
+      "data/raw/halfface/full_face/p054/p054_01m.jpg",
+      "data/raw/halfface/full_face/p054/p054_02m.jpg"
+    ],
+    "halfface_056": [
+      "data/raw/halfface/full_face/p056/p056_00m.jpg",
+      "data/raw/halfface/full_face/p056/p056_01m.jpg",
+      "data/raw/halfface/full_face/p056/p056_02m.jpg"
+    ],
+    "halfface_058": [
+      "data/raw/halfface/full_face/p058/p058_00m.jpeg",
+      "data/raw/halfface/full_face/p058/p058_01m.jpeg",
+      "data/raw/halfface/full_face/p058/p058_02m.jpeg"
+    ],
+    "halfface_064": [
+      "data/raw/halfface/full_face/p064/p064_00m.jpeg",
+      "data/raw/halfface/full_face/p064/p064_01m.jpeg",
+      "data/raw/halfface/full_face/p064/p064_02m.jpeg"
+    ],
+    "halfface_068": [
+      "data/raw/halfface/full_face/p068/p068_00m.jpg",
+      "data/raw/halfface/full_face/p068/p068_01m.jpg",
+      "data/raw/halfface/full_face/p068/p068_02m.jpg"
+    ],
+    "halfface_072": [
+      "data/raw/halfface/full_face/p072/p072_00m.jpeg",
+      "data/raw/halfface/full_face/p072/p072_01m.jpeg",
+      "data/raw/halfface/full_face/p072/p072_02m.jpeg"
+    ],
+    "halfface_077": [
+      "data/raw/halfface/full_face/p077/p077_00m.JPG",
+      "data/raw/halfface/full_face/p077/p077_01m.JPG",
+      "data/raw/halfface/full_face/p077/p077_02m.JPG"
+    ],
+    "halfface_084": [
+      "data/raw/halfface/full_face/p084/p084_00m.jpeg",
+      "data/raw/halfface/full_face/p084/p084_01m.jpeg",
+      "data/raw/halfface/full_face/p084/p084_02m.jpeg"
+    ],
+    "halfface_087": [
+      "data/raw/halfface/full_face/p087/p087_00m.jpg",
+      "data/raw/halfface/full_face/p087/p087_01m.jpg",
+      "data/raw/halfface/full_face/p087/p087_02m.jpg"
+    ],
+    "halfface_091": [
+      "data/raw/halfface/full_face/p091/p091_00m.jpg",
+      "data/raw/halfface/full_face/p091/p091_01m.jpg",
+      "data/raw/halfface/full_face/p091/p091_02m.jpg"
+    ],
+    "halfface_095": [
+      "data/raw/halfface/full_face/p095/p095_00m.jpg",
+      "data/raw/halfface/full_face/p095/p095_01m.jpg",
+      "data/raw/halfface/full_face/p095/p095_02m.jpg"
+    ],
+    "halfface_096": [
+      "data/raw/halfface/full_face/p096/p096_00m.jpeg",
+      "data/raw/halfface/full_face/p096/p096_01m.jpeg",
+      "data/raw/halfface/full_face/p096/p096_02m.jpeg"
+    ],
+    "halfface_102": [
+      "data/raw/halfface/full_face/p102/p102_00m.jpeg",
+      "data/raw/halfface/full_face/p102/p102_01m.jpeg",
+      "data/raw/halfface/full_face/p102/p102_02m.jpeg"
+    ],
+    "halfface_103": [
+      "data/raw/halfface/full_face/p103/p103_00m.JPG",
+      "data/raw/halfface/full_face/p103/p103_01m.JPG",
+      "data/raw/halfface/full_face/p103/p103_02m.JPG"
+    ],
+    "halfface_104": [
+      "data/raw/halfface/full_face/p104/p104_00m.jpeg",
+      "data/raw/halfface/full_face/p104/p104_01m.jpeg",
+      "data/raw/halfface/full_face/p104/p104_02m.jpeg"
+    ],
+    "halfface_107": [
+      "data/raw/halfface/full_face/p107/p107_00m.JPG",
+      "data/raw/halfface/full_face/p107/p107_01m.JPG",
+      "data/raw/halfface/full_face/p107/p107_02m.JPG"
+    ],
+    "halfface_110": [
+      "data/raw/halfface/full_face/p110/p110_00m.jpg",
+      "data/raw/halfface/full_face/p110/p110_01m.jpg",
+      "data/raw/halfface/full_face/p110/p110_02m.jpg"
+    ],
+    "halfface_114": [
+      "data/raw/halfface/full_face/p114/p114_00m.jpeg",
+      "data/raw/halfface/full_face/p114/p114_01m.jpeg",
+      "data/raw/halfface/full_face/p114/p114_02m.jpeg"
+    ],
+    "halfface_115": [
+      "data/raw/halfface/full_face/p115/p115_00m.jpeg",
+      "data/raw/halfface/full_face/p115/p115_01m.jpeg",
+      "data/raw/halfface/full_face/p115/p115_02m.jpeg"
+    ],
+    "halfface_120": [
+      "data/raw/halfface/full_face/p120/p120_00m.jpeg",
+      "data/raw/halfface/full_face/p120/p120_01m.jpeg",
+      "data/raw/halfface/full_face/p120/p120_02m.jpeg"
+    ],
+    "halfface_122": [
+      "data/raw/halfface/full_face/p122/p122_00m.jpeg",
+      "data/raw/halfface/full_face/p122/p122_01m.jpeg",
+      "data/raw/halfface/full_face/p122/p122_02m.jpeg"
+    ],
+    "halfface_125": [
+      "data/raw/halfface/full_face/p125/p125_00m.JPG",
+      "data/raw/halfface/full_face/p125/p125_01m.JPG",
+      "data/raw/halfface/full_face/p125/p125_02m.JPG"
+    ],
+    "halfface_126": [
+      "data/raw/halfface/full_face/p126/p126_00m.jpeg",
+      "data/raw/halfface/full_face/p126/p126_01m.jpeg",
+      "data/raw/halfface/full_face/p126/p126_02m.jpeg"
+    ],
+    "halfface_128": [
+      "data/raw/halfface/full_face/p128/p128_00m.jpeg",
+      "data/raw/halfface/full_face/p128/p128_01m.jpeg",
+      "data/raw/halfface/full_face/p128/p128_02m.jpeg"
+    ],
+    "halfface_129": [
+      "data/raw/halfface/full_face/p129/p129_00m.jpeg",
+      "data/raw/halfface/full_face/p129/p129_01m.jpeg",
+      "data/raw/halfface/full_face/p129/p129_02m.jpeg"
+    ],
+    "halfface_130": [
+      "data/raw/halfface/full_face/p130/p130_00m.jpg",
+      "data/raw/halfface/full_face/p130/p130_01m.jpg",
+      "data/raw/halfface/full_face/p130/p130_02m.jpg"
+    ],
+    "halfface_136": [
+      "data/raw/halfface/full_face/p136/p136_00m.jpeg",
+      "data/raw/halfface/full_face/p136/p136_01m.jpeg",
+      "data/raw/halfface/full_face/p136/p136_02m.jpeg"
+    ],
+    "halfface_137": [
+      "data/raw/halfface/full_face/p137/p137_00m.jpg",
+      "data/raw/halfface/full_face/p137/p137_01m.jpg",
+      "data/raw/halfface/full_face/p137/p137_02m.jpg"
+    ],
+    "halfface_145": [
+      "data/raw/halfface/full_face/p145/p145_00m.jpg",
+      "data/raw/halfface/full_face/p145/p145_01m.jpg",
+      "data/raw/halfface/full_face/p145/p145_02m.jpg"
+    ],
+    "halfface_147": [
+      "data/raw/halfface/full_face/p147/p147_00m.jpeg",
+      "data/raw/halfface/full_face/p147/p147_01m.jpeg",
+      "data/raw/halfface/full_face/p147/p147_02m.jpeg"
+    ],
+    "halfface_148": [
+      "data/raw/halfface/full_face/p148/p148_00m.jpeg",
+      "data/raw/halfface/full_face/p148/p148_01m.jpeg",
+      "data/raw/halfface/full_face/p148/p148_02m.jpeg"
+    ],
+    "halfface_150": [
+      "data/raw/halfface/full_face/p150/p150_00m.jpg",
+      "data/raw/halfface/full_face/p150/p150_02m.jpg"
+    ],
+    "halfface_158": [
+      "data/raw/halfface/full_face/p158/p158_00m.jpeg",
+      "data/raw/halfface/full_face/p158/p158_01m.jpeg",
+      "data/raw/halfface/full_face/p158/p158_02m.jpeg"
+    ],
+    "halfface_159": [
+      "data/raw/halfface/full_face/p159/p159_00m.jpg",
+      "data/raw/halfface/full_face/p159/p159_01m.jpg",
+      "data/raw/halfface/full_face/p159/p159_02m.jpg"
+    ],
+    "halfface_160": [
+      "data/raw/halfface/full_face/p160/p160_00m.jpeg",
+      "data/raw/halfface/full_face/p160/p160_01m.jpeg",
+      "data/raw/halfface/full_face/p160/p160_02m.jpeg"
+    ],
+    "halfface_164": [
+      "data/raw/halfface/full_face/p164/p164_00m.jpg",
+      "data/raw/halfface/full_face/p164/p164_01m.jpg"
+    ],
+    "halfface_166": [
+      "data/raw/halfface/full_face/p166/p166_00m.jpeg",
+      "data/raw/halfface/full_face/p166/p166_01m.jpeg",
+      "data/raw/halfface/full_face/p166/p166_02m.jpeg"
+    ]
+  },
+  "augmentation_probe_paths": [
+    "data/raw/halfface/full_face/p001/p001_10m.jpeg",
+    "data/raw/halfface/full_face/p001/p001_11m.jpeg",
+    "data/raw/halfface/full_face/p001/p001_12m.jpeg",
+    "data/raw/halfface/full_face/p003/p003_10m.jpg",
+    "data/raw/halfface/full_face/p004/p004_10m.jpeg",
+    "data/raw/halfface/full_face/p004/p004_11m.jpeg",
+    "data/raw/halfface/full_face/p004/p004_12m.jpeg",
+    "data/raw/halfface/full_face/p005/p005_10m.jpg",
+    "data/raw/halfface/full_face/p006/p006_00f.jpg",
+    "data/raw/halfface/full_face/p006/p006_01f.jpg",
+    "data/raw/halfface/full_face/p006/p006_02f.jpg",
+    "data/raw/halfface/full_face/p006/p006_10f.jpg",
+    "data/raw/halfface/full_face/p006/p006_11f.jpg",
+    "data/raw/halfface/full_face/p006/p006_12f.jpg",
+    "data/raw/halfface/full_face/p008/p008_10m.jpg",
+    "data/raw/halfface/full_face/p008/p008_11m.jpg",
+    "data/raw/halfface/full_face/p008/p008_12m.jpg",
+    "data/raw/halfface/full_face/p009/p009_10m.jpg",
+    "data/raw/halfface/full_face/p009/p009_11m.jpg",
+    "data/raw/halfface/full_face/p009/p009_12m.jpg",
+    "data/raw/halfface/full_face/p010/p010_10f.jpg",
+    "data/raw/halfface/full_face/p013/p013_10m.jpg",
+    "data/raw/halfface/full_face/p013/p013_11m.jpg",
+    "data/raw/halfface/full_face/p013/p013_12m.jpg",
+    "data/raw/halfface/full_face/p014/p014_00m.jpg",
+    "data/raw/halfface/full_face/p014/p014_01m.jpg",
+    "data/raw/halfface/full_face/p014/p014_02m.jpg",
+    "data/raw/halfface/full_face/p014/p014_10m.jpg",
+    "data/raw/halfface/full_face/p014/p014_11m.jpg",
+    "data/raw/halfface/full_face/p014/p014_12m.jpg",
+    "data/raw/halfface/full_face/p019/p019_00f.jpg",
+    "data/raw/halfface/full_face/p019/p019_01f.jpg",
+    "data/raw/halfface/full_face/p019/p019_02f.jpg",
+    "data/raw/halfface/full_face/p019/p019_10f.jpg",
+    "data/raw/halfface/full_face/p019/p019_11f.jpg",
+    "data/raw/halfface/full_face/p019/p019_12f.jpg",
+    "data/raw/halfface/full_face/p021/p021_10m.jpg",
+    "data/raw/halfface/full_face/p021/p021_11m.jpg",
+    "data/raw/halfface/full_face/p021/p021_12m.jpg",
+    "data/raw/halfface/full_face/p025/p025_10f.jpg",
+    "data/raw/halfface/full_face/p025/p025_11f.jpg",
+    "data/raw/halfface/full_face/p025/p025_12f.jpg",
+    "data/raw/halfface/full_face/p026/p026_10f.jpg",
+    "data/raw/halfface/full_face/p026/p026_11f.jpg",
+    "data/raw/halfface/full_face/p026/p026_12f.jpg",
+    "data/raw/halfface/full_face/p028/p028_00m.jpg",
+    "data/raw/halfface/full_face/p028/p028_01m.jpg",
+    "data/raw/halfface/full_face/p028/p028_02m.jpg",
+    "data/raw/halfface/full_face/p028/p028_10m.jpg",
+    "data/raw/halfface/full_face/p028/p028_11m.jpg",
+    "data/raw/halfface/full_face/p029/p029_10f.jpg",
+    "data/raw/halfface/full_face/p029/p029_11f.jpg",
+    "data/raw/halfface/full_face/p029/p029_12f.jpg",
+    "data/raw/halfface/full_face/p033/p033_10f.jpg",
+    "data/raw/halfface/full_face/p034/p034_10m.jpg",
+    "data/raw/halfface/full_face/p034/p034_11m.jpg",
+    "data/raw/halfface/full_face/p034/p034_12m.jpg",
+    "data/raw/halfface/full_face/p038/p038_10m.jpeg",
+    "data/raw/halfface/full_face/p038/p038_11m.jpeg",
+    "data/raw/halfface/full_face/p038/p038_12m.jpeg",
+    "data/raw/halfface/full_face/p040/p040_10m.jpg",
+    "data/raw/halfface/full_face/p040/p040_11m.jpg",
+    "data/raw/halfface/full_face/p047/p047_00m.jpg",
+    "data/raw/halfface/full_face/p047/p047_01m.jpg",
+    "data/raw/halfface/full_face/p047/p047_02m.jpg",
+    "data/raw/halfface/full_face/p047/p047_10m.jpg",
+    "data/raw/halfface/full_face/p047/p047_11m.jpg",
+    "data/raw/halfface/full_face/p047/p047_12m.jpg",
+    "data/raw/halfface/full_face/p048/p048_10f.jpg",
+    "data/raw/halfface/full_face/p048/p048_11f.jpg",
+    "data/raw/halfface/full_face/p048/p048_12f.jpg",
+    "data/raw/halfface/full_face/p050/p050_00m.jpeg",
+    "data/raw/halfface/full_face/p050/p050_01m.jpeg",
+    "data/raw/halfface/full_face/p050/p050_02m.jpeg",
+    "data/raw/halfface/full_face/p050/p050_10m.jpeg",
+    "data/raw/halfface/full_face/p050/p050_11m.jpeg",
+    "data/raw/halfface/full_face/p050/p050_12m.jpeg",
+    "data/raw/halfface/full_face/p052/p052_10m.jpeg",
+    "data/raw/halfface/full_face/p052/p052_11m.jpeg",
+    "data/raw/halfface/full_face/p052/p052_12m.jpeg",
+    "data/raw/halfface/full_face/p053/p053_10m.jpg",
+    "data/raw/halfface/full_face/p053/p053_12m.jpg",
+    "data/raw/halfface/full_face/p054/p054_10m.jpg",
+    "data/raw/halfface/full_face/p054/p054_11m.jpg",
+    "data/raw/halfface/full_face/p054/p054_12m.jpg",
+    "data/raw/halfface/full_face/p056/p056_10m.jpg",
+    "data/raw/halfface/full_face/p056/p056_11m.jpg",
+    "data/raw/halfface/full_face/p056/p056_12m.jpg",
+    "data/raw/halfface/full_face/p058/p058_10m.jpeg",
+    "data/raw/halfface/full_face/p058/p058_11m.jpeg",
+    "data/raw/halfface/full_face/p058/p058_12m.jpeg",
+    "data/raw/halfface/full_face/p064/p064_10m.jpeg",
+    "data/raw/halfface/full_face/p064/p064_11m.jpeg",
+    "data/raw/halfface/full_face/p064/p064_12m.jpeg",
+    "data/raw/halfface/full_face/p068/p068_10m.jpg",
+    "data/raw/halfface/full_face/p068/p068_11m.jpg",
+    "data/raw/halfface/full_face/p068/p068_12m.jpg",
+    "data/raw/halfface/full_face/p070/p070_00m.jpg",
+    "data/raw/halfface/full_face/p070/p070_01m.jpg",
+    "data/raw/halfface/full_face/p070/p070_02m.jpg",
+    "data/raw/halfface/full_face/p070/p070_10m.jpg",
+    "data/raw/halfface/full_face/p070/p070_11m.jpg",
+    "data/raw/halfface/full_face/p070/p070_12m.jpg",
+    "data/raw/halfface/full_face/p072/p072_10m.jpeg",
+    "data/raw/halfface/full_face/p072/p072_11m.jpeg",
+    "data/raw/halfface/full_face/p072/p072_12m.jpeg",
+    "data/raw/halfface/full_face/p074/p074_00m.jpeg",
+    "data/raw/halfface/full_face/p074/p074_01m.jpeg",
+    "data/raw/halfface/full_face/p074/p074_02m.jpeg",
+    "data/raw/halfface/full_face/p074/p074_10m.jpeg",
+    "data/raw/halfface/full_face/p074/p074_11m.jpeg",
+    "data/raw/halfface/full_face/p074/p074_12m.jpeg",
+    "data/raw/halfface/full_face/p077/p077_10m.JPG",
+    "data/raw/halfface/full_face/p077/p077_11m.JPG",
+    "data/raw/halfface/full_face/p077/p077_12m.JPG",
+    "data/raw/halfface/full_face/p080/p080_00m.jpeg",
+    "data/raw/halfface/full_face/p080/p080_01m.jpeg",
+    "data/raw/halfface/full_face/p080/p080_02m.jpeg",
+    "data/raw/halfface/full_face/p080/p080_10m.jpeg",
+    "data/raw/halfface/full_face/p080/p080_11m.jpeg",
+    "data/raw/halfface/full_face/p080/p080_12m.jpeg",
+    "data/raw/halfface/full_face/p081/p081_00m.jpeg",
+    "data/raw/halfface/full_face/p081/p081_01m.jpeg",
+    "data/raw/halfface/full_face/p081/p081_02m.jpeg",
+    "data/raw/halfface/full_face/p081/p081_10m.jpeg",
+    "data/raw/halfface/full_face/p081/p081_11m.jpeg",
+    "data/raw/halfface/full_face/p081/p081_12m.jpeg",
+    "data/raw/halfface/full_face/p083/p083_00m.JPG",
+    "data/raw/halfface/full_face/p083/p083_01m.JPG",
+    "data/raw/halfface/full_face/p083/p083_02m.JPG",
+    "data/raw/halfface/full_face/p083/p083_10m.JPG",
+    "data/raw/halfface/full_face/p083/p083_11m.JPG",
+    "data/raw/halfface/full_face/p083/p083_12m.JPG",
+    "data/raw/halfface/full_face/p084/p084_10m.jpeg",
+    "data/raw/halfface/full_face/p084/p084_11m.jpeg",
+    "data/raw/halfface/full_face/p084/p084_12m.jpeg",
+    "data/raw/halfface/full_face/p087/p087_10m.jpg",
+    "data/raw/halfface/full_face/p087/p087_11m.jpg",
+    "data/raw/halfface/full_face/p087/p087_12m.jpg",
+    "data/raw/halfface/full_face/p089/p089_00m.jpeg",
+    "data/raw/halfface/full_face/p089/p089_01m.jpeg",
+    "data/raw/halfface/full_face/p089/p089_02m.jpeg",
+    "data/raw/halfface/full_face/p089/p089_10m.jpeg",
+    "data/raw/halfface/full_face/p089/p089_11m.jpeg",
+    "data/raw/halfface/full_face/p089/p089_12m.jpeg",
+    "data/raw/halfface/full_face/p091/p091_10m.jpg",
+    "data/raw/halfface/full_face/p091/p091_11m.jpg",
+    "data/raw/halfface/full_face/p091/p091_12m.jpg",
+    "data/raw/halfface/full_face/p092/p092_00m.jpg",
+    "data/raw/halfface/full_face/p092/p092_01m.jpg",
+    "data/raw/halfface/full_face/p092/p092_02m.jpg",
+    "data/raw/halfface/full_face/p092/p092_10m.jpg",
+    "data/raw/halfface/full_face/p092/p092_11m.jpg",
+    "data/raw/halfface/full_face/p092/p092_12m.jpg",
+    "data/raw/halfface/full_face/p093/p093_00m.JPG",
+    "data/raw/halfface/full_face/p093/p093_01m.JPG",
+    "data/raw/halfface/full_face/p093/p093_02m.JPG",
+    "data/raw/halfface/full_face/p093/p093_10m.JPG",
+    "data/raw/halfface/full_face/p093/p093_11m.JPG",
+    "data/raw/halfface/full_face/p093/p093_12m.JPG",
+    "data/raw/halfface/full_face/p095/p095_10m.jpg",
+    "data/raw/halfface/full_face/p095/p095_11m.jpg",
+    "data/raw/halfface/full_face/p095/p095_12m.jpg",
+    "data/raw/halfface/full_face/p096/p096_10m.jpeg",
+    "data/raw/halfface/full_face/p096/p096_11m.jpeg",
+    "data/raw/halfface/full_face/p096/p096_12m.jpeg",
+    "data/raw/halfface/full_face/p101/p101_00m.jpeg",
+    "data/raw/halfface/full_face/p101/p101_01m.jpeg",
+    "data/raw/halfface/full_face/p101/p101_02m.jpeg",
+    "data/raw/halfface/full_face/p101/p101_10m.jpeg",
+    "data/raw/halfface/full_face/p101/p101_11m.jpeg",
+    "data/raw/halfface/full_face/p101/p101_12m.jpeg",
+    "data/raw/halfface/full_face/p102/p102_10m.jpeg",
+    "data/raw/halfface/full_face/p102/p102_11m.jpeg",
+    "data/raw/halfface/full_face/p102/p102_12m.jpeg",
+    "data/raw/halfface/full_face/p103/p103_10m.JPG",
+    "data/raw/halfface/full_face/p103/p103_11m.JPG",
+    "data/raw/halfface/full_face/p103/p103_12m.JPG",
+    "data/raw/halfface/full_face/p104/p104_10m.jpeg",
+    "data/raw/halfface/full_face/p104/p104_11m.jpeg",
+    "data/raw/halfface/full_face/p104/p104_12m.jpeg",
+    "data/raw/halfface/full_face/p107/p107_10m.JPG",
+    "data/raw/halfface/full_face/p107/p107_11m.JPG",
+    "data/raw/halfface/full_face/p107/p107_12m.JPG",
+    "data/raw/halfface/full_face/p110/p110_10m.jpg",
+    "data/raw/halfface/full_face/p110/p110_11m.jpg",
+    "data/raw/halfface/full_face/p110/p110_12m.jpg",
+    "data/raw/halfface/full_face/p111/p111_00m.jpeg",
+    "data/raw/halfface/full_face/p111/p111_01m.jpeg",
+    "data/raw/halfface/full_face/p111/p111_02m.jpeg",
+    "data/raw/halfface/full_face/p111/p111_10m.jpeg",
+    "data/raw/halfface/full_face/p111/p111_12m.jpeg",
+    "data/raw/halfface/full_face/p114/p114_10m.jpeg",
+    "data/raw/halfface/full_face/p114/p114_11m.jpeg",
+    "data/raw/halfface/full_face/p114/p114_12m.jpeg",
+    "data/raw/halfface/full_face/p115/p115_10m.jpeg",
+    "data/raw/halfface/full_face/p115/p115_11m.jpeg",
+    "data/raw/halfface/full_face/p115/p115_12m.jpeg",
+    "data/raw/halfface/full_face/p117/p117_00m.jpeg",
+    "data/raw/halfface/full_face/p117/p117_01m.jpeg",
+    "data/raw/halfface/full_face/p117/p117_02m.jpeg",
+    "data/raw/halfface/full_face/p117/p117_10m.jpeg",
+    "data/raw/halfface/full_face/p117/p117_11m.jpeg",
+    "data/raw/halfface/full_face/p117/p117_12m.jpeg",
+    "data/raw/halfface/full_face/p118/p118_00m.jpg",
+    "data/raw/halfface/full_face/p118/p118_01m.jpg",
+    "data/raw/halfface/full_face/p118/p118_02m.jpg",
+    "data/raw/halfface/full_face/p118/p118_10m.jpg",
+    "data/raw/halfface/full_face/p118/p118_11m.jpg",
+    "data/raw/halfface/full_face/p120/p120_10m.jpeg",
+    "data/raw/halfface/full_face/p120/p120_11m.jpeg",
+    "data/raw/halfface/full_face/p120/p120_12m.jpeg",
+    "data/raw/halfface/full_face/p122/p122_10m.jpeg",
+    "data/raw/halfface/full_face/p122/p122_11m.jpeg",
+    "data/raw/halfface/full_face/p122/p122_12m.jpeg",
+    "data/raw/halfface/full_face/p123/p123_00m.JPG",
+    "data/raw/halfface/full_face/p123/p123_01m.JPG",
+    "data/raw/halfface/full_face/p123/p123_02m.JPG",
+    "data/raw/halfface/full_face/p123/p123_10m.JPG",
+    "data/raw/halfface/full_face/p123/p123_11m.JPG",
+    "data/raw/halfface/full_face/p123/p123_12m.JPG",
+    "data/raw/halfface/full_face/p125/p125_10m.JPG",
+    "data/raw/halfface/full_face/p125/p125_11m.JPG",
+    "data/raw/halfface/full_face/p125/p125_12m.JPG",
+    "data/raw/halfface/full_face/p126/p126_10m.jpeg",
+    "data/raw/halfface/full_face/p126/p126_11m.jpeg",
+    "data/raw/halfface/full_face/p126/p126_12m.jpeg",
+    "data/raw/halfface/full_face/p128/p128_10m.jpeg",
+    "data/raw/halfface/full_face/p128/p128_11m.jpeg",
+    "data/raw/halfface/full_face/p128/p128_12m.jpeg",
+    "data/raw/halfface/full_face/p129/p129_10m.jpeg",
+    "data/raw/halfface/full_face/p129/p129_11m.jpeg",
+    "data/raw/halfface/full_face/p129/p129_12m.jpeg",
+    "data/raw/halfface/full_face/p130/p130_10m.jpg",
+    "data/raw/halfface/full_face/p130/p130_11m.jpg",
+    "data/raw/halfface/full_face/p130/p130_12m.jpg",
+    "data/raw/halfface/full_face/p132/p132_00m.jpeg",
+    "data/raw/halfface/full_face/p132/p132_01m.jpeg",
+    "data/raw/halfface/full_face/p132/p132_02m.jpeg",
+    "data/raw/halfface/full_face/p132/p132_10m.jpeg",
+    "data/raw/halfface/full_face/p132/p132_11m.jpeg",
+    "data/raw/halfface/full_face/p132/p132_12m.jpeg",
+    "data/raw/halfface/full_face/p136/p136_10m.jpeg",
+    "data/raw/halfface/full_face/p136/p136_11m.jpeg",
+    "data/raw/halfface/full_face/p136/p136_12m.jpeg",
+    "data/raw/halfface/full_face/p137/p137_10m.jpg",
+    "data/raw/halfface/full_face/p137/p137_11m.jpg",
+    "data/raw/halfface/full_face/p138/p138_00m.jpeg",
+    "data/raw/halfface/full_face/p138/p138_01m.jpeg",
+    "data/raw/halfface/full_face/p138/p138_02m.jpeg",
+    "data/raw/halfface/full_face/p138/p138_10m.jpeg",
+    "data/raw/halfface/full_face/p138/p138_11m.jpeg",
+    "data/raw/halfface/full_face/p138/p138_12m.jpeg",
+    "data/raw/halfface/full_face/p145/p145_10m.jpg",
+    "data/raw/halfface/full_face/p145/p145_11m.jpg",
+    "data/raw/halfface/full_face/p145/p145_12m.jpg",
+    "data/raw/halfface/full_face/p146/p146_00m.jpg",
+    "data/raw/halfface/full_face/p146/p146_01m.jpg",
+    "data/raw/halfface/full_face/p146/p146_02m.jpg",
+    "data/raw/halfface/full_face/p146/p146_10m.jpg",
+    "data/raw/halfface/full_face/p146/p146_11m.jpg",
+    "data/raw/halfface/full_face/p146/p146_12m.jpg",
+    "data/raw/halfface/full_face/p147/p147_10m.jpeg",
+    "data/raw/halfface/full_face/p147/p147_11m.jpeg",
+    "data/raw/halfface/full_face/p147/p147_12m.jpeg",
+    "data/raw/halfface/full_face/p148/p148_10m.jpeg",
+    "data/raw/halfface/full_face/p148/p148_11m.jpeg",
+    "data/raw/halfface/full_face/p148/p148_12m.jpeg",
+    "data/raw/halfface/full_face/p150/p150_10m.jpg",
+    "data/raw/halfface/full_face/p150/p150_11m.jpg",
+    "data/raw/halfface/full_face/p150/p150_12m.jpg",
+    "data/raw/halfface/full_face/p151/p151_00m.jpeg",
+    "data/raw/halfface/full_face/p151/p151_01m.jpeg",
+    "data/raw/halfface/full_face/p151/p151_02m.jpeg",
+    "data/raw/halfface/full_face/p151/p151_10m.jpeg",
+    "data/raw/halfface/full_face/p151/p151_11m.jpeg",
+    "data/raw/halfface/full_face/p151/p151_12m.jpeg",
+    "data/raw/halfface/full_face/p152/p152_00m.jpeg",
+    "data/raw/halfface/full_face/p152/p152_01m.jpeg",
+    "data/raw/halfface/full_face/p152/p152_02m.jpeg",
+    "data/raw/halfface/full_face/p152/p152_10m.jpeg",
+    "data/raw/halfface/full_face/p152/p152_11m.jpeg",
+    "data/raw/halfface/full_face/p152/p152_12m.jpeg",
+    "data/raw/halfface/full_face/p157/p157_00m.jpeg",
+    "data/raw/halfface/full_face/p157/p157_10m.jpeg",
+    "data/raw/halfface/full_face/p158/p158_10m.jpeg",
+    "data/raw/halfface/full_face/p158/p158_11m.jpeg",
+    "data/raw/halfface/full_face/p158/p158_12m.jpeg",
+    "data/raw/halfface/full_face/p159/p159_10m.jpg",
+    "data/raw/halfface/full_face/p159/p159_11m.jpg",
+    "data/raw/halfface/full_face/p159/p159_12m.jpg",
+    "data/raw/halfface/full_face/p160/p160_10m.jpeg",
+    "data/raw/halfface/full_face/p160/p160_11m.jpeg",
+    "data/raw/halfface/full_face/p160/p160_12m.jpeg",
+    "data/raw/halfface/full_face/p164/p164_10m.jpg",
+    "data/raw/halfface/full_face/p164/p164_11m.jpg",
+    "data/raw/halfface/full_face/p164/p164_12m.jpg",
+    "data/raw/halfface/full_face/p165/p165_00m.jpeg",
+    "data/raw/halfface/full_face/p165/p165_02m.jpeg",
+    "data/raw/halfface/full_face/p165/p165_10m.jpeg",
+    "data/raw/halfface/full_face/p165/p165_12m.jpeg",
+    "data/raw/halfface/full_face/p166/p166_10m.jpeg",
+    "data/raw/halfface/full_face/p166/p166_11m.jpeg",
+    "data/raw/halfface/full_face/p166/p166_12m.jpeg"
+  ],
+  "growth_probe_paths": [
+    "data/raw/halfface/full_face/p006/p006_00f.jpg",
+    "data/raw/halfface/full_face/p006/p006_01f.jpg",
+    "data/raw/halfface/full_face/p006/p006_02f.jpg",
+    "data/raw/halfface/full_face/p006/p006_10f.jpg",
+    "data/raw/halfface/full_face/p006/p006_11f.jpg",
+    "data/raw/halfface/full_face/p006/p006_12f.jpg",
+    "data/raw/halfface/full_face/p008/p008_10m.jpg",
+    "data/raw/halfface/full_face/p008/p008_11m.jpg",
+    "data/raw/halfface/full_face/p008/p008_12m.jpg",
+    "data/raw/halfface/full_face/p014/p014_00m.jpg",
+    "data/raw/halfface/full_face/p014/p014_01m.jpg",
+    "data/raw/halfface/full_face/p014/p014_02m.jpg",
+    "data/raw/halfface/full_face/p014/p014_10m.jpg",
+    "data/raw/halfface/full_face/p014/p014_11m.jpg",
+    "data/raw/halfface/full_face/p014/p014_12m.jpg",
+    "data/raw/halfface/full_face/p019/p019_00f.jpg",
+    "data/raw/halfface/full_face/p019/p019_01f.jpg",
+    "data/raw/halfface/full_face/p019/p019_02f.jpg",
+    "data/raw/halfface/full_face/p019/p019_10f.jpg",
+    "data/raw/halfface/full_face/p019/p019_11f.jpg",
+    "data/raw/halfface/full_face/p019/p019_12f.jpg",
+    "data/raw/halfface/full_face/p025/p025_10f.jpg",
+    "data/raw/halfface/full_face/p025/p025_11f.jpg",
+    "data/raw/halfface/full_face/p025/p025_12f.jpg",
+    "data/raw/halfface/full_face/p028/p028_00m.jpg",
+    "data/raw/halfface/full_face/p028/p028_01m.jpg",
+    "data/raw/halfface/full_face/p028/p028_02m.jpg",
+    "data/raw/halfface/full_face/p028/p028_10m.jpg",
+    "data/raw/halfface/full_face/p028/p028_11m.jpg",
+    "data/raw/halfface/full_face/p047/p047_00m.jpg",
+    "data/raw/halfface/full_face/p047/p047_01m.jpg",
+    "data/raw/halfface/full_face/p047/p047_02m.jpg",
+    "data/raw/halfface/full_face/p047/p047_10m.jpg",
+    "data/raw/halfface/full_face/p047/p047_11m.jpg",
+    "data/raw/halfface/full_face/p047/p047_12m.jpg",
+    "data/raw/halfface/full_face/p050/p050_00m.jpeg",
+    "data/raw/halfface/full_face/p050/p050_01m.jpeg",
+    "data/raw/halfface/full_face/p050/p050_02m.jpeg",
+    "data/raw/halfface/full_face/p050/p050_10m.jpeg",
+    "data/raw/halfface/full_face/p050/p050_11m.jpeg",
+    "data/raw/halfface/full_face/p050/p050_12m.jpeg",
+    "data/raw/halfface/full_face/p052/p052_10m.jpeg",
+    "data/raw/halfface/full_face/p052/p052_11m.jpeg",
+    "data/raw/halfface/full_face/p052/p052_12m.jpeg",
+    "data/raw/halfface/full_face/p053/p053_10m.jpg",
+    "data/raw/halfface/full_face/p053/p053_12m.jpg",
+    "data/raw/halfface/full_face/p054/p054_10m.jpg",
+    "data/raw/halfface/full_face/p054/p054_11m.jpg",
+    "data/raw/halfface/full_face/p054/p054_12m.jpg",
+    "data/raw/halfface/full_face/p068/p068_10m.jpg",
+    "data/raw/halfface/full_face/p068/p068_11m.jpg",
+    "data/raw/halfface/full_face/p068/p068_12m.jpg",
+    "data/raw/halfface/full_face/p070/p070_00m.jpg",
+    "data/raw/halfface/full_face/p070/p070_01m.jpg",
+    "data/raw/halfface/full_face/p070/p070_02m.jpg",
+    "data/raw/halfface/full_face/p070/p070_10m.jpg",
+    "data/raw/halfface/full_face/p070/p070_11m.jpg",
+    "data/raw/halfface/full_face/p070/p070_12m.jpg",
+    "data/raw/halfface/full_face/p074/p074_00m.jpeg",
+    "data/raw/halfface/full_face/p074/p074_01m.jpeg",
+    "data/raw/halfface/full_face/p074/p074_02m.jpeg",
+    "data/raw/halfface/full_face/p074/p074_10m.jpeg",
+    "data/raw/halfface/full_face/p074/p074_11m.jpeg",
+    "data/raw/halfface/full_face/p074/p074_12m.jpeg",
+    "data/raw/halfface/full_face/p080/p080_00m.jpeg",
+    "data/raw/halfface/full_face/p080/p080_01m.jpeg",
+    "data/raw/halfface/full_face/p080/p080_02m.jpeg",
+    "data/raw/halfface/full_face/p080/p080_10m.jpeg",
+    "data/raw/halfface/full_face/p080/p080_11m.jpeg",
+    "data/raw/halfface/full_face/p080/p080_12m.jpeg",
+    "data/raw/halfface/full_face/p081/p081_00m.jpeg",
+    "data/raw/halfface/full_face/p081/p081_01m.jpeg",
+    "data/raw/halfface/full_face/p081/p081_02m.jpeg",
+    "data/raw/halfface/full_face/p081/p081_10m.jpeg",
+    "data/raw/halfface/full_face/p081/p081_11m.jpeg",
+    "data/raw/halfface/full_face/p081/p081_12m.jpeg",
+    "data/raw/halfface/full_face/p083/p083_00m.JPG",
+    "data/raw/halfface/full_face/p083/p083_01m.JPG",
+    "data/raw/halfface/full_face/p083/p083_02m.JPG",
+    "data/raw/halfface/full_face/p083/p083_10m.JPG",
+    "data/raw/halfface/full_face/p083/p083_11m.JPG",
+    "data/raw/halfface/full_face/p083/p083_12m.JPG",
+    "data/raw/halfface/full_face/p089/p089_00m.jpeg",
+    "data/raw/halfface/full_face/p089/p089_01m.jpeg",
+    "data/raw/halfface/full_face/p089/p089_02m.jpeg",
+    "data/raw/halfface/full_face/p089/p089_10m.jpeg",
+    "data/raw/halfface/full_face/p089/p089_11m.jpeg",
+    "data/raw/halfface/full_face/p089/p089_12m.jpeg",
+    "data/raw/halfface/full_face/p092/p092_00m.jpg",
+    "data/raw/halfface/full_face/p092/p092_01m.jpg",
+    "data/raw/halfface/full_face/p092/p092_02m.jpg",
+    "data/raw/halfface/full_face/p092/p092_10m.jpg",
+    "data/raw/halfface/full_face/p092/p092_11m.jpg",
+    "data/raw/halfface/full_face/p092/p092_12m.jpg",
+    "data/raw/halfface/full_face/p093/p093_00m.JPG",
+    "data/raw/halfface/full_face/p093/p093_01m.JPG",
+    "data/raw/halfface/full_face/p093/p093_02m.JPG",
+    "data/raw/halfface/full_face/p093/p093_10m.JPG",
+    "data/raw/halfface/full_face/p093/p093_11m.JPG",
+    "data/raw/halfface/full_face/p093/p093_12m.JPG",
+    "data/raw/halfface/full_face/p101/p101_00m.jpeg",
+    "data/raw/halfface/full_face/p101/p101_01m.jpeg",
+    "data/raw/halfface/full_face/p101/p101_02m.jpeg",
+    "data/raw/halfface/full_face/p101/p101_10m.jpeg",
+    "data/raw/halfface/full_face/p101/p101_11m.jpeg",
+    "data/raw/halfface/full_face/p101/p101_12m.jpeg",
+    "data/raw/halfface/full_face/p104/p104_10m.jpeg",
+    "data/raw/halfface/full_face/p104/p104_11m.jpeg",
+    "data/raw/halfface/full_face/p104/p104_12m.jpeg",
+    "data/raw/halfface/full_face/p111/p111_00m.jpeg",
+    "data/raw/halfface/full_face/p111/p111_01m.jpeg",
+    "data/raw/halfface/full_face/p111/p111_02m.jpeg",
+    "data/raw/halfface/full_face/p111/p111_10m.jpeg",
+    "data/raw/halfface/full_face/p111/p111_12m.jpeg",
+    "data/raw/halfface/full_face/p117/p117_00m.jpeg",
+    "data/raw/halfface/full_face/p117/p117_01m.jpeg",
+    "data/raw/halfface/full_face/p117/p117_02m.jpeg",
+    "data/raw/halfface/full_face/p117/p117_10m.jpeg",
+    "data/raw/halfface/full_face/p117/p117_11m.jpeg",
+    "data/raw/halfface/full_face/p117/p117_12m.jpeg",
+    "data/raw/halfface/full_face/p118/p118_00m.jpg",
+    "data/raw/halfface/full_face/p118/p118_01m.jpg",
+    "data/raw/halfface/full_face/p118/p118_02m.jpg",
+    "data/raw/halfface/full_face/p118/p118_10m.jpg",
+    "data/raw/halfface/full_face/p118/p118_11m.jpg",
+    "data/raw/halfface/full_face/p123/p123_00m.JPG",
+    "data/raw/halfface/full_face/p123/p123_01m.JPG",
+    "data/raw/halfface/full_face/p123/p123_02m.JPG",
+    "data/raw/halfface/full_face/p123/p123_10m.JPG",
+    "data/raw/halfface/full_face/p123/p123_11m.JPG",
+    "data/raw/halfface/full_face/p123/p123_12m.JPG",
+    "data/raw/halfface/full_face/p128/p128_10m.jpeg",
+    "data/raw/halfface/full_face/p128/p128_11m.jpeg",
+    "data/raw/halfface/full_face/p128/p128_12m.jpeg",
+    "data/raw/halfface/full_face/p132/p132_00m.jpeg",
+    "data/raw/halfface/full_face/p132/p132_01m.jpeg",
+    "data/raw/halfface/full_face/p132/p132_02m.jpeg",
+    "data/raw/halfface/full_face/p132/p132_10m.jpeg",
+    "data/raw/halfface/full_face/p132/p132_11m.jpeg",
+    "data/raw/halfface/full_face/p132/p132_12m.jpeg",
+    "data/raw/halfface/full_face/p137/p137_10m.jpg",
+    "data/raw/halfface/full_face/p137/p137_11m.jpg",
+    "data/raw/halfface/full_face/p138/p138_00m.jpeg",
+    "data/raw/halfface/full_face/p138/p138_01m.jpeg",
+    "data/raw/halfface/full_face/p138/p138_02m.jpeg",
+    "data/raw/halfface/full_face/p138/p138_10m.jpeg",
+    "data/raw/halfface/full_face/p138/p138_11m.jpeg",
+    "data/raw/halfface/full_face/p138/p138_12m.jpeg",
+    "data/raw/halfface/full_face/p146/p146_00m.jpg",
+    "data/raw/halfface/full_face/p146/p146_01m.jpg",
+    "data/raw/halfface/full_face/p146/p146_02m.jpg",
+    "data/raw/halfface/full_face/p146/p146_10m.jpg",
+    "data/raw/halfface/full_face/p146/p146_11m.jpg",
+    "data/raw/halfface/full_face/p146/p146_12m.jpg",
+    "data/raw/halfface/full_face/p148/p148_10m.jpeg",
+    "data/raw/halfface/full_face/p148/p148_11m.jpeg",
+    "data/raw/halfface/full_face/p148/p148_12m.jpeg",
+    "data/raw/halfface/full_face/p150/p150_10m.jpg",
+    "data/raw/halfface/full_face/p150/p150_11m.jpg",
+    "data/raw/halfface/full_face/p150/p150_12m.jpg",
+    "data/raw/halfface/full_face/p151/p151_00m.jpeg",
+    "data/raw/halfface/full_face/p151/p151_01m.jpeg",
+    "data/raw/halfface/full_face/p151/p151_02m.jpeg",
+    "data/raw/halfface/full_face/p151/p151_10m.jpeg",
+    "data/raw/halfface/full_face/p151/p151_11m.jpeg",
+    "data/raw/halfface/full_face/p151/p151_12m.jpeg",
+    "data/raw/halfface/full_face/p152/p152_00m.jpeg",
+    "data/raw/halfface/full_face/p152/p152_01m.jpeg",
+    "data/raw/halfface/full_face/p152/p152_02m.jpeg",
+    "data/raw/halfface/full_face/p152/p152_10m.jpeg",
+    "data/raw/halfface/full_face/p152/p152_11m.jpeg",
+    "data/raw/halfface/full_face/p152/p152_12m.jpeg",
+    "data/raw/halfface/full_face/p157/p157_00m.jpeg",
+    "data/raw/halfface/full_face/p157/p157_10m.jpeg",
+    "data/raw/halfface/full_face/p165/p165_00m.jpeg",
+    "data/raw/halfface/full_face/p165/p165_02m.jpeg",
+    "data/raw/halfface/full_face/p165/p165_10m.jpeg",
+    "data/raw/halfface/full_face/p165/p165_12m.jpeg"
+  ]
+}
